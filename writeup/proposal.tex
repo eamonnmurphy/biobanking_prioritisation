@@ -1,0 +1,106 @@
+\documentclass[11pt,titlepage]{article}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{lineno}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{forloop}
+\usepackage{graphicx}
+\onehalfspacing
+
+
+\title{Project Proposal: Prioritising Species for Genetic Biobanking}
+\author{Eamonn Murphy}
+\date{April 2022}
+
+\begin{document}
+	
+	\maketitle
+	
+	\linenumbers
+	\section{Keywords}
+	
+	Phylogenetics, genetics, optimisation, extinction, restoration, conservation genetics
+	
+	\section{Introduction}
+	Many approaches are being used to tackle the current mass extinction event, which is likely to continue to get worse over the coming century \cite{ceballos_vertebrates_2020}. Recently, there have been large advances made in the field of biotechnology, and it seems very likely that in the coming decades, we will be able to regenerate organisms using their genetic data, and biological material from donor organisms. These advances make possible a new method for addressing biodiversity loss: restoration of extinct species \cite{sandler_ethical_2021}. These restoration approaches would rely on having stored genetic material for the species in question. These samples must be collected from existing populations, and it is important to start this process soon, in order to preserve as much genetic diversity as possible from within the threatened species. We would like to create a prioritisation list for this sample collection, to ensure that samples which are likely to be the most valuable for this approach are collected first.
+	
+	Future biotechnological approaches to restore extinct species will rely on two biological factors: stored genetic data for the species of interest, and the survival of a closely related species, as regeneration of individuals is likely to rely on donated cell material, surrogate implantation of embryos, or other similar approaches. Thus, we have two key metrics to consider when prioritising species for genetic biobanking. We must consider the vulnerability of the species in question, as well as the likelihood of survival of closely related species.
+	
+	\section{Proposed Methods}
+	It is proposed to adapt phylogenetic approaches for conservation prioritisation to the particular constraints of species restoration. For example, methods have been developed which use the phylogenetic tree, and data on species vulnerability from the IUCN Red List, to attempt to prioritise conservation efforts \cite{nunes_price_2015}. In order to create a prioritisation score for species biobanking, a metric will be developed which incorporates the vulnerability of the species in question, as well as the likelihood of survival of closely related species, determined via the phylogenetic tree. The vulnerability of each species will be taken from the IUCN Red List, from which the likelihood of extinction at various time scales can be calculated. Coding will be carried out using R, building on existing approaches for conservation prioritisation. Considerations will include how closely related species can be and still serve as viable donors for regeneration approaches.
+	\section{Anticipated Outputs and Outcomes}
+	It is anticipated to have by the end of the project a usable prioritisation list for genetic biobanking aimed at future species restoration, within the mammalian clade. This prioritisation list will be tested for its usefulness by comparison to a random sampling approach, and the predicted number of species protected by each will be compared. Another method that will be used to test the robustness of the methods developed will be to carry out the analysis using different time scales (eg. 50 years, 100 years) to calculate species vulnerability. The prioritisation lists can then be compared, to see if the same or different species are prioritised at each time scale. The methods and code used should also be available and ready to be applied to other clades, once adaptations have been made for considerations such as time of divergence between species.
+
+	\section{Project Timeline}
+	\newcounter{loopcntr}
+	\newcommand{\rpt}[2][1]{%
+		\forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}%
+	}
+	\newcommand{\on}[1][1]{
+		\forloop{loopcntr}{0}{\value{loopcntr}<#1}{&\cellcolor{gray}}
+	}
+	\newcommand{\off}[1][1]{
+		\forloop{loopcntr}{0}{\value{loopcntr}<#1}{&}
+	}
+
+	\noindent\begin{tabular}{p{0.35\textwidth}*{20}{|p{0.01\textwidth}}|}
+	
+	\textbf{Gantt chart} & \multicolumn{4}{c|}{April} 
+	& \multicolumn{4}{c|}{May} 
+	& \multicolumn{4}{c|}{June} 
+	& \multicolumn{4}{c|}{July} 
+	& \multicolumn{4}{c|}{August} \\
+	\hline
+	Writing & \multicolumn{20}{c|}{}\\
+	\hline
+	Introduction \on[6] \off[14] \\
+	Methods \off[10] \on[4] \off[6] \\
+	Results \off[14] \on[2] \off[4]\\
+	Discussion \off[16] \on[2] \off[2] \\
+	Final edits \off[18] \on[2] \\
+	\hline
+	\textbf{Project Work} & \multicolumn{20}{c|}{} \\
+	\hline
+	Initial reading \on[6] \off[14]\\
+	Basic prioritisation model \off[2] \on[6] \off[12] \\
+	Testing for validity \off[8] \on[4] \off[8] \\
+	Potential further directions \off[12] \on[4] \off[4] \\
+	\hline
+	
+	\end{tabular}
+	
+	\section{Budget}
+	\begin{table}[h]
+		\begin{center}
+			\caption{Budget Requests}
+			\begin{tabular}{|p{5cm}|p{5cm}|c|c|c|}
+				\hline
+				Item & Justification & Cost per Unit & Number & Total Cost \\
+				\hline
+				Visit to ZSL and Edge & Speak with researchers working on conservation prioritisation & £25 & 5 & £125 \\
+				\hline
+				Reading Mathematical Models in Ecology and Evolution Conference & Nearby relevant conference & £10 & 3 & £30 \\
+				\hline
+				\textbf{Total}& & & & £155 \\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+	
+	\bibliographystyle{apalike}
+	\bibliography{MSc_Thesis.bib}
+	\newpage
+	\section{Supervisor Signature}
+	
+	Name: James Rosindell \\
+	Signature: \\
+	\includegraphics[scale = 0.4]{james_signature.jpg}\\
+	Date: Wednesday 6th April\\
+	
+	%\bibliography{}
+	
+\end{document}

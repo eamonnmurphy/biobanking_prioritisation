@@ -38,3 +38,14 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Latex extra files
+*.aux
+*.blg
+*.synctex.gz
+*.log
+*.bbl
+
+# Ignore results folder
+results/*
+!results/.gitkeep
