@@ -9,45 +9,45 @@ library(dplyr)
 iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
 
 ####### Load in data #########
-load("../data/cleaned_mammal_trees_2020.RData")
-likelihoods <- read.csv("../data/species_likelihoods.csv")
+load("cleaned_mammal_trees_2020.RData")
+likelihoods <- read.csv("species_likelihoods.csv")
 
 # Extract required info
 spec_extinction <- likelihoods$extinction
 spec_survival <- likelihoods$survival
 
 ##### Prepare objects which will store results #####
-prior_df <- data.frame(matrix(nrow = 6253, ncol = 101))
-colnames(prior_df) <- c(paste("Tree", seq(1, 100), sep = ""), "Average")
-rownames(prior_df) <- Species$Species
+prior.df <- data.frame(matrix(nrow = 6253, ncol = 101))
+colnames(prior.df) <- c(paste("Tree", seq(1,100), sep = ""), "Average")
+rownames(prior.df) <- Species$Species
 
 ##### Iterate through each tree for analysis ######
 for (t in 1:100) {
   # Calculate distances between species
   dist <- cophenetic.phylo(phy.block.1000[[t]])
-
+  
   # Calculate prioritisation index
   prior_score <- rep(NA, 6253)
   for (i in 1:6253) {
     spec <- Species$Species[i]
-    if (sum(dist[spec, ] / 2 < iter & dist[spec, ] != 0, na.rm = T) == 0) {
+    if (sum(dist[spec,] / 2 < iter & dist[spec,] != 0, na.rm = T) == 0) {
       close_extinction <- 1
     } else {
-      close_extinction <-
-        spec_extinction[which(dist[Species$Species[i], ] / 2 < 10
-                              & dist[Species$Species[i], ] != 0)]
+      close_extinction <- 
+        spec_extinction[which(dist[Species$Species[i],] / 2 < 10 
+                              & dist[Species$Species[i],] != 0)]
     }
     total_close_extinction <- prod(close_extinction, na.rm = TRUE)
     related_survival <- 1 - total_close_extinction
     prior_score[i] <- spec_extinction[i] * related_survival
   }
 
-  prior_df[, t] <- prior_score
+  prior.df[,t] <- prior_score
 }
 
-prior_df[, 101] <- rowMeans(prior_df[, 1:100], na.rm = T)
+prior.df[,101] <- rowMeans(prior.df[,1:100], na.rm = T)
 
-ordered_prior_df <- arrange(prior_df, desc(Average))
+ordered_prior_df <- arrange(prior.df, desc(Average))
 
 filename <- paste("ordered_prior_score_", iter, "mya.csv", sep = "")
 

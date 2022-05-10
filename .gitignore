@@ -39,6 +39,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# Rplots output
+Rplots.pdf
+
 # Latex extra files
 *.aux
 *.blg
@@ -52,3 +55,6 @@ results/*
 
 # Ignore org folder
 org/*
+
+# Ignore tree data files (too big)
+*.tre
