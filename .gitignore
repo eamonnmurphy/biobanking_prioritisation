@@ -49,3 +49,6 @@ vignettes/*.pdf
 # Ignore results folder
 results/*
 !results/.gitkeep
+
+# Ignore org folder
+org/*

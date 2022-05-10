@@ -15,3 +15,20 @@ df <- setNames(df, columns)
 
 write.csv(df, file = "../data/survival_likelihoods.csv")
 
+# Precalculate survival and extinction likelihoods
+load("../data/cleaned_mammal_trees_2020.RData")
+
+spec_survival <- rep(NA, 6253)
+spec_extinction <- rep(NA, 6253)
+for (i in 1:6253) {
+  try(spec_survival[i] <- 
+        df$Survival[which(df$GE == Species$GE[i])], silent = T)
+  try(spec_extinction[i] <- 
+        df$Extinction[which(df$GE == Species$GE[i])], silent = T)
+}
+
+data <- data.frame("species" = Species$Species, 
+    "survival" = spec_survival, "extinction" = spec_extinction)
+
+# Create a csv file to store the likelihoods
+write.csv(data, file = "../data/species_likelihoods.csv")
