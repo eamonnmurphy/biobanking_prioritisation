@@ -34,14 +34,12 @@ write.csv(table, file = "../results/threshold_table.csv")
 
 png(filename = "../results/thresholds_scores.png")
 
-par(mfrow = c(1,2))
-
-plot(table[2:21, 2], type = "l", ylim = c(0, 200), main = "High priority",
+plot(table[2:21, 3], type = "l", ylim = c(0, 500),
     xlab = "Threshold (mya)", ylab = "No. of species")
-abline(v = 10, col = "red", lty = 2)
 
-plot(table[2:21, 3], type = "l", ylim = c(0, 500), main = "Medium priority",
-    xlab = "Threshold (mya)", ylab = "No. of species")
-abline(v = 10, col = "red", lty = 2)
+lines(table[2:21, 2], col = "red")
+
+legend(x = "bottomright", legend = c("Medium priority", "High priority"),
+    col = c("black", "red"), lty = 1)
 
 dev.off()
