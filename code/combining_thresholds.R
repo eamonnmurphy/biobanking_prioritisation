@@ -25,7 +25,7 @@ results <- data.frame(species, means)
 ordered <- arrange(results, desc(means))
 
 # Attempt to produce color scale tree
-load("../data/100_mammal_trees_with_2020_RL.RData")
+load("../data/cleaned_mammal_trees_2020.RData")
 example <- phy.block.1000[[1]]
 
 colfunc <- colorRampPalette(c("red", "yellow", "black"))

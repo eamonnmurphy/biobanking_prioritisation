@@ -58,3 +58,6 @@ org/*
 
 # Ignore tree data files (too big)
 *.tre
+
+# Ignore pdfs
+*.pdf
