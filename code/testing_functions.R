@@ -61,11 +61,11 @@ prior_calc <- function(phylo, species, ext_like, thresh, multiphylo = TRUE) {
     }
 }
 
-load("../data/cleaned_mammal_trees_2020.RData")
-ext_like <- read.csv("../data/mammals_50_likelihoods.csv", header = TRUE)
+# load("../data/cleaned_mammal_trees_2020.RData")
+# ext_like <- read.csv("../data/mammals_50_likelihoods.csv", header = TRUE)
 
-example <- phy.block.1000[[1]]
-res <- prior_calc(phy.block.1000, ext_like[, 1], ext_like, thresh = 10)
+# example <- phy.block.1000[[1]]
+# res <- prior_calc(phy.block.1000, ext_like[, 1], ext_like, thresh = 10)
 # res <- tree_prior_calc(example, ext_like[, 1], ext_like, 10)
 # dist <- ape::cophenetic.phylo(example)
 # spec <- ext_like[74, 1]
