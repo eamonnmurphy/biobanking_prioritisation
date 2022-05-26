@@ -55,4 +55,14 @@ biased, particularly towards species housed in zoos. Zoos are generally more
 likely to contain larger mammals and certain taxa like primates, and as such
 give an unrepresentative sample of the total biological diversity of animals.
 
-
+Another potential source of bias in our estimates lies within species
+classification in the phylogenetic trees. There will always be debate whether
+to classify closely related taxa as seperate species or only subspecies. This
+can create a source of bias, particularly if there is a tendency within certain
+genera or orders to classify as species vs. subspecies and vice-versa. Since it
+is necessary for closely related species to survive, artificially inflating the
+number of closely related taxa will bias the priority scores. However, this
+effect should be evened somewhat by the fact that each of these species will 
+have their own conservation status, which will be incorporated into the
+calculations. A sensitivity analysis needs to be carried out to get a better
+sense of the size of this effect.
