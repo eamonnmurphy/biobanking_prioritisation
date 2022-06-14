@@ -10,6 +10,22 @@ for (i in 1:20) {
     scores[[i]] <- read.csv(file_name, header = TRUE)
 }
 
+# Create histogram for standard ext likelihood distributions
+ext_like <- read.csv("../data/mammals_50_likelihoods.csv", header = TRUE)
+png(filename = "../results/hist_ext_like.png")
+par(mfrow = c(1,2))
+hist(ext_like$extinction, xlab = "Likelihood of extinction",
+    ylab = "Number of species",
+    main = "Distribution of extinction likelihoods in 50 years under IUCN data")
+graphics.off()
+
+
+# Create histogram for threshold of 10 million years
+png(filename = "../results/hist_prior_10mya.png")
+hist(scores[[1]][, 101], xlab = "Prioritisation score",
+    ylab = "Number of species", main = "Threshold of 1 million years to MRCA")
+graphics.off()
+
 # par(mfrow = c(5, 4))
 
 # for (i in 1:20) {
