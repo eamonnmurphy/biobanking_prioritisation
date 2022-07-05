@@ -48,6 +48,8 @@ Rplots.pdf
 *.synctex.gz
 *.log
 *.bbl
+*.bcf
+*.run.xml
 
 # Ignore results folder
 results/*

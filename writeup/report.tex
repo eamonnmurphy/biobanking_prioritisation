@@ -1,0 +1,217 @@
+\documentclass[10pt]{article}
+\usepackage{csvsimple}
+\usepackage{amsmath}
+\usepackage{a4wide}
+
+\title{Prioritising species sampling for genetic biobanking}
+\author{Eamonn Murphy}
+
+\begin{document}
+	\maketitle
+	
+	\pagebreak
+	
+	\section{Introduction}
+
+	Scientists believe that we may be living through the time of the Sixth 
+	Great Mass Extinction \cite{barnoskyHasEarthSixth2011}. Anthropogenic changes to the natural environment, such 
+	as climate change and pollution, have already driven many species extinct and 
+	threaten to cause the extinction of many more in the coming centuries \cite{ceballosVertebratesBrinkIndicators2020}. 
+	Traditional conservation strategies focus on mitigating the impacts of human
+	activites, as well protecting some of our most vulnerable and 
+	threatened species. However, this may not be sufficient to protect some of the most
+	vulnerable species, as these approaches are often costly to implement, and 
+	the political will can be lacking. Another approach, previously confined to
+	science fiction stories, but recently made possible by advances in 
+	biotechnology, is to clone individuals from threatened (and potentially even
+	extinct) species using stored biological material \cite{loiGeneticRescueEndangered2001}. In order to make this approach possible, we must biobank samples from threatened species now, before it is too
+	late.
+	
+	Traditional conservation methods include habitat
+	protection and restoration, as well as protecting species from poaching and other
+	harmful human activities \cite{mccarthyFinancialCostsMeeting2012}. Breeding programmes have also played an important role,
+	whether in zoos, aquariums, wildlife preserves or other venues. The goal of breeding
+	programmes, has been to increase the number of individuals of the species, while
+	maintaining its genetic diversity as best as possible. However, this can be 
+	difficult, particularly when the source wild population is small, or if the species has
+	difficulties with breeding in captivity (which often mean most of the successful
+	breeding is done with a few individuals). It has been common to collect samples
+	from these captive individuals, such as frozen cells, DNA and stem cells \cite{angelesChallengesDevelopmentBiodiversity2022, breithoffArkBankExtinction2020}. Now, it
+	should be possible to use these stored samples to assist in the goal of maintaining
+	genetic diversity within captive, and ultimately wild, populations.
+	
+	It has been possible for a few decades now to create clones of existing individuals \cite{campbellSheepClonedNuclear1996}.
+	This approach has traditionally relied upon the use of egg cells from the donor
+	individual, which can be difficult and expensive to extract, particularly if you are
+	working with an endangered species, where every individual is particularly valuable.
+	The method for doing this is somatic cell nuclear transfer, which involves replacing
+	the nucleus of the egg cell using a nucleus taken from a somatic cell. The somatic
+	nucleus is then reprogrammed by the egg cytoplasmic factors to become a zygotic nucleus,
+	and the egg will begin to multiply, forming a blastocyst. This blastocyst can then be
+	implanted into a host embryo, in which it will grow and develop into a new, cloned
+	individual. Under recent developments, it is now possible to use a cross-species
+	approach for this process, where a somatic nucleus from the target species is
+	implanted into an egg cell obtained from some closely related species \cite{loiGeneticRescueEndangered2001}.
+	
+	For example, this approach has recently been used to clone an individual of the black-footed ferret \cite{ConservationFirstCloned, wiselyRoadMap21st2015, sandlerEthicalAnalysisCloning2021}. The black-footed ferret is an endangered species native to the 
+	USA, which had been thought extinct in the late 1970s. In 1987, cell lines from a few
+	individuals of the species were preserved via deep-freezing. Since then, there has been
+	a breeding programme that has attempted to increase the numbers of the species, in order
+	to complement the wild population. However, despite the best efforts of the breeding
+	programme, genetic diversity within the population has been continually declining. For
+	this reason, it was decided to attempt to clone an individual using the stored cell
+	lines, by implanting the somatic nucleus into an egg cell from the domestic ferret, 
+	and developing the embryo in a surrogate domestic ferret mother. The stored lines contain
+	a lot of genetic diversity that has been lost in the current population, and it is hoped
+	to use the successfully cloned individual in the breeding programme to restore some of
+	this genetic diversity to the population \cite{ConservationFirstCloned}.
+	
+	Cross-species cloning may be an effective method for certain taxa, such as mammals.
+	However, in other taxa such as birds, cloning is not possible \cite{ConservationFirstCloned}. Alternative methods
+	have been developed which may be able to perform a similar role. It is possible to 
+	introduce primordial germ cells from a target species into some host species, for
+	example the chicken. These germ cells will then migrate to the gonads of the host
+	species, where they become sex cells and begin to produce gametic cells.
+	
+	Maintaining genetic diversity within a population is key to its long-term health and
+	survival. Existing genetic diversity is important to allow for selection under
+	evolutionary pressures \cite{harmonConservationSmallPopulations2010}. This allows a population to adapt to changes in its environment,
+	and new threats such as pathogens or climatic changes \cite{mccallumTasmanianDevilFacial2008}. For example, having a variety
+	of variants of antigenic receptors within a population will likely mean that a pathogen
+	binds more closely to cells in some individuals than others, thus being less pathogenic
+	to some and allowing them to survive and reproduce. Genetic rescue is another phenomenon
+	that relies on genetic diversity within the population, whereby selection on existing
+	genetic variation can give rise to traits which "rescue" a population from new external
+	conditions.
+	
+	An important concept for understanding the genetic diversity within a population is the
+	effective population size ($N_e$). The effective population size is a measure of
+	population size which also takes into account the relatedness between individuals in
+	a population, thus serving as a good measure of the total genetic diversity. We can
+	create a threshold using the effective population size, below which populations enter
+	what is known as the extinction vortex \cite{harmonConservationSmallPopulations2010}. This threshold is usually set at an $N_e$ of
+	around 50. Upon entering the extinction vortex, populations not only struggle to
+	adapt to new environmental changes, but begin to suffer from the ill effects of
+	inbreeding, which can lead to decreased fitness and reduced fertility. It is very
+	difficult to rescue a population once it has entered the extinction vortex, as genetic
+	drift will tend to overpower mutation at such small population sizes and genetic
+	variation will continually be lost \cite{harmonConservationSmallPopulations2010}. One of the promising aspects of cloning techniques 
+	for conservation is that it will allow conservationists to restore genetic diversity to
+	populations which have entered an extinction vortex, as in the case of the black-footed
+	ferret above \cite{wiselyRoadMap21st2015}. 
+
+	
+	Besides rescuing or restoring genetic diversity to highly vulnerable populations,
+	it seems likely that we will be able to extend this approach to clone individuals from species which
+	have recently become extinct. In fact, there is an ongoing project to restore
+	the Wooly Mammoth by a similar approach, which is a much more difficult project
+	as it necessitates working with ancient DNA, meaning low coverage reads and 
+	missing chunks of the genome \cite{novakDeExtinction2018}. By comparison, restoring species from DNA stored 
+	in modern cryopreservation facilities should be relatively doable.
+	
+	Often, conservation resources are focused on species with high visibility or
+	high cultural appeal \cite{gunnthorsdottirPhysicalAttractivenessAnimal2001}. Although this approach can help to drive resources
+	towards conservation, it does not optimise the use of the resources we have, 
+	and can result in oversights which leave behind species of high worth on other
+	metrics, such as ecological importance or phylogenetic diversity. This has been
+	the basis of approaches such as EDGE scores, which prioritise conservation 
+	resources based on aims such as maximising retained phylogenetic diversity \cite{isaacMammalsEDGEConservation2007}. In 
+	this case, we aim to prioritise species for biobanking based solely on the 
+	likelihood of the material becoming useful. Currently, biobanks such as 
+	Nature's Safe simply aim to biobank whatever material is available. While this %need citation
+	can be a cost effective approach, and avoids potentially controversial 
+	decisions comparing the worth of various species, it means that the samples are
+	biased, particularly towards species housed in zoos \cite{mooneyValueExSitu2021}. Zoos are generally more
+	likely to contain larger mammals and certain taxa like primates, and as such
+	give an unrepresentative sample of the total biological diversity of animals \cite{gunnthorsdottirPhysicalAttractivenessAnimal2001}.
+	
+	Under a scenario of limited resources, a key consideration for using cloning and other
+	biotechnological techniques to restore species and population genetic diversity, is
+	which species to biobank first \cite{harwoodDevelopingImplementingPrioritisation}. We can build a metric, the Priority Score, that approaches this 
+	question by utilising phylogenetics, and data on conservation status. The cross-species approach for species restoration appears most promising at present, as it avoids using
+	individuals of a valuable threatened species for risky procedures such as egg cell
+	extraction and blastocyst implantation, and may also allow us to leverage existing
+	knowledge on best breeding practices within the donor species \cite{wiselyRoadMap21st2015}. In order for a
+	cross-species approach to be possible, we need biobanked material from the target
+	species, as well as the presence of some sufficiently closely related species to act
+	as a donor of egg cells and a host for embryos. Therefore, the highest priority species
+	for biobanking are those which have a high probability of extinction, alongside a high
+	probability of the survival of a closely related species, within some threshold. The current best test of
+	relatedness is phylogenetic distance, particularly in a general, cross-taxa approach, so we can calculate these prioritisation
+	scores by combining IUCN Red List data with phylogenetic trees of the taxa of 
+	interest.
+	
+	\begin{figure}
+	\begin{align}
+			Priority\ Score &= Pr(species\ extinction) * Pr(related\ survival) \\
+			Pr(related\ survival) &= 1 - \prod_{i}^{n}{Pr(extinction\ for\ species\ i)}
+	\end{align}
+	\caption{Where the set in equation 2 includes all species for whom the time to the most recent common ancestor (MRCA) is below some threshold T, beyond which it is
+			not believed to be possible to carry out cross-species cloning.}
+	\end{figure}
+	
+	As well as generating a set of priority scores for biobanking, based on the
+	outlined approach, we also want to get a sense of the usefulness and
+	robustness of this approach. One way to do this is to simulate a set of future
+	scenarios and compare them to each other. These can compare the number of species
+	preserved when biobanking is based upon the priority list, as well as a random
+	approach, and the scenario where cloning-based restoration of species is not
+	performed at all. We can also get some sense of the financial cost-effectiveness of
+	this endeavour when compared to traditional conservation approaches. Estimates of the
+	cost of downlisting (moving from one IUCN threat status to the next, e.g. Critically
+	Endangered to Endangered) around 200 different bird species were made by
+	species experts \cite{mccarthyFinancialCostsMeeting2012}, and we can use these costs as a base comparison to see e.g. what
+	amount of phylogenetic diversity would be saved by each approach, and at what
+	cost level would cloning-based approaches need to be viable to be competitive
+	with traditional conservation approaches \cite{nunesPriceConservingAvian2015}. Of course, the suggestion is not to replace
+	existing conservation spending with spending on biobanking and cloning; it would
+	be to supplement the existing conservation efforts with this technique, and the
+	financial analysis simply gives a good baseline on which to analyse it.
+
+	%still need to discuss - 
+	% 	where to set the thresholds / how are these set
+	%	the use of conversions from IUCN status to extinction probabilities
+	
+	
+	
+	\section{Methods}
+	\subsection{Data Sources}
+	Conservation status for mammals and birds was sourced from the IUCN Red List 2020 \cite{iucnIUCNRedList2021, IUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, kindly provided by Dr. Rikki Gumbs (EDGE). The conservation statuses were converted to likelihoods of extinction, according to the transformations in the table below.
+	
+	\begin{table}[b]
+		\begin{tabular}{|c|c c c c|}
+			\hline
+			Status & Abbreviation & IUCN 50 years & IUCN 500 years & Pessimistic \\
+			\hline
+			Least Concern & LC & 0.00005 & 0.0004 & 0.2 \\
+			Near Threatened & NT & 0.004 & 0.02 & 0.4 \\
+			Not Available & NA & 0.004 & 0.02 & 0.4 \\
+			Data Deficient & DD & 0.004 & 0.02 & 0.4 \\
+			Not Evaluated & NE & 0.004 & 0.02 & 0.4 \\
+			Vulnerable & VU & 0.05 & 0.39 & 0.8 \\
+			Endangered & EN & 0.42 & 0.996 & 0.9 \\
+			Critically Endangered & CR & 0.97 & 1 & 0.99 \\
+			Extinct in the Wild & EW & 1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+		\caption{Conversion of IUCN threat status to probablities of extinction, under three
+			different scenarios \cite{mooersConvertingEndangeredSpecies2008}}
+	\end{table}
+	\section{Results}
+	
+	\section{Discussion}
+	Another potential source of bias in our estimates lies within species
+	classification in the phylogenetic trees. There will always be debate whether
+	to classify closely related taxa as seperate species or only subspecies. This
+	can create a source of bias, particularly if there is a tendency within certain
+	genera or orders to classify as species vs. subspecies and vice-versa. Since it
+	is necessary for closely related species to survive, artificially inflating the
+	number of closely related taxa will bias the priority scores. However, this
+	effect should be evened somewhat by the fact that each of these species will 
+	have their own conservation status, which will be incorporated into the
+	calculations. A sensitivity analysis needs to be carried out to get a better
+	sense of the size of this effect.
+	
+	\bibliographystyle{plain}
+	\bibliography{MSc_Thesis}
+\end{document}
