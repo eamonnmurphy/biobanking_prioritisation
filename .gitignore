@@ -63,3 +63,6 @@ org/*
 
 # Ignore pdfs
 *.pdf
+
+# Ignore locked files
+.~lock.
