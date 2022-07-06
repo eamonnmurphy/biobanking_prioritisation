@@ -1,8 +1,8 @@
 # Script to clean provided data on species status
 rm(list = ls())
 
-
 ##### Load required libraries
+library(stringr)
 
 ##### Load in data ######
 load("../data/100_mammal_trees_with_2020_RL.RData")
@@ -24,3 +24,13 @@ for (i in 1:length(bird.species$Species)) {
 }
 
 save(bird.trees, bird.species, file = "../data/cleaned_bird_trees_2020.RData")
+
+bird_expen <- read.csv("../data/bird_downlisting_expenditure.csv", header = TRUE)
+
+bird_expen[, 2] <- str_replace_all(bird_expen[, 2], "[^[:alnum:]]", "_")
+bird_expen[, 2] <- sub("_", "", bird_expen[, 2])
+
+names(bird_expen)[2] <- "Species"
+
+write.csv(bird_expen, file = "../data/cleaned_bird_downlist_expen.csv",
+  row.names = FALSE)
