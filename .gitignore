@@ -66,3 +66,9 @@ org/*
 
 # Ignore locked files
 .~lock.
+
+# Ignore large distance files
+!data/bird_distances/.gitkeep
+!data/mammal_distances/.gitkeep
+data/bird_distances/*.csv
+data/mammal_distances/*.csv
