@@ -72,3 +72,7 @@ org/*
 !data/mammal_distances/.gitkeep
 data/bird_distances/*.csv
 data/mammal_distances/*.csv
+
+# Ignore cluster output and error files
+*.o*
+*.e*
