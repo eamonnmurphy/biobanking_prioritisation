@@ -8,7 +8,7 @@ dist <- matrix(nrow = 6253, ncol = 6253)
 for (i in seq_len(100)) {
     dist <- ape::cophenetic.phylo(phy.block.1000[[i]])
     write.csv(dist, file = paste(
-        "mammal_dist_", 
+        "mammal_dist_",
         i, ".csv", sep = ""))
 }
 
@@ -20,8 +20,8 @@ dist <- matrix(nrow = 10988, ncol = 10988)
 
 for (i in seq_len(100)) {
     dist <- ape::cophenetic.phylo(bird.trees[[i]])
-    write.csv(dist,file = paste(
-        "bird_dist_", 
+    write.csv(dist, file = paste(
+        "bird_dist_",
         i, ".csv", sep = ""))
 }
 
