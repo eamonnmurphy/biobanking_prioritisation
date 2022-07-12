@@ -21,49 +21,51 @@ priorities <- priority_builder(
 restoration <- restoration_prioritised(base_res, priorities, "mammal", 10, sims,
     thresh = 10)
 
-# Random biobanking scenario with 100 saved
-rand_like <- rand_biobank(like, 100)
+write.csv(restoration, file = "../results/restoration_scores.csv")
 
-rand_res <- run_sim(rand_like, sims)
+# # Random biobanking scenario with 100 saved
+# rand_like <- rand_biobank(like, 100)
 
-rand_avg <- average_calc(rand_res)
+# rand_res <- run_sim(rand_like, sims)
 
-rand_extinctions <- nrow(like) - sum(rand_avg$survival)
+# rand_avg <- average_calc(rand_res)
 
-print(rand_extinctions)
+# rand_extinctions <- nrow(like) - sum(rand_avg$survival)
 
-# Random downlisting scenario with 100 saved
-rand_bb_like <- rand_downlist(like, 100)
+# print(rand_extinctions)
 
-rand_bb_res <- run_sim(rand_bb_like, sims)
+# # Random downlisting scenario with 100 saved
+# rand_bb_like <- rand_downlist(like, 100)
 
-rand_bb_avg <- average_calc(rand_bb_res)
+# rand_bb_res <- run_sim(rand_bb_like, sims)
 
-rand_bb_extinctions <- nrow(like) - sum(rand_bb_avg$survival)
+# rand_bb_avg <- average_calc(rand_bb_res)
 
-print(rand_bb_extinctions)
+# rand_bb_extinctions <- nrow(like) - sum(rand_bb_avg$survival)
 
-# Prioritised biobanking scenario with 100 saved
-priorities <- priority_builder(
-    "../results/mammal_thresholds/ordered_prior_score_10mya.csv")
+# print(rand_bb_extinctions)
 
-prior_like <- prioritised_biobank(like, priorities, 100)
+# # Prioritised biobanking scenario with 100 saved
+# priorities <- priority_builder(
+#     "../results/mammal_thresholds/ordered_prior_score_10mya.csv")
 
-prior_res <- run_sim(prior_like, sims)
+# prior_like <- prioritised_biobank(like, priorities, 100)
 
-prior_avg <- average_calc(prior_res)
+# prior_res <- run_sim(prior_like, sims)
 
-prior_extinctions <- nrow(like) - sum(prior_avg$survival)
+# prior_avg <- average_calc(prior_res)
 
-print(prior_extinctions)
+# prior_extinctions <- nrow(like) - sum(prior_avg$survival)
 
-# Prioritised downlisting scenario with 100 saved
-prior_bb_like <- prioritised_downlist(like, priorities, 100)
+# print(prior_extinctions)
 
-prior_bb_res <- run_sim(prior_bb_like, sims)
+# # Prioritised downlisting scenario with 100 saved
+# prior_bb_like <- prioritised_downlist(like, priorities, 100)
 
-prior_bb_avg <- average_calc(prior_bb_res)
+# prior_bb_res <- run_sim(prior_bb_like, sims)
 
-prior_bb_extinctions <- nrow(like) - sum(prior_bb_avg$survival)
+# prior_bb_avg <- average_calc(prior_bb_res)
 
-print(prior_bb_extinctions)
+# prior_bb_extinctions <- nrow(like) - sum(prior_bb_avg$survival)
+
+# print(prior_bb_extinctions)
