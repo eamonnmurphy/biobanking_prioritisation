@@ -1,7 +1,7 @@
 # # Script to calculate remaining species under extinction scenarios
 source("extsim_functions.R")
 set.seed(123)
-sims <- 100
+sims <- 10
 
 # Base scenario
 # Calculate no. of mammals surviving 50 year scenario
@@ -14,6 +14,12 @@ base_avg <- average_calc(base_res)
 base_extinctions <- nrow(like) - sum(base_avg$survival)
 
 print(base_extinctions)
+
+# quick test of proper restoration check
+priorities <- priority_builder(
+    "../results/mammal_thresholds/ordered_prior_score_10mya.csv")
+restoration <- restoration_prioritised(base_res, priorities, "mammal", 10, sims,
+    thresh = 10)
 
 # Random biobanking scenario with 100 saved
 rand_like <- rand_biobank(like, 100)

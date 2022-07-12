@@ -123,3 +123,27 @@ prioritised_downlist <- function(likelihoods, priorities, n) {
 
     return(likelihoods)
 }
+
+restoration_prioritised <- function(sim_res, priorities, taxa, n, sims, thresh) {
+    selected <- priorities[1:n, ]
+
+    restored <- matrix(0, nrow = sims, ncol = 100)
+
+    for (i in seq_len(sims)) {
+        for (j in seq_along(selected$species)) {
+            spec <- selected$species[j]
+            if (sim_res[which(sim_res$species == spec), i + 1] == 0) {
+                    for (k in 1:1) {
+                        dist <- read.csv(file = paste("../data/", taxa,
+                            "_distances/", taxa, "_dist_", k, ".csv", sep = ""))
+                        possible <- colnames(dist)[which(dist[spec, ]) / 2 < thresh & dist[spec, ] != 0]
+                        if (any(sim_res[which(sim_res$species %in% possible), i + 1] == 1)) {
+                            restored[i, k] <- restored[i, k] + 1
+                        }
+                    }
+                }
+        }
+    }
+    
+    return(restored)
+}
