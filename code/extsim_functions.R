@@ -129,7 +129,7 @@ restoration_prioritised <- function(sim_res, priorities, taxa, n, sims, thresh) 
 
     restored <- matrix(0, nrow = sims, ncol = 100)
 
-    dist <- read.csv("../data/mammal_distances/mammal_dist_1.csv")
+    dist <- read.csv("mammal_dist_1.csv", row.names = 1)
 
     for (i in seq_len(sims)) {
         # browser()
