@@ -148,3 +148,74 @@ restoration_prioritised <- function(sim_res, priorities, taxa, n, sims, thresh) 
     
     return(restored)
 }
+
+possible_donor_species <- function(taxa) {
+    thresh <- 10
+
+    for (i in 1:100) {
+        dist <- read.csv(file = paste(taxa, "_dist_", i, ".csv", sep = ""), 
+            row.names = 1)
+        
+        for (s in seq_len(nrow(dist))) {
+
+        }
+    }
+}
+
+optimised_restoration_prioritised <- function(sim_res, priorities, taxa, n, sims, thresh) {
+    selected <- priorities[1:n, ]
+
+    restored <- matrix(0, nrow = sims, ncol = 100)
+
+    for (i in seq_len(sims)) {
+        # browser()
+        for (j in seq_along(selected$species)) {
+            spec <- selected$species[j]
+            if (sim_res[which(sim_res$species == spec), i + 1] == 0) {
+                    for (k in 1:100) {
+                        dist <- read.csv(file = paste(taxa, "_dist_",
+                            k, ".csv", sep = ""), row.names = 1)
+                        possible <- colnames(dist)[which(dist[spec, ] / 2 < thresh & dist[spec, ] != 0)]
+                        if (any(sim_res[which(sim_res$species %in% possible), i + 1] == 1)) {
+                            restored[i, k] <- restored[i, k] + 1
+                        }
+                    }
+                }
+        }
+    }
+    
+    return(restored)
+}
+
+aggregate_distance_thresholds <- function(taxa, threshold) {
+    # Function to create  aggregated scores for threshold matching across trees
+    if (taxa = "mammal") {
+        aggregated <- matrix(nrow = 6253, ncol = 6253)
+        temp <- matrix(nrow = 6253, ncol = 6253)
+    }
+    else if (taxa = "bird") {
+        aggregated <- matrix(nrow = 10988, ncol = 10988)
+        temp <- matrix(nrow = 10988, ncol = 10988)
+    }
+
+    checker <- function(distance, threshold) {
+        if ((distance / 2) < threshold) {
+            return(1)
+        }
+        else {
+            return(0)
+        }
+    }
+
+    for (i in 1:100) {
+        dist <- data.table::fread(file = paste(taxa, "_dist_", i, ".csv",
+            sep = ""), row.names = 1)
+        temp <- sapply(dist, checker, threshold = threshold)
+        aggregated <- ((aggregated * (i - 1)) + temp) / i 
+    }
+
+    rownames(aggregated) <- rownames(dist)
+    colnames(aggregated) <- colnames(dist)
+
+    return(aggregated)
+}
