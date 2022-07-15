@@ -4,6 +4,7 @@ set.seed(123)
 sims <- 10
 
 # Base scenario
+thresh <- 10
 # Calculate no. of mammals surviving 50 year scenario
 like <- read.csv("mammals_50_likelihoods.csv")
 
@@ -16,9 +17,13 @@ base_extinctions <- nrow(like) - sum(base_avg$survival)
 print(base_extinctions)
 
 # quick test of proper restoration check
+max_biobanked <- 100
 priorities <- priority_builder("ordered_prior_score_10mya.csv")
-restoration <- restoration_prioritised(base_res, priorities, "mammal", 10, sims,
-    thresh = 10)
+restoration <- matrix(nrow = max_biobanked, ncol = sims)
+for (i in seq_len(max_biobanked)) {
+    restoration[i, ] <- optimised_restoration_prioritised(sim_res, priorities,
+        taxa = "mammal", n = i, sims = sims, thresh = thresh)
+}
 
 write.csv(restoration, file = "restoration_scores.csv")
 
