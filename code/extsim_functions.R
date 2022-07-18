@@ -189,14 +189,15 @@ optimised_restoration_prioritised <- function(sim_res, priorities, taxa, n, sims
 
 aggregate_distance_thresholds <- function(taxa, threshold) {
     # Function to create  aggregated scores for threshold matching across trees
-    if (taxa = "mammal") {
-        aggregated <- matrix(nrow = 6253, ncol = 6253)
-        temp <- matrix(nrow = 6253, ncol = 6253)
+    if (taxa == "mammal") {
+        len = 6253
     }
-    else if (taxa = "bird") {
-        aggregated <- matrix(nrow = 10988, ncol = 10988)
-        temp <- matrix(nrow = 10988, ncol = 10988)
+    else if (taxa == "bird") {
+	len = 10988
     }
+
+    aggregated <- matrix(nrow = len, ncol = len)
+    temp <- matrix(nrow = len, ncol = len)
 
     checker <- function(distance, threshold) {
         if ((distance / 2) < threshold) {
@@ -208,9 +209,10 @@ aggregate_distance_thresholds <- function(taxa, threshold) {
     }
 
     for (i in 1:100) {
-        dist <- data.table::fread(file = paste(taxa, "_dist_", i, ".csv",
-            sep = ""), row.names = 1)
-        temp <- sapply(dist, checker, threshold = threshold)
+        dist <- as.matrix(data.table::fread(file = paste(taxa, "_dist_", i,
+            ".csv", sep = "")), rownames = 1)
+        temp <- apply(dist, c(1,2), checker, threshold = threshold,
+		      simplify = TRUE)
         aggregated <- ((aggregated * (i - 1)) + temp) / i 
     }
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Desc: Shell for running R script on HPC cluster
 
-#PBS -l walltime=3:00:00
+#PBS -l walltime=70:00:00
 #PBS -l select=1:ncpus=1:mem=32gb
 module load anaconda3/personal
 source activate Renv_prior
