@@ -191,19 +191,17 @@ aggregate_distance_thresholds <- function(taxa, threshold) {
     # Function to create  aggregated scores for threshold matching across trees
     if (taxa == "mammal") {
         len = 6253
-    }
-    else if (taxa == "bird") {
+    } else if (taxa == "bird") {
 	len = 10988
     }
 
-    aggregated <- matrix(nrow = len, ncol = len)
+    aggregated <- matrix(0, nrow = len, ncol = len)
     temp <- matrix(nrow = len, ncol = len)
 
     checker <- function(distance, threshold) {
         if ((distance / 2) < threshold) {
             return(1)
-        }
-        else {
+        } else {
             return(0)
         }
     }
