@@ -32,5 +32,33 @@ bird_expen[, 2] <- sub("_", "", bird_expen[, 2])
 
 names(bird_expen)[2] <- "Species"
 
+# Replacements for species names from global names database
+bird_expen$Species[1] <- "Rhabdotorrhinus_waldeni"
+bird_expen$Species[18] <- "Hedydipna_pallidigaster"
+bird_expen$Species[23] <- "Aphrastura_masafucrae"
+bird_expen$Species[41] <- "Geospiza_heliobates"
+bird_expen$Species[49] <- "Poeoptera_femoralis"
+bird_expen$Species[18] <- "Hedydipna_pallidigaster"
+bird_expen$Species[23] <- "Aphrastura_masafucrae"
+bird_expen$Species[41] <- "Geospiza_heliobates"
+bird_expen$Species[49] <- "Poeoptera_femoralis"
+bird_expen$Species[73] <- "Pternistis_ochropectus"
+bird_expen$Species[74] <- "Pternistis_swierstrai"
+bird_expen$Species[81] <- "Trochalopteron_yersini"
+bird_expen$Species[105] <- "Laterallus_spilonota"
+bird_expen$Species[132] <- "Crithagra_concolor"
+bird_expen$Species[144] <- "Leucocarbo_chalconotus"
+bird_expen$Species[145] <- "Leucocarbo_onslowi"
+bird_expen$Species[177] <- "Schoutedenapus_myoptilus"
+bird_expen$Species[182] <- "Thalasseus_bernsteini"
+bird_expen$Species[186] <- "Chlorophoneus_kupeensis"
+bird_expen$Species[189] <- "Thryophilus_nicefori"
+bird_expen$Species[201] <- "Geokichla_guttata"
+bird_expen$Species[202] <- "Zosterops_chloronothos"
+
+# Remove the ummatched species
+unmatched <- read.csv("../data/possible_dl_matches.csv")
+bird_expen <- subset(bird_expen, !(Species %in% unmatched$no_match))
+
 write.csv(bird_expen, file = "../data/cleaned_bird_downlist_expen.csv",
   row.names = FALSE)
