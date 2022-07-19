@@ -25,7 +25,7 @@ for (i in seq_len(max_biobanked)) {
         taxa = "mammal", n = i, sims = sims, thresh = thresh)
 }
 
-write.csv(restoration, file = "restoration_scores.csv")
+write.csv(restoration, file = "mammal_restoration_scores.csv")
 
 # # Random biobanking scenario with 100 saved
 # rand_like <- rand_biobank(like, 100)

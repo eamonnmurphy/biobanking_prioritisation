@@ -168,7 +168,7 @@ optimised_restoration_prioritised <- function(sim_res, priorities, taxa, n, sims
     restored <- vector(length = sims)
 
     within_threshold <- read.csv(paste("aggregated_", taxa, "_", thresh,
-        "mya.csv"), row.names = 1)
+        "mya.csv", sep = ""), row.names = 1)
 
     for (i in seq_len(sims)) {
         # browser()
