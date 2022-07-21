@@ -12,20 +12,32 @@ base_avg <- average_calc(base_res)
 
 base_extinctions <- nrow(like) - sum(base_avg$survival)
 
-spend <- c()
+magnitude <- 10 ^ seq(from = 0, to = 10, length.out = 11)
+no <- seq(from = 1, to = 9, length.out = 9)
+spend <- c(0)
 
-dl_all_ext <- c()
+for (i in seq_along(magnitude)) {
+    spend <- append(spend, magnitude[i] * no)
+}
 
-for (i in 1:11) {
-    spend <- append(spend, 1 * (10 ^ i))
 
+dl_all_ext <- c(base_extinctions)
+
+for (i in 2:length(spend)) {
     new_like <- prioritised_downlisting_conservation(like, spend[i])
 
-    new_res <- run_sim(like, sims)
+    new_res <- run_sim(new_like, sims)
 
     new_avg <- average_calc(new_res)
 
-    dl_extinctions <- nrow(like) - sum(new_avg$survival)
+    dl_extinctions <- nrow(new_like) - sum(new_avg$survival)
 
     dl_all_ext <- append(dl_all_ext, dl_extinctions)
 }
+
+result <- data.frame(spend, extinctions = dl_all_ext)
+write.csv(result, "../results/conservation_spend_sim.csv", row.names = FALSE)
+
+png("../results/expense_sims.png")
+plot(log10(result$spend), result$extinctions)
+graphics.off()

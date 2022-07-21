@@ -5,6 +5,10 @@ prioritised_downlisting_conservation <- function(like, total) {
 
     cum_spend <- 0
 
+    if (total < expen_per[3, 3]) {
+        return(like)
+    }
+
     while (cum_spend < total) {
         if (any(like$extinction == 0.97)) {
             selected <- sample(like$species[which(like$extinction == 0.97)], 1)
