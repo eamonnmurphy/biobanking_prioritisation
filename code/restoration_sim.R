@@ -21,8 +21,9 @@ max_biobanked <- 100
 priorities <- priority_builder("ordered_prior_score_10mya.csv")
 restoration <- matrix(nrow = max_biobanked, ncol = sims)
 for (i in seq_len(max_biobanked)) {
-    restoration[i, ] <- optimised_restoration_prioritised(sim_res, priorities,
+    restoration[i, ] <- optimised_restoration_prioritised(base_res, priorities,
         taxa = "mammal", n = i, sims = sims, thresh = thresh)
+    print(i)
 }
 
 write.csv(restoration, file = "mammal_restoration_scores.csv")
