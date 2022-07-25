@@ -1,193 +1,167 @@
-"Common..Name","Species","IUCN..Bird..Red..List.2013","ADEPD.score","EDGE..score","Required.Expenditure..US..","Recent.Expenditure..US.."
-"Rufous-­‐headed  Hornbill","Rhabdotorrhinus_waldeni","CR",4.01935,5.27014,11700000,227000
-"Kiritimati  Reed-­‐warbler","Acrocephalus_aequinoctialis","EN",0.22537,3.16048,2460000,75000
-"TahitiReed-­‐warbler","Acrocephalus_caffer","EN",0.27332,3.11996,1450000,3400
-"Millerbird","Acrocephalus_familiaris","CR",0.72116,3.98234,2700000,1320000
-"Aquatic  Warbler","Acrocephalus_paludicola","VU",0.25316,3.44313,330000000,31900000
-"Purple-­‐backed  Sunbeam","Aglaeactis_aliciae","EN",1.47184,3.98658,612000,9500
-"Raso  Lark","Alauda_razae","CR",1.6354,4.57759,514000,42000
-"Chestnut-­‐bellied  Hummingbird","Amazilia_castaneiventris","EN",0.81087,3.55238,2140000,231000
-"Black-­‐billed  Amazon","Amazona_agilis","VU",0.24148,3.04237,11400000,3240000
-"Tucuman  Amazon  ","Amazona_tucumana","VU",0.10574,2.85307,4020000,211000
-"Puerto  Rican  Amazon","Amazona_vittata","CR",1.1709,4.12403,27500000,17200000
-"White-­‐throated  Grasswren","Amytornis_woodwardi","VU",0.12183,3.76683,15000000,10800000
-"Ash-­‐breasted  Tit-­‐tyrant","Anairetes_alpinus","EN",1.21003,3.83951,8240000,992000
-"Auckland  Islands  Teal","Anas_aucklandica","VU",0.02893,2.39253,5490000,0
-"Brown  Teal","Anas_chlorotis","EN",0.14459,3.08953,1200000,3230000
-"Hawaiian  Duck","Anas_wyvilliana","EN",0.56412,3.33374,9030000,260000
-"Amani  Sunbird","Hedydipna_pallidigaster","EN",1.69546,4.24002,29800000,16500000
-"Nilgiri  Pipit","Anthus_nilghiriensis","VU",0.16503,3.25948,4110000,10000
-"Araripe  Manakin","Antilophia_bokermanni","CR",1.01678,4.40679,12400000,1470000
-"Yellow-­‐throated  Apalis","Apalis_flavigularis","EN",1.24639,3.86622,9520000,1000000
-"Taita  Apalis","Apalis_fuscigularis","CR",1.82498,4.56293,2930000,921000
-"Masafuera  Rayadito","Aphrastura_masafucrae","CR",1.99158,4.79684,4140000,86000
-"Southern  Brown  Kiwi","Apteryx_australis","VU",0.22485,4.26348,2330000,1480000
-"Blue-­‐throated  Macaw","Ara_glaucogularis","CR",2.94924,4.52755,1250000,1270000
-"Hainan  Partridge","Arborophila_ardens","VU",0.12538,3.12413,2710000,1440000
-"Great  Indian  Bustard","Ardeotis_nigriceps","EN",1.26966,5.07401,11100000,1870000
-"Long-­‐billed  Tailorbird","Artisornis_moreaui","CR",1.48871,4.70343,12300000,2260000
-"Pale-­‐headed  Brush-­‐finch","Atlapetes_pallidiceps","EN",0.97326,3.59634,775000,373000
-"Madagascar  Pochard","Aythya_innotata","CR",0.44433,3.85209,2740000,857000
-"White-­‐bearded  Antshrike","Biatas_nigropectus","VU",0.18257,3.34327,662000000,16500000
-"Dwarf  Olive  Ibis","Bostrychia_bocagei","CR",4.82401,5.52702,9440000,956000
-"Australasian  Bittern","Botaurus_poiciloptilus","EN",2.33523,4.70586,13000000,932000
-"Kittlitz's  Murrelet","Brachyramphus_brevirostris","CR",3.6651,5.05653,7800000,952000
-"Grey-­‐cheeked  Parakeet","Brotogeris_pyrrhoptera","EN",1.17122,3.85902,10800000,104000
-"Philippine  Cockatoo","Cacatua_haematuropygia","CR",4.66378,4.97623,2740000,870000
-"Yellow-­‐crested  Cockatoo","Cacatua_sulphurea","CR",1.21083,4.60642,2550000,681000
-"Mangrove  Finch","Geospiza_heliobates","CR",0.3102,3.54036,5690000,973000
-"White-­‐mantled  Barbet","Capito_hypoleucus","EN",0.16376,3.3464,61700000,141000
-"Bicknell's  Thrush","Catharus_bicknelli","VU",0.07072,2.94187,22500000,3320000
-"Gunnison  Sage-­‐grouse","Centrocercus_minimus","EN",0.26027,3.63662,14100000,1290000
-"Esmeraldas  Woodstar","Chaetocercus_berlepschi","EN",0.16158,2.99619,31200000,12500000
-"St.  HelenaP  lover","Charadrius_sanctaehelenae","CR",4.55037,5.42525,5150000,968000
-"Royal  Cinclodes","Cinclodes_aricomae","CR",1.05201,4.03896,7230000,872000
-"White-­‐bellied  Cinclodes","Cinclodes_palliatus","CR",0.7931,3.96252,3020000,18000
-"Abbott's  Starling","Poeoptera_femoralis","VU",0.33407,3.65362,22600000,1030000
-"Reunion  Harrier","Circus_maillardi","EN",1.65951,4.06398,101000000,86500000
-"Black  Harrier","Circus_maurus","VU",0.19589,3.40719,11200000,87000
-"Apolinar's  Wren","Cistothorus_apolinari","EN",1.27839,4.0311,1900000,23000
-"Golden  White-­‐eye","Cleptornis_marchei","CR",1.93796,4.43167,41000000,16900000
-"Nilgiri  Wood-­‐pigeon","Columba_elphinstonii","VU",0.16896,4.74215,171000000,152000000
-"Mariana  Crow","Corvus_kubaryi","CR",1.21646,4.2988,29000000,12800000
-"Brown  Eared-­‐pheasant","Crossoptilon_mantchuricum","VU",0.0046,2.74141,12600000,6290000
-"Malherbe's  Parakeet","Cyanoramphus_malherbi","CR",0.27379,3.91257,2940000,2340000
-"Okinawa  Woodpecker","Dendrocopos_noguchii","CR",0.85831,4.20686,49700000,3670000
-"Cebu  Flowerpecker","Dicaeum_quadricolor","CR",2.48594,4.92025,6300000,1010000
-"Tooth-­‐billed  Pigeon","Didunculus_strigirostris","EN",9.75449,5.37124,695000,209000
-"Amsterdam  Albatross","Diomedea_amsterdamensis","CR",0.64077,4.8218,712000,350000
-"Chestnut-­‐bellied  Imperial-­‐pigeon","Ducula_brenchleyi","VU",0.19149,3.37688,10800000,1510000
-"Bicoloured  Antvireo","Dysithamnus_occidentalis","VU",0.16796,3.26237,9310000,2680000
-"Bahia  Tapaculo","Eleoscytalopus_psychopompus","CR",3.05993,5.26132,12100000,5490000
-"Colourful  Puffleg","Eriocnemis_mirabilis","CR",1.89478,4.55757,2930000,173000
-"Black-­‐breasted  Puffleg","Eriocnemis_nigrivestis","CR",0.7985,4.40107,44000000,2380000
-"Chilean  Woodstar","Eulidia_yarrellii","EN",0.78714,3.30104,2750000,159000
-"Cerulean  Paradise-­‐flycatcher","Eutrichomyias_rowleyi","CR",1.21228,4.27553,1260000,815000
-"Madagascar  Serpent-­‐eagle","Eutriorchis_astur","EN",11.81134,5.54404,5420000,236000
-"Djibouti  Francolin","Pternistis_ochropectus","CR",1.35209,4.37076,16900000,97000
-"Swierstra's  Francolin","Pternistis_swierstrai","EN",0.94203,3.6454,1140000,66000
-"Christmas  Island  Frigatebird","Fregata_andrewsi","CR",7.88621,5.93714,1470000,244000
-"Negros  Bleeding-­‐heart","Gallicolumba_keayi","CR",3.53034,5.0884,11000000,227000
-"Madagascar  Snipe","Gallinago_macrodactyla","VU",0.19859,3.50872,20700000,7780000
-"Blue-­‐crowned  Laughingthrush","Garrulax_courtoisi","CR",0.99975,4.19608,358000,67000
-"Collared  Laughingthrush","Trochalopteron_yersini","EN",0.72961,3.51651,1860000,783000
-"Northern  Bald  Ibis","Geronticus_eremita","CR",2.94685,5.79345,12500000,3480000
-"Cloud-­‐forest  Pygmy-­‐owl","Glaucidium_nubicola","VU",0.19873,3.51228,17000000,59000
-"Cundinamarca  Antpitta","Grallaria_kaestneri","EN",1.8555,4.23066,3030000,45000
-"Jocotoco  Antpitta","Grallaria_ridgelyi","EN",1.85699,4.23822,5840000,1260000
-"Black-­‐necked  Crane","Grus_nigricollis","VU",0.05115,3.25615,16100000,7750000
-"California  Condor","Gymnogyps_californianus","CR",12.74715,6.31036,103000000,54000000
-"Crow  Honeyeater","Gymnomyza_aubryana","CR",2.47208,4.96298,29600000,10100000
-"White-­‐rumped  Vulture","Gyps_bengalensis","CR",1.5315,4.6345,7640000,4340000
-"Indian  Vulture","Gyps_indicus","CR",0.4958,4.39003,7640000,4340000
-"Slender-­‐billed  Vulture","Gyps_tenuirostris","CR",0.51012,4.39245,7640000,4340000
-"Black-­‐cheeked  Ant-­‐tanager","Habia_atrimaxillaris","EN",1.584,4.04402,1410000,0
-"Madagascar  Fish-­‐eagle","Haliaeetus_vociferoides","CR",1.16291,5.01536,4090000,527000
-"Munchique  Wood-­‐wren","Henicorhina_negreti","CR",1.82169,4.64574,4040000,114000
-"Forest  Owlet","Heteroglaux_blewitti","CR",13.29361,5.99484,4110000,39000
-"Black  Stilt","Himantopus_novaezelandiae","CR",1.86359,5.08274,3630000,3280000
-"Bengal  Florican","Houbaropsis_bengalensis","CR",12.57593,6.00236,9700000,891000
-"Grand  Comoro  Flycatcher","Humblotia_flavirostris","EN",1.34592,4.03283,1720000,514000
-"Montserrat  Oriole","Icterus_oberi","CR",1.08879,4.13744,2320000,26000
-"Gabela  Bush-­‐shrike","Laniarius_amboimensis","EN",1.55805,4.05523,3600000,243000
-"Sao  Tome  Fiscal","Lanius_newtoni","CR",1.67649,4.55747,9320000,338000
-"Black-­‐billed  Gull","Larus_bulleri","EN",0.17846,3.05792,14800000,380000
-"Galapagos  Rail","Laterallus_spilonota","VU",0.20157,3.48278,958000,8400
-"Junin  Rail","Laterallus_tuerosi","EN",1.55046,4.18472,3140000,58000
-"Sapphire-­‐bellied  Hummingbird","Lepidopyga_lilliae","CR",0.43062,3.92895,2820000,54000
-"White-­‐browed  Tit-­‐spinetail","Leptasthenura_xenothorax","EN",0.76372,3.53703,2600000,872000
-"White-­‐collared  Kite","Leptodon_forbesi","CR",3.39495,5.51539,1160000,58000
-"Grenada  Dove","Leptotila_wellsi","CR",2.63501,4.88534,14500000,1500000
-"Chinese  Monal","Lophophorus_lhuysii","VU",0.20795,3.54722,1050000,618000
-"Short-­‐crested  Coquette","Lophornis_brachylophus","CR",1.25269,4.39627,6180000,155000
-"Akekee","Loxops_caeruleirostris","CR",1.66335,4.279,29000000,2680000
-"Akepa","Loxops_coccineus","EN",1.7262,3.58585,25600000,9360000
-"Zambian  Barbet","Lybius_chaplini","VU",0.14504,3.19499,47900000,8440000
-"Mountain  Grackle","Macroagelaius_subalaris","EN",0.93233,3.72914,940000,15000
-"Sharpe's  Longclaw","Macronyx_sharpei","EN",1.4696,4.10363,4670000,124000
-"Rufous-­‐throated  White-­‐eye","Madanga_ruficollis","EN",0.54385,4.23944,7810000,36000
-"Uluguru  Bush-­‐shrike","Malaconotus_alius","CR",3.55066,5.13182,7040000,216000
-"Brazilian  Merganser","Mergus_octosetaceus","CR",0.83959,4.18225,56700000,5400000
-"Stresemann's  Bristlefront","Merulaxis_stresemanni","CR",2.89097,5.23536,8950000,917000
-"Perija  Metaltail","Metallura_iracunda","EN",0.71271,3.66876,3350000,39000
-"Socorro  Mockingbird","Mimus_graysoni","CR",1.34829,4.34803,4140000,493000
-"San  Cristobal  Mockingbird","Mimus_melanotis","EN",0.1899,3.46966,1750000,15000
-"Floreana  Mockingbird","Mimus_trifasciatus","CR",1.53388,4.41128,16900000,113000
-"Amber  Mountain  Rock-­‐thrush","Monticola_erythronotus","EN",0.23178,3.5417,1130000,1850000
-"Puaiohi","Myadestes_palmeri","CR",2.08106,4.70695,27800000,4590000
-"Paria  Redstart","Myioborus_pariae","EN",0.94016,3.4526,4930000,126000
-"Alagoas  Antwren","Myrmotherula_snowi","CR",2.41336,4.90171,3260000,824000
-"Cherry-­‐throated  Tanager","Nemosia_rourei","CR",1.71707,4.79994,2930000,95000
-"Banded  Ground-­‐cuckoo","Neomorphus_radiolosus","EN",2.71579,4.93039,8190000,451000
-"Sao  Tome  Grosbeak","Crithagra_concolor","CR",1.75588,4.54925,9320000,962000
-"Fearful  Owl","Nesasio_solomonensis","VU",0.2073,3.58384,7610000,1320000
-"Red-­‐tailed  Newtonia","Newtonia_fanovanae","VU",0.1864,3.50679,18900000,9800000
-"Javan  Hawk-­‐eagle","Nisaetus_bartelsi","EN",0.71416,4.08565,861000,168000
-"Akikiki","Oreomystis_bairdi","CR",3.29298,4.73369,29700000,2680000
-"Horned  Guan","Oreophasis_derbianus","EN",4.40718,4.67628,324000000,678000
-"Isabela  Oriole","Oriolus_isabellae","CR",0.1717,4.5367,4540000,365000
-"Anjouan  Scops-­‐owl","Otus_capnodes","CR",1.8929,4.56824,14700000,4750000
-"Akohekohe","Palmeria_dolei","CR",1.58144,4.38235,19900000,16400000
-"Forty-­‐spotted  Pardalote","Pardalotus_quadragintus","EN",2.29284,4.71225,2940000,60000
-"White-­‐winged  Guan","Penelope_albipennis","CR",0.7236,4.19277,3290000,1340000
-"Black  Robin","Petroica_traversi","EN",1.64789,4.53089,1270000,1170000
-"Stewart  Island  Shag","Leucocarbo_chalconotus","VU",0.05973,3.27313,224000,0
-"Chatham  Islands  Shag","Leucocarbo_onslowi","CR",2.45511,4.85362,470000,130000
-"Waved  Albatross","Phoebastria_irrorata","CR",3.61476,5.24648,4390000,478000
-"Urich's  Tyrannulet","Phyllomyias_urichi","EN",1.6564,4.16687,5500000,105000
-"White-­‐necked  Picathartes","Picathartes_gymnocephalus","VU",0.33639,4.46713,4510000,77000
-"Trinidad  Piping-­‐guan","Pipile_pipile","CR",0.13424,4.01481,4020000,60000
-"Philippine  Eagle","Pithecophaga_jefferyi","CR",13.47935,5.97685,21800000,3810000
-"Banded  Wattle-­‐eye","Platysteira_laticincta","EN",1.81137,4.33114,4480000,2440000
-"Golden-­‐naped  Weaver","Ploceus_aureonucha","EN",0.69844,3.44952,29400000,344000
-"Clarke's  Weaver","Ploceus_golandi","EN",0.7052,3.42594,12300000,3150000
-"Usambara  Weaver","Ploceus_nicolli","EN",0.68776,3.4456,41300000,1500000
-"Junin  Grebe","Podiceps_taczanowskii","CR",4.71685,5.51784,3060000,955000
-"Palawan  Peacock-­‐pheasant","Polyplectron_napoleonis","VU",0.27995,3.49173,16800000,13500000
-"Tahiti  Monarch","Pomarea_nigra","CR",2.21979,4.45989,2050000,365000
-"Fatuhiva  Monarch","Pomarea_whitneyi","CR",1.14114,4.20523,85400000,158000
-"White-­‐throated  Barbtail","Premnoplex_tatei","VU",0.21513,3.51752,7660000,64000
-"White-­‐shouldered  Ibis","Pseudibis_davisoni","CR",4.59328,5.62554,7920000,729000
-"Fiji  Petrel","Pseudobulweria_macgillivrayi","CR",2.86806,4.86407,2540000,334000
-"African  Green  Broadbill","Pseudocalyptomena_graueri","VU",1.03286,4.53705,59900000,1740000
-"Maui  Parrotbill","Pseudonestor_xanthophrys","CR",2.2094,4.43584,22000000,16400000
-"Magenta  Petrel","Pterodroma_magentae","CR",1.86609,4.7048,4230000,531000
-"Galapagos  Petrel","Pterodroma_phaeopygia","CR",1.37065,4.63103,2810000,202000
-"Falcated  Wren-­‐babbler","Ptilocichla_falcata","VU",0.06477,2.85344,13800000,1500000
-"Townsend's  Shearwater","Puffinus_auricularis","CR",2.50796,4.82297,7730000,679000
-"Balearic  Shearwater","Puffinus_mauretanicus","CR",2.02416,4.84906,6070000,735000
-"El  Oro  Parakeet","Pyrrhura_orcesi","EN",0.62048,3.19681,2230000,2180000
-"Santa  Marta  Parakeet","Pyrrhura_viridicata","EN",0.75098,3.25066,203000,36000
-"Jerdon's  Courser","Rhinoptilus_bitorquatus","CR",3.21989,5.32652,11800000,436000
-"Thick-­‐billed  Parrot","Rhynchopsitta_pachyrhyncha","EN",3.04346,4.0526,1080000,23000
-"Maroon-­‐fronted  Parrot","Rhynchopsitta_terrisi","EN",3.04346,4.0526,8180000,663000
-"Gough  Bunting","Rowettia_goughensis","CR",2.06562,4.58893,6890000,159000
-"Schouteden's  Swift","Schoutedenapus_myoptilus","VU",0.17595,3.65988,34600000,3030000
-"Juan  Fernandez  Firecrown","Sephanoides_fernandensis","CR",2.29092,5.13221,7140000,189000
-"Rubeho  Akalat","Sheppardia_aurantiithorax","EN",0.98988,4.05999,5520000,221000
-"Worthen's  Sparrow","Spizella_wortheni","EN",1.18321,3.83525,2150000,886000
-"Botha's  Lark","Spizocorys_fringillaris","EN",1.24794,3.96391,71000,0
-"Chinese  Crested  Tern","Thalasseus_bernsteini","CR",1.35688,4.50324,3010000,561000
-"Kakapo","Strigops_habroptila","CR",23.5638,6.28029,9380000,6930000
-"Blackish-­‐headed  Spinetail","Synallaxis_tithys","EN",0.56272,3.32433,17500000,8150000
-"Craveri's  Murrelet","Synthliboramphus_craveri","VU",0.05085,3.28485,36500000,3250000
-"Mount  Kupe  Bush-­‐shrike","Chlorophoneus_kupeensis","EN",2.047,4.3914,4550000,1430000
-"Seychelles  Paradise-­‐flycatcher","Terpsiphone_corvina","CR",1.1359,4.29325,2570000,1190000
-"Giant  Ibis","Thaumatibis_gigantea","CR",31.89691,6.82656,6740000,157000
-"Niceforo's  Wren","Thryophilus_nicefori","CR",1.84019,4.63713,2180000,200000
-"Sombre  Kingfisher","Todiramphus_funebris","VU",0.14558,3.15831,7100000,6750000
-"Tuamotu  Kingfisher","Todiramphus_gambieri","CR",1.65795,4.54843,296000,444000
-"Marquesan  Kingfisher","Todiramphus_godeffroyi","CR",1.62218,4.52531,575000,725000
-"Pemba  Green-­‐pigeon","Treron_pembaensis","VU",0.20587,3.48995,4010000,76000
-"Timor  Green-­‐pigeon","Treron_psittaceus","EN",1.52224,4.09818,1450000,628000
-"Sao  Tome  Green-­‐pigeon","Treron_sanctithomae","VU",0.22339,3.51824,755000,755000
-"Santa  Marta  Wren","Troglodytes_monticola","CR",1.54578,4.4932,859000,0
-"Taita  Thrush","Turdus_helleri","CR",2.75116,4.76912,5860000,1820000
-"Buff-­‐breasted  Buttonquail","Turnix_olivii","EN",2.71274,4.6099,566000,43000
-"Sociable  Lapwing","Vanellus_gregarius","CR",3.92744,5.23294,1490000,644000
-"South  Island  Wren","Xenicus_gilviventris","VU",1.28355,4.97076,2530000,248000
-"Spotted  Ground-­‐thrush","Geokichla_guttata","EN",3.6457,4.58583,18000000,3230000
-"Mauritius  Olive  White-­‐eye","Zosterops_chloronothos","CR",0.60779,3.60925,2580000,642000
-"Sangihe  White-­‐eye","Zosterops_nehrkorni","CR",0.5516,3.5993,1260000,815000
-"Rota  Bridled  White-­‐eye","Zosterops_rotensis","CR",0.60189,3.67204,25800000,15700000
-"Ranongga  White-­‐eye","Zosterops_splendidus","VU",0.02898,2.10127,968000,0
+"Species","Status","Required_expen","GE"
+"Rhabdotorrhinus_waldeni","CR",150930000,4
+"Acrocephalus_aequinoctialis","EN",31734000,3
+"Acrocephalus_caffer","EN",18705000,3
+"Acrocephalus_familiaris","CR",34830000,4
+"Acrocephalus_paludicola","VU",4.257e+09,2
+"Aglaeactis_aliciae","EN",7894800,3
+"Alauda_razae","CR",6630600,4
+"Amazona_agilis","VU",147060000,2
+"Amazona_tucumana","VU",51858000,2
+"Amazona_vittata","CR",354750000,4
+"Amytornis_woodwardi","VU",193500000,2
+"Anairetes_alpinus","EN",106296000,3
+"Anas_aucklandica","VU",70821000,2
+"Anas_wyvilliana","EN",116487000,3
+"Hedydipna_pallidigaster","EN",384420000,3
+"Anthus_nilghiriensis","VU",53019000,2
+"Antilophia_bokermanni","CR",159960000,4
+"Apalis_flavigularis","EN",122808000,3
+"Apalis_fuscigularis","CR",37797000,4
+"Aphrastura_masafucrae","CR",53406000,4
+"Apteryx_australis","VU",30057000,2
+"Ara_glaucogularis","CR",16125000,4
+"Arborophila_ardens","VU",34959000,2
+"Artisornis_moreaui","CR",158670000,4
+"Atlapetes_pallidiceps","EN",9997500,3
+"Aythya_innotata","CR",35346000,4
+"Biatas_nigropectus","VU",8539800000,2
+"Bostrychia_bocagei","CR",121776000,4
+"Botaurus_poiciloptilus","EN",167700000,3
+"Brotogeris_pyrrhoptera","EN",139320000,3
+"Cacatua_haematuropygia","CR",35346000,4
+"Cacatua_sulphurea","CR",32895000,4
+"Geospiza_heliobates","CR",73401000,4
+"Catharus_bicknelli","VU",290250000,2
+"Centrocercus_minimus","EN",181890000,3
+"Chaetocercus_berlepschi","EN",402480000,3
+"Cinclodes_aricomae","CR",93267000,4
+"Cinclodes_palliatus","CR",38958000,4
+"Poeoptera_femoralis","VU",291540000,2
+"Circus_maillardi","EN",1302900000,3
+"Cistothorus_apolinari","EN",24510000,3
+"Cleptornis_marchei","CR",528900000,4
+"Columba_elphinstonii","VU",2205900000,2
+"Corvus_kubaryi","CR",374100000,4
+"Crossoptilon_mantchuricum","VU",162540000,2
+"Cyanoramphus_malherbi","CR",37926000,4
+"Dendrocopos_noguchii","CR",641130000,4
+"Dicaeum_quadricolor","CR",81270000,4
+"Ducula_brenchleyi","VU",139320000,2
+"Dysithamnus_occidentalis","VU",120099000,2
+"Eriocnemis_nigrivestis","CR",567600000,4
+"Eutrichomyias_rowleyi","CR",16254000,4
+"Eutriorchis_astur","EN",69918000,3
+"Pternistis_ochropectus","CR",218010000,4
+"Pternistis_swierstrai","EN",14706000,3
+"Fregata_andrewsi","CR",18963000,4
+"Gallicolumba_keayi","CR",141900000,4
+"Gallinago_macrodactyla","VU",267030000,2
+"Garrulax_courtoisi","CR",4618200,4
+"Trochalopteron_yersini","EN",23994000,3
+"Glaucidium_nubicola","VU",219300000,2
+"Grallaria_kaestneri","EN",39087000,3
+"Grallaria_ridgelyi","EN",75336000,3
+"Grus_nigricollis","VU",207690000,2
+"Gymnogyps_californianus","CR",1328700000,4
+"Gymnomyza_aubryana","CR",381840000,4
+"Gyps_bengalensis","CR",98556000,4
+"Gyps_indicus","CR",98556000,4
+"Gyps_tenuirostris","CR",98556000,4
+"Habia_atrimaxillaris","EN",18189000,3
+"Haliaeetus_vociferoides","CR",52761000,4
+"Himantopus_novaezelandiae","CR",46827000,4
+"Houbaropsis_bengalensis","CR",125130000,4
+"Humblotia_flavirostris","EN",22188000,3
+"Laniarius_amboimensis","EN",46440000,3
+"Lanius_newtoni","CR",120228000,4
+"Larus_bulleri","EN",190920000,3
+"Laterallus_spilonota","VU",12358200,2
+"Laterallus_tuerosi","EN",40506000,3
+"Lepidopyga_lilliae","CR",36378000,4
+"Leptasthenura_xenothorax","EN",33540000,3
+"Leptotila_wellsi","CR",187050000,4
+"Lophophorus_lhuysii","VU",13545000,2
+"Lophornis_brachylophus","CR",79722000,4
+"Loxops_caeruleirostris","CR",374100000,4
+"Loxops_coccineus","EN",330240000,3
+"Lybius_chaplini","VU",617910000,2
+"Macroagelaius_subalaris","EN",12126000,3
+"Macronyx_sharpei","EN",60243000,3
+"Madanga_ruficollis","EN",100749000,3
+"Mergus_octosetaceus","CR",731430000,4
+"Merulaxis_stresemanni","CR",115455000,4
+"Metallura_iracunda","EN",43215000,3
+"Mimus_graysoni","CR",53406000,4
+"Mimus_melanotis","EN",22575000,3
+"Monticola_erythronotus","EN",14577000,3
+"Myadestes_palmeri","CR",358620000,4
+"Myioborus_pariae","EN",63597000,3
+"Myrmotherula_snowi","CR",42054000,4
+"Nemosia_rourei","CR",37797000,4
+"Neomorphus_radiolosus","EN",105651000,3
+"Crithagra_concolor","CR",120228000,4
+"Nesasio_solomonensis","VU",98169000,2
+"Newtonia_fanovanae","VU",243810000,2
+"Nisaetus_bartelsi","EN",11106900,3
+"Oreomystis_bairdi","CR",383130000,4
+"Oreophasis_derbianus","EN",4179600000,3
+"Oriolus_isabellae","CR",58566000,4
+"Palmeria_dolei","CR",256710000,4
+"Pardalotus_quadragintus","EN",37926000,3
+"Petroica_traversi","EN",16383000,3
+"Leucocarbo_chalconotus","VU",2889600,2
+"Leucocarbo_onslowi","CR",6063000,4
+"Phoebastria_irrorata","CR",56631000,4
+"Phyllomyias_urichi","EN",70950000,3
+"Picathartes_gymnocephalus","VU",58179000,2
+"Pipile_pipile","CR",51858000,4
+"Pithecophaga_jefferyi","CR",281220000,4
+"Platysteira_laticincta","EN",57792000,3
+"Ploceus_aureonucha","EN",379260000,3
+"Ploceus_golandi","EN",158670000,3
+"Ploceus_nicolli","EN",532770000,3
+"Podiceps_taczanowskii","CR",39474000,4
+"Polyplectron_napoleonis","VU",216720000,2
+"Pomarea_nigra","CR",26445000,4
+"Pomarea_whitneyi","CR",1101660000,4
+"Pseudibis_davisoni","CR",102168000,4
+"Pseudobulweria_macgillivrayi","CR",32766000,4
+"Pseudocalyptomena_graueri","VU",772710000,2
+"Pseudonestor_xanthophrys","CR",283800000,4
+"Pterodroma_magentae","CR",54567000,4
+"Pterodroma_phaeopygia","CR",36249000,4
+"Ptilocichla_falcata","VU",178020000,2
+"Puffinus_auricularis","CR",99717000,4
+"Puffinus_mauretanicus","CR",78303000,4
+"Pyrrhura_orcesi","EN",28767000,3
+"Pyrrhura_viridicata","EN",2618700,3
+"Rhinoptilus_bitorquatus","CR",152220000,4
+"Rhynchopsitta_pachyrhyncha","EN",13932000,3
+"Rhynchopsitta_terrisi","EN",105522000,3
+"Rowettia_goughensis","CR",88881000,4
+"Sephanoides_fernandensis","CR",92106000,4
+"Sheppardia_aurantiithorax","EN",71208000,3
+"Spizella_wortheni","EN",27735000,3
+"Spizocorys_fringillaris","EN",915900,3
+"Thalasseus_bernsteini","CR",38829000,4
+"Strigops_habroptila","CR",121002000,4
+"Synthliboramphus_craveri","VU",470850000,2
+"Chlorophoneus_kupeensis","EN",58695000,3
+"Terpsiphone_corvina","CR",33153000,4
+"Thaumatibis_gigantea","CR",86946000,4
+"Thryophilus_nicefori","CR",28122000,4
+"Todiramphus_funebris","VU",91590000,2
+"Todiramphus_gambieri","CR",3818400,4
+"Todiramphus_godeffroyi","CR",7417500,4
+"Treron_pembaensis","VU",51729000,2
+"Treron_psittaceus","EN",18705000,3
+"Troglodytes_monticola","CR",11081100,4
+"Turdus_helleri","CR",75594000,4
+"Turnix_olivii","EN",7301400,3
+"Vanellus_gregarius","CR",19221000,4
+"Geokichla_guttata","EN",232200000,3
+"Zosterops_chloronothos","CR",33282000,4
+"Zosterops_nehrkorni","CR",16254000,4
+"Zosterops_rotensis","CR",332820000,4
+"Zosterops_splendidus","VU",12487200,2

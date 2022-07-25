@@ -170,6 +170,7 @@ optimised_restoration_prioritised <- function(sim_res, priorities, taxa, n, sims
     within_threshold <- read.csv(paste("aggregated_", taxa, "_", thresh,
         "mya.csv", sep = ""), row.names = 1)
 
+
     for (i in seq_len(sims)) {
         # browser()
         for (j in seq_along(selected$species)) {
