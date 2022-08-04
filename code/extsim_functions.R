@@ -46,6 +46,18 @@ average_calc <- function(sim_results) {
     return(data.frame(species = sim_results[, 1], survival))
 }
 
+
+# Calculate the average number of extinctions in each simulation
+avg_extinctions <- function(sim_results) {
+    surviving <- rep(NA, ncol(sim_results) - 1)
+
+    surviving <- apply(sim_results[, 2:ncol(sim_results)], 2, sum)
+
+    extinctions <- nrow(sim_results) - surviving
+    
+    return(extinctions)
+}
+
 rand_biobank <- function(likelihoods, n) {
     biobanked <- sample.int(nrow(likelihoods), size = n)
 
@@ -163,6 +175,11 @@ possible_donor_species <- function(taxa) {
 }
 
 optimised_restoration_prioritised <- function(sim_res, priorities, taxa, n, sims, thresh) {
+    if (n == 0) {
+        restored <- rep(0, sims)
+        return(restored)
+    }
+    
     selected <- priorities[1:n, ]
 
     restored <- vector(length = sims)
@@ -175,6 +192,34 @@ optimised_restoration_prioritised <- function(sim_res, priorities, taxa, n, sims
         # browser()
         for (j in seq_along(selected$species)) {
             spec <- selected$species[j]
+            if (sim_res[which(sim_res$species == spec), i + 1] == 0) {
+                        possible <- within_threshold[spec, ] * sim_res[, i + 1]
+                        restored[i] <- restored[i] + max(possible)
+                }
+        }
+    }
+    
+    return(restored)
+}
+
+random_restoration_prioritised <- function(sim_res, taxa, n, sims, thresh) {
+    if (n == 0) {
+        restored <- rep(0, sims)
+        return(restored)
+    }
+
+    selected <- sample(sim_res$species, n)
+
+    restored <- vector(length = sims)
+
+    within_threshold <- read.csv(paste("aggregated_", taxa, "_", thresh,
+        "mya.csv", sep = ""), row.names = 1)
+
+
+    for (i in seq_len(sims)) {
+        # browser()
+        for (j in seq_along(selected)) {
+            spec <- selected[j]
             if (sim_res[which(sim_res$species == spec), i + 1] == 0) {
                         possible <- within_threshold[spec, ] * sim_res[, i + 1]
                         restored[i] <- restored[i] + max(possible)

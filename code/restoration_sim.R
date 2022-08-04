@@ -2,11 +2,27 @@
 source("extsim_functions.R")
 set.seed(123)
 sims <- 10
-
-# Base scenario
+max_biobanked <- 1000
 thresh <- 10
-# Calculate no. of mammals surviving 50 year scenario
-like <- read.csv("mammals_50_likelihoods.csv")
+iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
+
+# Check which of four scenarios to calculate
+if (iter == 1) {
+    taxa <- "bird"
+    type <- "random"
+} else if (iter == 2) {
+    taxa <- "bird"
+    type <- "optimised"
+} else if (iter == 3) {
+    taxa <- "mammal"
+    type <- "random"
+} else if (iter == 4) {
+    taxa <- "mammal"
+    type <- "optimised"
+}
+
+# Load in the likelihood table
+like <- read.csv(paste(taxa, "s_50_likelihoods.csv", sep = ""))
 
 base_res <- run_sim(like, sims)
 
@@ -14,21 +30,26 @@ base_avg <- average_calc(base_res)
 
 base_extinctions <- nrow(like) - sum(base_avg$survival)
 
-print(base_extinctions)
+print(paste(taxa, ":", base_extinctions))
 
 # quick test of proper restoration check
-max_biobanked <- 100
-priorities <- priority_builder("ordered_prior_score_10mya.csv")
-restoration <- matrix(nrow = max_biobanked, ncol = sims)
-bb <- seq_len(max_biobanked)
-restoration[, ] <- sapply(bb, optimised_restoration_prioritised,
-    sim_res = base_res, priorities = priorities, taxa = "mammal", sims = sims,
-    thresh = thresh)
+if (taxa == "bird") {
+    priorities <- priority_builder("50_score_", thresh, "mya.csv", sep = "")
+} else if (taxa == "mammal") {
+    priorities <- priority_builder("ordered_prior_score_", thresh, "mya.csv",
+        sep = "")
+}
 
-# for (i in seq_len(max_biobanked)) {
-#     restoration[i, ] <- optimised_restoration_prioritised(base_res, priorities,
-#         taxa = "mammal", n = i, sims = sims, thresh = thresh)
-#     print(i)
-# }
+bb <- seq(from = 0, to = max_biobanked, length.out = 101)
+restoration <- matrix(nrow = length(bb), ncol = sims)
+if (type == "random") {
+    restoration[, ] <- sapply(bb, random_restoration_prioritised,
+        sim_res = base_res, taxa = taxa, sims = sims, thresh = thresh)
+} else if (type == "optimised") {
+    restoration[, ] <- sapply(bb, optimised_restoration_prioritised,
+        sim_res = base_res, priorities = priorities, taxa = taxa, sims = sims,
+        thresh = thresh)
+}
 
-write.csv(restoration, file = "mammal_restoration_scores.csv")
+write.csv(restoration, file = paste(taxa, type, "restoration_scores.csv",
+    sep = "_"))

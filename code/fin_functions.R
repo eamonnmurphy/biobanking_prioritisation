@@ -116,3 +116,23 @@ optim_dl_conservation <- function(like, total, cost, score) {
 
     return(like)
 }
+
+random_sim <- function(spend, like, cost, sims) {
+    new_like <- random_dl_conservation(like, spend, cost)
+
+    new_res <- run_sim(new_like, sims)
+
+    new_extinctions <- avg_extinctions(new_res)
+
+    return(new_extinctions)
+}
+
+optim_sim <- function(spend, like, cost, score, sims) {
+    new_like <- optim_dl_conservation(like, spend, cost, score)
+
+    new_res <- run_sim(new_like, sims)
+
+    new_extinctions <- avg_extinctions(new_res)
+
+    return(new_extinctions)
+}
