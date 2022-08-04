@@ -34,10 +34,11 @@ print(paste(taxa, ":", base_extinctions))
 
 # quick test of proper restoration check
 if (taxa == "bird") {
-    priorities <- priority_builder("50_score_", thresh, "mya.csv", sep = "")
+    priorities <- priority_builder(paste("50_score_", thresh, "mya.csv",
+        sep = ""))
 } else if (taxa == "mammal") {
-    priorities <- priority_builder("ordered_prior_score_", thresh, "mya.csv",
-        sep = "")
+    priorities <- priority_builder(paste("ordered_prior_score_", thresh,
+        "mya.csv", sep = ""))
 }
 
 bb <- seq(from = 0, to = max_biobanked, length.out = 101)
