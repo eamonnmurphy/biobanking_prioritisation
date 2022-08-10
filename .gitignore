@@ -73,6 +73,7 @@ org/*
 data/bird_distances/*.csv
 data/mammal_distances/*.csv
 data/aggregated*
+code/aggregated*
 
 # Ignore cluster output and error files
 *.o*

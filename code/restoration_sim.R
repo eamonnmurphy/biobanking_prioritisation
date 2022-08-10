@@ -1,7 +1,7 @@
 # # Script to calculate remaining species under extinction scenarios
 source("extsim_functions.R")
 set.seed(123)
-sims <- 10
+sims <- 2
 max_biobanked <- 1000
 thresh <- 10
 iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
@@ -42,15 +42,15 @@ if (taxa == "bird") {
 }
 
 bb <- seq(from = 0, to = max_biobanked, length.out = 101)
-restoration <- matrix(nrow = length(bb), ncol = sims)
+restoration <- matrix(nrow = sims, ncol = length(bb))
 if (type == "random") {
-    restoration[, ] <- sapply(bb, random_restoration_prioritised,
+    restoration <- sapply(bb, random_restoration_prioritised,
         sim_res = base_res, taxa = taxa, sims = sims, thresh = thresh)
 } else if (type == "optimised") {
-    restoration[, ] <- sapply(bb, optimised_restoration_prioritised,
+    restoration <- sapply(bb, optimised_restoration_prioritised,
         sim_res = base_res, priorities = priorities, taxa = taxa, sims = sims,
         thresh = thresh)
 }
 
 write.csv(restoration, file = paste(taxa, type, "restoration_scores.csv",
-    sep = "_"))
+    sep = "_"), row.names = FALSE)

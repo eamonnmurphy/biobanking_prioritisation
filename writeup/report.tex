@@ -144,7 +144,8 @@
 	\begin{figure}
 	\begin{align}
 			Priority\ Score &= Pr(species\ extinction) * Pr(related\ survival) \\
-			Pr(related\ survival) &= 1 - \prod_{i}^{n}{Pr(extinction\ for\ species\ i)}
+			Pr(related\ survival) &= 1 - \prod_{i}^{n}{Pr(extinction\ for\ species\ i)} \\
+			Priority\ Score &= Pr(Extinction) * [1 - \prod_{i}^{n}{Pr(Extinction\ for\ related\ species\ i)}]
 	\end{align}
 	\caption{Where the set in equation 2 includes all species for whom the time to the most recent common ancestor (MRCA) is below some threshold T, beyond which it is
 			not believed to be possible to carry out cross-species cloning.}
