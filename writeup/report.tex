@@ -141,16 +141,6 @@
 	scores by combining IUCN Red List data with phylogenetic trees of the taxa of 
 	interest.
 	
-	\begin{figure}
-	\begin{align}
-			Priority\ Score &= Pr(species\ extinction) * Pr(related\ survival) \\
-			Pr(related\ survival) &= 1 - \prod_{i}^{n}{Pr(extinction\ for\ species\ i)} \\
-			Priority\ Score &= Pr(Extinction) * [1 - \prod_{i}^{n}{Pr(Extinction\ for\ related\ species\ i)}]
-	\end{align}
-	\caption{Where the set in equation 2 includes all species for whom the time to the most recent common ancestor (MRCA) is below some threshold T, beyond which it is
-			not believed to be possible to carry out cross-species cloning.}
-	\end{figure}
-	
 	As well as generating a set of priority scores for biobanking, based on the
 	outlined approach, we also want to get a sense of the usefulness and
 	robustness of this approach. One way to do this is to simulate a set of future
@@ -177,7 +167,7 @@
 	
 	\section{Methods}
 	\subsection{Data Sources}
-	Conservation status for mammals and birds was sourced from the IUCN Red List 2020 \cite{iucnIUCNRedList2021, IUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, kindly provided by Dr. Rikki Gumbs (EDGE). The conservation statuses were converted to likelihoods of extinction, according to the transformations in the table below.
+	Conservation status for mammals and birds was sourced from the IUCN Red List 2020 \cite{iucnIUCNRedList2021, IUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, kindly provided by Dr. Rikki Gumbs (EDGE). The conservation statuses were converted to likelihoods of extinction, according to the transformations in Table \ref{ext_prob}.
 	
 	\begin{table}[b]
 		\begin{tabular}{|c|c c c c|}
@@ -195,10 +185,67 @@
 			Extinct in the Wild & EW & 1 & 1 & 1 \\
 			\hline
 		\end{tabular}
-		\caption{Conversion of IUCN threat status to probablities of extinction, under three
-			different scenarios \cite{mooersConvertingEndangeredSpecies2008}}
+		\caption{Conversion of IUCN threat status to probabilities of extinction, under three
+			different scenarios \cite{mooersConvertingEndangeredSpecies2008}}\label{ext_prob}
 	\end{table}
+
+	Data was also obtained on the estimated cost of conservation spending needed to downlist 206 different bird species, from \cite[McCarthy \textit{et al.} 2012]{mccarthyFinancialCostsMeeting2012}. Downlisting means moving a species from one IUCN threat category to the one below it, e.g. Critically Endangered to Endangered. This data was collected via expert surveys, and was formatted as the estimated spending per year in US \$ needed over 10 years to result in species downlisting. Amounts were converted using an inflation estimator to 2022 US \$. Mismatches between the species names in this data and the 2020 IUCN data were resolved using Global Names Verifier \cite{}. Any species without a clear synonymic or misspelling match were removed from the data. Species who had changed IUCN threat status during the intervening period were also removed from the data. This left a total of 166 species to use for the analysis. The cleaned data is available to view in the appendix.
+	
+	Data on estimated material costs of sample storage in a biobank was obtained from Jacqueline Mackenzie-Dobbs, manager of the Molecular Collections Facility at the Natural History Museum. These estimates include consumable purchase, liquid nitrogen / electricity usage, service and maintenance costs and equipment depreciation. However, it does not include a large portion of the costs, such as staff time, insurance, building space and other overheads.
+	
+	\begin{table}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Cryovial Volume (mL) & Storage Temp ($^\circ C$) & Cost per Sample Year 1 & Annual Cost Ongoing \\
+			\hline
+			2.0 & -20 & £1.08 & £0.05 \\
+			 & -80 & £1.18 & £0.15 \\
+			 & -196 & £1.25 & £0.22 \\
+			\hline
+			0.5 & -20 & £0.27 & £0.01 \\
+			 & -80 & £0.29 & £0.04 \\
+			 & -196 & £0.31 & £0.06 \\
+			\hline
+		\end{tabular}
+		\caption{Estimated material costs for sample storage in the NHM Molecular Collections Facility}
+	\end{table}
+
+	\subsection{Priority Score Calculation}\label{ps_method}
+	Priority scores were calculated for each species in the two taxa of interest, birds and mammals. The formula for calculating this score is outlined below, where the probability of extinction
+	for the species of interest is multiplied by the chance of any closely related species surviving
+	($RS$).
+	A closely related species is defined by being within the threshold $T$, which is the time in 
+	millions of years to the most recent common ancestor (MRCA) of the two species. If there are no
+	relatives within $T$ million years, the probability of survival for a closely related species is
+	0, and thus the Priority Score is 0. For any species with at least one related species within $T$ 
+	million years, $RS$ will be 1 minus the product of the probabilities of extinction of the n
+	species within $T$ million years, i.e. the probability of any of these related species
+	surviving.
+	
+	\begin{align}
+		Priority\ Score &= Pr(Extinction) * [1 - \prod_{i}^{n}{Pr(Extinction\ for\ related\ species\ i)}] \\
+		PS &= P_e * RS \\
+		RS &= \begin{cases}
+			0 & \text{If there are 0 species within $T$ million years of s} \\
+			1 - \prod_{i}^{n}{P_e} & \text{Otherwise}
+		\end{cases}
+	\end{align}
+
+	In order to deduce the number of closely related species for each species, phylogenetic trees were used. 100 different phylogenetic trees were used for each taxa, in order to avoid biasing the results to any particular phylogeny. The priority scores for each species were calculated for each phylogeny, and the mean across all 100 trees was then calculated and used as the final
+	priority score for further steps. A number of different models for the likelihood of species
+	extinction are available, as shown in Table \ref{ext_prob}. Each of these models was used to
+	calculate a different set of priority scores, changing the probabilities of extinction as
+	appropriate for each model.
+	
 	\section{Results}
+	\subsection{Prioritising Species for Biobanking}
+	The primary aim of this project was to explore methods for prioritising sample collection and
+	storage for genetic biobanking, when the aim of the sample storage is for use in cross-species
+	restoration techniques. These priority scores were calculated for two taxa of broad interest,
+	mammals and birds. Mammals were of interest as attempts have already been made to use
+	cross-species methods to assist in conservation within this taxa, as in the example of the
+	black-footed ferret. Birds were used as a comparison taxa, and also because there are data
+	available on estimated costs of conservation for bird species, which will be used in a later section. The priority scores using the methods laid out in Section \ref{ps_method}
 	
 	\section{Discussion}
 	Another potential source of bias in our estimates lies within species
@@ -212,6 +259,15 @@
 	have their own conservation status, which will be incorporated into the
 	calculations. A sensitivity analysis needs to be carried out to get a better
 	sense of the size of this effect.
+	
+	\section{Appendix}
+	\subsection{Bird Downlisting Conservation Expenditure Estimates}
+	\csvreader[tabular=|c|c|c|,
+		table head=\hline Species & Status & Required Expenditure\\\hline,
+		late after line=\\\hline]%
+	{cleanedexpen.csv}{"Species"=\species,"Status"=\status,"Required_expen"=\required}%
+	{\thecsvrow & \status & \required}%
+	
 	
 	\bibliographystyle{plain}
 	\bibliography{MSc_Thesis}

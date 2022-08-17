@@ -1,6 +1,5 @@
 # Script to plot the results of biobanking simulations vs conservations sims
 
-restoration <- read.csv("../results/mammal_restoration_scores.csv", row.name = 1)
 con_spend <- read.csv("../results/conservation_spend_sim.csv")
 
 png("../results/log_expense_sims.png")
@@ -35,6 +34,12 @@ graphics.off()
 # billion_saving <- max(con_spend$extinctions) - max(con_spend$extinctions[
 #     which(con_spend$spend == 1000000000)])
 
+restoration <- read.csv("../results/mammal_restoration_scores.csv",
+    row.name = 1)
+
+random_rest <- read.csv("../results/mammal_random_restoration_scores.csv")
+optim_rest <- read.csv("../results/mammal_optimised_restoration_scores.csv")
+
 png("../restoration/prior_bb_results.png")
 
 for (i in seq_len(nrow(restoration))) {
@@ -50,3 +55,23 @@ for (i in seq_len(nrow(restoration))) {
 }
 
 graphics.off()
+
+png("../results/mammal_restoration.png")
+
+plot(seq(0, 1000, by = 10), random_rest[1, ], xlim = c(0, 1000), ylim = c(0, 1000))
+points(seq(0, 1000, by = 10), random_rest[2, ])
+
+points(seq(0, 1000, by = 10), optim_rest[1, ], col = "red")
+points(seq(0, 1000, by = 10), optim_rest[2, ], col = "red")
+
+graphics.off()
+
+
+random_rest <- read.csv("../results/bird_random_restoration_scores.csv")
+optim_rest <- read.csv("../results/bird_optimised_restoration_scores.csv")
+
+plot(seq(0, 1000, by = 10), random_rest[1, ], xlim = c(0, 1000), ylim = c(0, 1000))
+points(seq(0, 1000, by = 10), random_rest[2, ])
+
+points(seq(0, 1000, by = 10), optim_rest[1, ], col = "red")
+points(seq(0, 1000, by = 10), optim_rest[2, ], col = "red")
