@@ -2,6 +2,7 @@
 \usepackage{csvsimple}
 \usepackage{amsmath}
 \usepackage{a4wide}
+\usepackage{graphicx}
 
 \title{Prioritising species sampling for genetic biobanking}
 \author{Eamonn Murphy}
@@ -128,7 +129,7 @@
 	Under a scenario of limited resources, a key consideration for using cloning and other
 	biotechnological techniques to restore species and population genetic diversity, is
 	which species to biobank first \cite{harwoodDevelopingImplementingPrioritisation}. We can build a metric, the Priority Score, that approaches this 
-	question by utilising phylogenetics, and data on conservation status. The cross-species approach for species restoration appears most promising at present, as it avoids using
+	question by utilising phylogenetics, and data on extinction risk. The cross-species approach for species restoration appears most promising at present, as it avoids using
 	individuals of a valuable threatened species for risky procedures such as egg cell
 	extraction and blastocyst implantation, and may also allow us to leverage existing
 	knowledge on best breeding practices within the donor species \cite{wiselyRoadMap21st2015}. In order for a
@@ -167,7 +168,8 @@
 	
 	\section{Methods}
 	\subsection{Data Sources}
-	Conservation status for mammals and birds was sourced from the IUCN Red List 2020 \cite{iucnIUCNRedList2021, IUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, kindly provided by Dr. Rikki Gumbs (EDGE). The conservation statuses were converted to likelihoods of extinction, according to the transformations in Table \ref{ext_prob}.
+	Extinction risk categories for mammal and bird species was sourced from the IUCN Red List 2020 \cite{iucnIUCNRedList2021, IUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, kindly provided by Dr. Rikki Gumbs (EDGE). % Proper citation needed
+	 The extinction risk categories were converted to likelihoods of extinction, according to the transformations given by \cite{mooersConvertingEndangeredSpecies2008} (see Table \ref{ext_prob}).
 	
 	\begin{table}[b]
 		\begin{tabular}{|c|c c c c|}
@@ -189,51 +191,60 @@
 			different scenarios \cite{mooersConvertingEndangeredSpecies2008}}\label{ext_prob}
 	\end{table}
 
-	Data was also obtained on the estimated cost of conservation spending needed to downlist 206 different bird species, from \cite[McCarthy \textit{et al.} 2012]{mccarthyFinancialCostsMeeting2012}. Downlisting means moving a species from one IUCN threat category to the one below it, e.g. Critically Endangered to Endangered. This data was collected via expert surveys, and was formatted as the estimated spending per year in US \$ needed over 10 years to result in species downlisting. Amounts were converted using an inflation estimator to 2022 US \$. Mismatches between the species names in this data and the 2020 IUCN data were resolved using Global Names Verifier \cite{}. Any species without a clear synonymic or misspelling match were removed from the data. Species who had changed IUCN threat status during the intervening period were also removed from the data. This left a total of 166 species to use for the analysis. The cleaned data is available to view in the appendix.
+	Data was also obtained on the estimated conservation spending needed for 206 different bird species, from \cite[McCarthy \textit{et al.} 2012]{mccarthyFinancialCostsMeeting2012}. This data was collected via expert surveys, and was their best estimate of the cost to downlist each birds species,
+	which means to move it from one IUCN risk category to the next, e.g from Critically Endangered
+	to Endangered. It was formatted as the estimated spending per year in US \$ needed over 10 years to result in species downlisting. To account for inflation, amounts were converted from January 2012
+	US \$ to May 2022 US \$ using the US Bureau of Labour Statistics CPI Inflation Calculator
+	\cite{} % need to cite the website from Zotero, https://www.bls.gov/data/inflation_calculator.htm
+	. Mismatches between the species names in this data and the 2020 IUCN data were resolved using Global Names Verifier \cite{}. Any species without a clear synonymic or misspelling match were removed from the data. Species that had changed IUCN extinction risk category
+	during the intervening period were also removed from the data. This left a total of 166 species to use for the analysis, and the cleaned data used is available from Appendix \ref{expen}.
 	
-	Data on estimated material costs of sample storage in a biobank was obtained from Jacqueline Mackenzie-Dobbs, manager of the Molecular Collections Facility at the Natural History Museum. These estimates include consumable purchase, liquid nitrogen / electricity usage, service and maintenance costs and equipment depreciation. However, it does not include a large portion of the costs, such as staff time, insurance, building space and other overheads.
-	
-	\begin{table}
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			Cryovial Volume (mL) & Storage Temp ($^\circ C$) & Cost per Sample Year 1 & Annual Cost Ongoing \\
-			\hline
-			2.0 & -20 & £1.08 & £0.05 \\
-			 & -80 & £1.18 & £0.15 \\
-			 & -196 & £1.25 & £0.22 \\
-			\hline
-			0.5 & -20 & £0.27 & £0.01 \\
-			 & -80 & £0.29 & £0.04 \\
-			 & -196 & £0.31 & £0.06 \\
-			\hline
-		\end{tabular}
-		\caption{Estimated material costs for sample storage in the NHM Molecular Collections Facility}
-	\end{table}
+	%\begin{table}
+	%	\begin{tabular}{|c|c|c|c|}
+	%		\hline
+	%		Cryovial Volume (mL) & Storage Temp ($^\circ C$) & Cost per Sample Year 1 & Annual Cost Ongoing \\
+	%		\hline
+	%		2.0 & -20 & £1.08 & £0.05 \\
+	%		 & -80 & £1.18 & £0.15 \\
+	%		 & -196 & £1.25 & £0.22 \\
+	%		\hline
+	%		0.5 & -20 & £0.27 & £0.01 \\
+	%		 & -80 & £0.29 & £0.04 \\
+	%		 & -196 & £0.31 & £0.06 \\
+	%		\hline
+	%	\end{tabular}
+	%	\caption{Estimated material costs for sample storage in the NHM Molecular Collections Facility}
+	%\end{table}
 
 	\subsection{Priority Score Calculation}\label{ps_method}
-	Priority scores were calculated for each species in the two taxa of interest, birds and mammals. The formula for calculating this score is outlined below, where the probability of extinction
-	for the species of interest is multiplied by the chance of any closely related species surviving
-	($RS$).
-	A closely related species is defined by being within the threshold $T$, which is the time in 
-	millions of years to the most recent common ancestor (MRCA) of the two species. If there are no
-	relatives within $T$ million years, the probability of survival for a closely related species is
-	0, and thus the Priority Score is 0. For any species with at least one related species within $T$ 
-	million years, $RS$ will be 1 minus the product of the probabilities of extinction of the n
-	species within $T$ million years, i.e. the probability of any of these related species
-	surviving.
+	In order to generate a descending order list for prioritising species to biobank,
+	a Priority Score was calculated for each species. This Priority Score is the probability
+	that the biobanked material will be useful for cross-species restoration approaches, i.e.
+	that the species itself is extinct, and that it has some remaining close relative. We can
+	define the set of sufficiently close relatives, $A_i(T)$, as the set of species
+	 whose most recent
+	common ancestor (MRCA) with the species of interest, $i$, is within $T$ million years (see
+	Equation \ref{set}). We can then define the Priority Score as $P_i(T)$, where it is equal
+	to the probability of extinction of the species of interest ($P_{ext}(i)$) multiplied by
+	the probability of any closely related species surviving (see Equation \ref{equation}). 
+	This can be calculated as 1 minus
+	the probability of all closely related species becoming extinct,
+	which is product of the probabilities
+	of extinction of each closely related species $a$ from the previously defined set $A_i(T)$.
+	This definition also holds for the case where there are no closely related species within
+	$T$ mya, as by definition, the product of an empty set is 1, producing a Priority Score of 0.
 	
 	\begin{align}
-		Priority\ Score &= Pr(Extinction) * [1 - \prod_{i}^{n}{Pr(Extinction\ for\ related\ species\ i)}] \\
-		PS &= P_e * RS \\
-		RS &= \begin{cases}
-			0 & \text{If there are 0 species within $T$ million years of s} \\
-			1 - \prod_{i}^{n}{P_e} & \text{Otherwise}
-		\end{cases}
+		P_i(T) &= P_{ext}(i) * [1 - \prod_{a \in A_i(T)} P_{ext}(a)] \label{equation}\\
+		A_i(T) &= \{j \in S | MRCA(j, i) \le T\} \label{set}
 	\end{align}
 
-	In order to deduce the number of closely related species for each species, phylogenetic trees were used. 100 different phylogenetic trees were used for each taxa, in order to avoid biasing the results to any particular phylogeny. The priority scores for each species were calculated for each phylogeny, and the mean across all 100 trees was then calculated and used as the final
-	priority score for further steps. A number of different models for the likelihood of species
-	extinction are available, as shown in Table \ref{ext_prob}. Each of these models was used to
+	
+
+	In order to deduce the number of closely related species, phylogenetic trees were used. 100 different phylogenetic trees were used for each taxa, to avoid biasing the results to any particular phylogeny. The priority scores for each species were calculated for each phylogeny, and the mean across all 100 trees was then calculated and used as the final
+	priority score. A number of different models for the probabilities of species
+	extinction, based on the IUCN Risk Categories, are available, as shown in Table \ref{ext_prob}.
+	Each of these models was used to
 	calculate a different set of priority scores, changing the probabilities of extinction as
 	appropriate for each model.
 	
@@ -245,9 +256,87 @@
 	mammals and birds. Mammals were of interest as attempts have already been made to use
 	cross-species methods to assist in conservation within this taxa, as in the example of the
 	black-footed ferret. Birds were used as a comparison taxa, and also because there are data
-	available on estimated costs of conservation for bird species, which will be used in a later section. The priority scores using the methods laid out in Section \ref{ps_method}
+	available on estimated costs of conservation for bird species, which will be used in a later section. The priority scores were calculated using the methods laid out in Section 
+	\ref{ps_method}. The histograms in Figure \ref{ps_hist} show the distribution of the priority
+	scores for a number of different models at a $T$ of 10 million years, as well as how this
+	distribution differs from the underlying extinction likelihoods. Intuitively, we know that
+	the priority score for any given species can only be less than it's given extinction likelihood,
+	as the probability of survival of some related species can only be $\le 1$ (refer to Equation \ref{ps_equation}). The underlying extinction likelihoods have a discrete distribution (discrete
+	value for each threat status), and the distribution of the priority scores mostly follows this.
+	The majority of the difference in the distribution comes from species who have no close relative
+	within $T$, and thus their priority score goes to zero. Given the distribution of species among
+	the threat categories, it is likely that if there is close relatives, it belongs to the least
+	threatened categories, meaning a low likelihood of extinction and only a small effect upon the
+	priority score. However, this does not hold for the pessimistic model of extinction, as even
+	species of Least Concern have a significant chance of extinction.
+	
+	\begin{figure}
+		\includegraphics{../results/combined_hist.png}
+		\caption{}\label{ps_hist}
+	\end{figure}
+
+	\subsection{Exploring the Effects of Varying $T$}
+	One important consideration when prioritising species for the possibility of cross-species
+	restoration methods, is how closely related the two species need to be for cloning to be viable.
+	I explored the effect of varying $T$ for a variety of different models in both birds and mammals,
+	as it is still unknown what level of relatedness is truly viable, or will be in the future. This
+	value is also likely to vary between groups, and even between species. In order to visualise
+	the effect of varying the threshold, the number of high priority species for a combination of
+	models and values of $T$ were calculated. High priority species were said to be those with a
+	priority score of $>0.95$. This threshold was chosen as it is close to the extinction likelihood
+	values of the Critically Endangered species for the 50 year and pessimistic scenarios, and the
+	extinction likelihood values of the Endangered species for the 500 year scenario (see Table 
+	\ref{ext_prob}). However, any
+	choice of threshold for this distinction will be somewhat arbitrary; the important aspect is to 
+	be able to visualise the difference between different models and different values of $T$. We can
+	see from Figure \ref{thresh_viz} that the number of high priority species approaches the total
+	number of species that have extinction likelihood values that exceed the priority threshold.
+	This is an expected result, as with increasing $T$, fewer species will be without close relatives,
+	and the greater number of close relatives will reduce the chance of none of them surviving. We
+	also see that the relative increase in high priority species from a $T$ of 1 million years to 20
+	million years is greater for the pessimistic and 500 year scenarios. This effect is mediated by
+	the higher extinction likelihood values in these scenarios for the lower threat categories. This
+	reduces the likelihood of a near relative surviving. An example is if some Critically Endangered
+	species had 2 near relatives, both Vulnerable, the Priority Scores under each model would be 
+	0.97, 0.85 and 0.36 for the 50 year, 500 year and pessimistic models, respectively (see 
+	\ref{ps_equation}).
+	
+	\begin{figure}
+		\includegraphics[scale=0.7]{../results/threshold_viz.png}
+		\caption{The number of species with a high priority score ($> 0.95$)
+			for the IUCN 50 and 500 year models and the pessimistic scenario, for 
+			mammals (A) and birds (B).}\label{thresh_viz}
+	\end{figure}
+	
+	\subsection{Simulating the Usefulness of Biobanked Material}
+	Having created prioritisation lists for two taxa, mammals and birds, we next wanted to test how
+	useful these lists would be in prioritising material. In order to do this, we simulated the
+	number of extinctions expected to occur under the IUCN 50 year model in 50 years time. We also
+	created a list of biobanked species of varying length using one of two approaches: random 
+	selection, or in descending order from the priority scores. Next, we could check for each
+	biobanked species, whether or not this material would be useful for cross-species restoration.
+	For this to be true, two criteria must be met; the species itself must be extinct, and there
+	must be some surviving relative within the chosen $T$. In order to reduce the number of
+	simulations, it was chosen to perform them using only a $T$ of 10mya, rather than with a range
+	of $T$.  We can see from these results that the optimised approach performs far better than a
+	random range for any number of species biobanked within the range explored (0-1000), although
+	that effect is largely mediated by the initial few hundred species, which in an optimised
+	scenario, are those that are either Critically Endangered or Endangered and are likely to have surviving close relatives.
+	
+	\begin{figure}
+		\includegraphics[scale = 0.5]{../results/restoration.png}
+		\caption{Restoration simulations}\label{rest_sims}
+	\end{figure}
+
+	
+	
+	
 	
 	\section{Discussion}
+	
+	
+	
+	
 	Another potential source of bias in our estimates lies within species
 	classification in the phylogenetic trees. There will always be debate whether
 	to classify closely related taxa as seperate species or only subspecies. This
@@ -256,12 +345,12 @@
 	is necessary for closely related species to survive, artificially inflating the
 	number of closely related taxa will bias the priority scores. However, this
 	effect should be evened somewhat by the fact that each of these species will 
-	have their own conservation status, which will be incorporated into the
+	have their own extinction risk, which will be incorporated into the
 	calculations. A sensitivity analysis needs to be carried out to get a better
 	sense of the size of this effect.
 	
 	\section{Appendix}
-	\subsection{Bird Downlisting Conservation Expenditure Estimates}
+	\subsection{Bird Downlisting Conservation Expenditure Estimates}\label{expen}
 	\csvreader[tabular=|c|c|c|,
 		table head=\hline Species & Status & Required Expenditure\\\hline,
 		late after line=\\\hline]%

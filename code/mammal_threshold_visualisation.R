@@ -21,7 +21,7 @@ graphics.off()
 
 # Create histogram for threshold of 10 million years
 png(filename = "../results/hist_prior_10mya.png")
-hist(scores[[1]][, 101], xlab = "Prioritisation score",
+hist(scores[[10]][, 101], xlab = "Prioritisation score",
     ylab = "Number of species",
     main = "Distribution of prioritisation scores, threshold 10mya to MRCA")
 graphics.off()
@@ -33,36 +33,37 @@ graphics.off()
 #     hist(scores[[i]][, 101], xlim = c(0.1, 1), ylim = c(0, 500))
 # }
 
-table <- matrix(nrow = 20, ncol = 3)
+# Load in the data
+scores_50 <- vector(mode = "list", length = 20)
+scores_500 <- vector(mode = "list", length = 20)
+scores_pessimistic <- vector(mode = "list", length = 20)
 
-cnames <- c("High", "Medium", "Low")
-
-for (i in 1:20) {
-    score <- scores[[i]][, 101]
-    table[i, ] <- c(sum(score > .95, na.rm = T),
-        sum(score > .33 & score < .95, na.rm = T),
-        sum(score > 0 & score < .33, na.rm = T))
+for (i in seq_len(20)) {
+    name_50 <- paste("../results/mammal_ps/50_score_", i,
+        "mya.csv", sep = "")
+    name_500 <- paste("../results/mammal_ps/500_score_", i,
+        "mya.csv", sep = "")
+    name_pessimistic <-
+        paste("../results/mammal_ps/pessimistic_score_", i,
+            "mya.csv", sep = "")
+    scores_50[[i]] <- read.csv(name_50, header = TRUE)
+    scores_500[[i]] <- read.csv(name_500, header = TRUE)
+    scores_pessimistic[[i]] <- read.csv(name_pessimistic, header = TRUE)
 }
 
-table <- data.frame(table, row.names = paste(seq_len(20), "mya", sep = ""))
-colnames(table) <- cnames
+table <- data.frame(matrix(nrow = 20, ncol = 3))
+colnames(table) <- c("fifty_year", "fivehundred_year", "pessimistic")
+
+for (i in seq_len(20)) {
+    score_50 <- scores_50[[i]][, 101]
+    score_500 <- scores_500[[i]][, 101]
+    score_pessimistic <- scores_pessimistic[[i]][, 101]
+
+    table[i, ] <- c(sum(score_50 > .95, na.rm = T),
+        sum(score_500 > .95, na.rm = T),
+        sum(score_pessimistic > .95, na.rm = T))
+}
+
+rownames(table) <- paste(seq_len(20), "mya", sep = "")
 
 write.csv(table, file = "../results/mammal_threshold_table.csv")
-
-png(filename = "../results/mammal_thresholds_scores.png")
-
-plot(table$Medium + table$High, type = "l", ylim = c(0, 1000),
-    xlab = "Threshold (mya)", ylab = "No. of species")
-
-lines(table$High, col = "red")
-
-abline(h = 199, col = "black", lty = 2)
-text(x = 10, y = 219, "Critically endangered mammal species")
-abline(h = 701, col = "black", lty = 2)
-text(x = 10, y = 721, "Endangered and critically endangered mammal species")
-
-legend(x = "bottomright",
-    legend = c("Medium and high priority", "High priority"),
-    col = c("black", "red"), lty = 1)
-
-dev.off()
