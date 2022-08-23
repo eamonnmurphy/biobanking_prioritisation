@@ -5,7 +5,7 @@
 #PBS -l select=1:ncpus=1:mem=20gb
 module load anaconda3/personal
 source activate Renv_prior
-cp $HOME/biobanking_prioritisation/code/related_survival_functions.R
+cp $HOME/biobanking_prioritisation/code/related_survival_functions.R .
 cp $HOME/biobanking_prioritisation/data/mammals_500_likelihoods.csv .
 cp $HOME/biobanking_prioritisation/data/mammals_pessimistic_likelihoods.csv .
 cp $HOME/biobanking_prioritisation/data/mammals_50_likelihoods.csv .  
