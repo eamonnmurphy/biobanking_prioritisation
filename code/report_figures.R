@@ -36,101 +36,54 @@ plot_ps <- function(taxa, model, threshold = 10) {
         name <- paste("Prioritisation scores, ", model, " year model",
             sep = "")
     }
+    if (taxa == "mammal") {
+        ys <- c(0, 6000)
+    } else {
+        ys <- c(0, 10000)
+    }
 
-    hist(values[, 101], xlab = "Prioritisation score",
-        ylab = "Number of species", main = "",  xlim = c(0, 1))
+    hist(values[, 101], xlab = "Priority score", breaks = 20,
+        ylab = "Number of species", main = "",  xlim = c(0, 1), ylim = ys)
 }
 
 taxa <- c("mammal", "bird")
 model <- c("50", "500", "pessimistic")
 
-png(filename = "../results/combined_hist.png")
-par(mfrow = c(3, 4))
-for (i in seq_along(model)) {
-    for (j in seq_along(taxa)) {
-        plot_ext_like(taxa[j], model[i])
-        if (model[i] == "50") {
-            mtext("Extinction likelihoods")
-        }
-        if (taxa[j] == "mammal") {
-            if (model[i] == "pessimistic") {
-                mtext(paste(model, " model", sep = ""), side = 2, outer = TRUE)
+pdf(file = "../results/combined_hist.pdf")
+par(mfrow = c(2, 3))
+letter <- c("A")
+for (i in seq_along(taxa)) {
+    for (j in seq_along(model)) {
+        plot_ps(taxa[i], model[j])
+        if (i == 1) {
+            if (model[j] == "pessimistic") {
+                mtext("Pessimistic model")
             } else {
-                mtext(paste(model, " year model", sep = ""), side = 2, outer = TRUE)
+                mtext(paste("IUCN", model[j], "year model", sep = " "))
             }
         }
-        plot_ps(taxa[j], model[i])
-        if (model[i] == "50") {
-            mtext("Priority scores")
+        if (i == 1 & j == 2) {
+            mtext("Mammals", line = 2, cex = 1.5)
+        }
+        if (i == 2 & j == 2) {
+            mtext("Birds", line = 2, cex = 1.5)
+        }
+        pplt <- par("plt")
+        adjx <- (0 - pplt[1]) / (pplt[2] - pplt[1])
+        liney <- par("mar")[3] - 2.5
+        if (i == 1) {
+            mtext(LETTERS[j], adj = adjx, line = liney)
+        } else if (i == 2) {
+            mtext(LETTERS[j + 3], adj = adjx, line = liney)
         }
     }
 }
 graphics.off()
-
-p <- ggplot(like_mammal_50, aes(x = extinction)) + geom_histogram() +
-    scale_y_sqrt()
-
-q <- ggplot(mammal_10mya, aes(x = average)) + geom_histogram() +
-    scale_y_sqrt()
-
-fig <- ggarrange(yo[[1]], yo[[2]])
-
-plot_ext_like <- function(taxa, model) {
-    values <- get(paste("like_", taxa, "_", model, sep = ""))
-    if (model == "pessimistic") {
-        name <- paste("Extinction likelihoods, ", model, " model", sep = "")
-    } else {
-        name <- paste("Extinction likelihoods, ", model, " year model",
-            sep = "")
-    }
-
-    p <- ggplot(values, aes(x = extinction)) + geom_histogram() +
-        scale_y_sqrt()
-    
-    return(p)
-}
-
-plot_ps <- function(taxa, model, threshold = 10) {
-    values <- read.csv(paste("../results/", taxa, "_ps/", model,
-        "_score_", threshold, "mya.csv", sep = ""))
-    if (model == "pessimistic") {
-        name <- paste("Prioritisation scores, ", model, " model", sep = "")
-    } else {
-        name <- paste("Prioritisation scores, ", model, " year model",
-            sep = "")
-    }
-
-    p <- ggplot(values, aes(x = average)) + geom_histogram() +
-        scale_y_sqrt()
-    
-    return(p)
-}
-
-taxa <- c("mammal", "bird")
-model <- c("50", "500", "pessimistic")
-
-png(filename = "../results/combined_hist.png")
-par(mfrow = c(3, 4))
-ext <- list()
-ps <- list()
-num <- 1
-for (i in seq_along(model)) {
-    for (j in seq_along(taxa)) {
-        ext[[num]] <- plot_ext_like(taxa[j], model[i])
-        ps[[num]] <- plot_ps(taxa[j], model[i])
-        num <- num + 1
-    }
-}
-
-fig <- ggarrange(ext[[1]], ps[[1]], ext[[2]], ps[[2]], ext[[3]], ps[[3]],
-    ext[[4]], ps[[4]], ext[[5]], ps[[5]], ext[[6]], ps[[6]])
-graphics.off()
-
 
 #### Varying thresholds visualisation ####
 bird_table <- read.csv("../results/bird_threshold_table.csv", row.names = 1)
 mammal_table <- read.csv("../results/mammal_threshold_table.csv", row.names = 1)
-png(filename = "../results/threshold_viz.png", height = 720)
+pdf("../results/threshold_viz.pdf")
 par(mfcol = c(2, 1))
 
 # Plot the mammal table
@@ -141,15 +94,15 @@ lines(mammal_table$fivehundred_year, col = "#6c3092")
 lines(mammal_table$pessimistic, col = "red")
 
 abline(h = 199, col = "black", lty = 2)
-text(x = 10, y = 250, "Critically endangered mammal species")
+text(x = 10, y = 239, "Critically endangered mammal species")
 abline(h = 701, col = "black", lty = 2)
-text(x = 10, y = 711, "Endangered and critically endangered mammal species")
+text(x = 10, y = 741, "Endangered and critically endangered mammal species")
 
 legend(x = "topright", legend = c("IUCN 50 year model",
     "IUCN 500 year model", "Pessimistic scenario"), col = c("blue", "purple",
         "red"), lty = 1)
 
-mtext("A", line = 1)
+mtext("A: Mammals", line = 1)
 
 # Plot the bird results
 plot(bird_table$fifty_year, type = "l", xlab = "Threshold for MRCA (mya)",
@@ -159,15 +112,15 @@ lines(bird_table$fivehundred_year, col = "#6c3092")
 lines(bird_table$pessimistic, col = "red")
 
 abline(h = 230, col = "black", lty = 2)
-text(x = 10, y = 250, "Critically endangered bird species")
+text(x = 10, y = 270, "Critically endangered bird species")
 abline(h = 691, col = "black", lty = 2)
-text(x = 10, y = 711, "Endangered and critically endangered bird species")
+text(x = 10, y = 731, "Endangered and critically endangered bird species")
 
 legend(x = "topright", legend = c("IUCN 50 year model",
     "IUCN 500 year model", "Pessimistic scenario"), col = c("blue", "purple",
         "red"), lty = 1)
 
-mtext("B", line = 1)
+mtext("B: Birds", line = 1)
 
 graphics.off()
 
@@ -184,12 +137,12 @@ bird_random_rest <-
 bird_optim_rest <-
     read.csv("../results/bird_optimised_restoration_scores.csv")
 
-png("../results/restoration.png", width = 960)
+pdf("../results/restoration.pdf")
 
 par(mfcol = c(1, 2))
 
 plot(seq(0, 1000, by = 10), mammal_random_rest[1, ], xlim = c(0, 1000),
-    ylim = c(0, 1000), xlab = "Number of species biobanked",
+    ylim = c(0, 500), xlab = "Number of species biobanked",
     ylab = "Number of species restored",
     main = "Mammal restoration")
 points(seq(0, 1000, by = 10), mammal_random_rest[2, ])
@@ -201,7 +154,7 @@ legend(x = "topright", legend = c("Random biobanking", "Optimised biobanking"),
     col = c("black", "red"), pch = 1)
 
 plot(seq(0, 1000, by = 10), bird_random_rest[1, ], xlim = c(0, 1000),
-    ylim = c(0, 1000), xlab = "Number of species biobanked",
+    ylim = c(0, 500), xlab = "Number of species biobanked",
     ylab = "Number of species restored",
     main = "Bird restoration")
 points(seq(0, 1000, by = 10), bird_random_rest[2, ])
@@ -212,4 +165,27 @@ points(seq(0, 1000, by = 10), bird_optim_rest[2, ], col = "red")
 legend(x = "topright", legend = c("Random biobanking", "Optimised biobanking"),
     col = c("black", "red"), pch = 1)
 
+graphics.off()
+
+
+#### Conservation cost simulations ####
+con_spend <- read.csv("../results/conservation_spend_sim.csv")
+
+pdf("../results/log_expense_sims.pdf")
+par(mfcol = c(1, 2))
+plot(log10(con_spend$spend), con_spend$optim_downlist,
+    xlab = "Log10 of dedicated conservation spending (US $)",
+    ylab = "No. of extinctions in a 50 year period")
+points(log10(con_spend$spend), con_spend$random_downlist, col = "red")
+legend(x = "bottomleft", legend = c("Optimised", "Random"),
+    col = c("black", "red"), pch = 1)
+abline(v = log10(9e+08), col = "black", lty = 2)
+abline(v = log10(6e+10), col = "red", lty = 2)
+
+plot(con_spend$spend, con_spend$optim_downlist,
+    xlab = "Dedicated conservation spending (US $)",
+    ylab = "No. of extinctions in a 50 year period")
+points(con_spend$spend, con_spend$random_downlist, col = "red")
+legend(x = "topright", legend = c("Optimised", "Random"),
+    col = c("black", "red"), pch = 1)
 graphics.off()

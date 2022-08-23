@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{a4wide}
 \usepackage{graphicx}
+\usepackage[square]{natbib}
 
 \title{Prioritising species sampling for genetic biobanking}
 \author{Eamonn Murphy}
@@ -15,33 +16,63 @@
 	\section{Introduction}
 
 	Scientists believe that we may be living through the time of the Sixth 
-	Great Mass Extinction \cite{barnoskyHasEarthSixth2011}. Anthropogenic changes to the natural environment, such 
+	Great Mass Extinction \citep{barnoskyHasEarthSixth2011}. Anthropogenic changes to the natural environment, such 
 	as climate change and pollution, have already driven many species extinct and 
-	threaten to cause the extinction of many more in the coming centuries \cite{ceballosVertebratesBrinkIndicators2020}. 
+	threaten to cause the extinction of many more in the coming centuries \citep{ceballosVertebratesBrinkIndicators2020}. 
 	Traditional conservation strategies focus on mitigating the impacts of human
-	activites, as well protecting some of our most vulnerable and 
+	activities, as well protecting some of our most vulnerable and 
 	threatened species. However, this may not be sufficient to protect some of the most
 	vulnerable species, as these approaches are often costly to implement, and 
 	the political will can be lacking. Another approach, previously confined to
 	science fiction stories, but recently made possible by advances in 
 	biotechnology, is to clone individuals from threatened (and potentially even
-	extinct) species using stored biological material \cite{loiGeneticRescueEndangered2001}. In order to make this approach possible, we must biobank samples from threatened species now, before it is too
-	late.
+	extinct) species using stored biological material \citep{loiGeneticRescueEndangered2001}. In order to make this approach possible, we must biobank samples from threatened species now, before it is too late.
 	
 	Traditional conservation methods include habitat
 	protection and restoration, as well as protecting species from poaching and other
-	harmful human activities \cite{mccarthyFinancialCostsMeeting2012}. Breeding programmes have also played an important role,
+	harmful human activities \citep{mccarthyFinancialCostsMeeting2012}. Breeding programmes have also played an important role,
 	whether in zoos, aquariums, wildlife preserves or other venues. The goal of breeding
 	programmes, has been to increase the number of individuals of the species, while
 	maintaining its genetic diversity as best as possible. However, this can be 
 	difficult, particularly when the source wild population is small, or if the species has
 	difficulties with breeding in captivity (which often mean most of the successful
-	breeding is done with a few individuals). It has been common to collect samples
-	from these captive individuals, such as frozen cells, DNA and stem cells \cite{angelesChallengesDevelopmentBiodiversity2022, breithoffArkBankExtinction2020}. Now, it
+	breeding is done with a few individuals).
+	
+	Maintaining genetic diversity within a population is key to its long-term health and
+	survival. Existing genetic diversity is important to allow for selection under
+	evolutionary pressures \citep{harmonConservationSmallPopulations2010}. This allows a population to adapt to changes in its environment,
+	and new threats such as pathogens or changing environments
+	\citep{mccallumTasmanianDevilFacial2008}. Evolutionary rescue, where a population
+	avoids extinction through adaption and selection
+	\citep{bellEvolutionaryRescue2017}, relies on genetic diversity that
+	exists within the population.
+	An important concept for understanding the genetic diversity within a population is the
+	effective population size ($N_e$). The effective population size is a measure of
+	population size which also takes into account the relatedness between individuals in
+	a population, thus serving as a good measure of the total genetic diversity
+	\citep{frankhamEffectivePopulationSize1995}. We can
+	create a threshold using the effective population size, below which populations enter
+	what is known as the extinction vortex \citep{harmonConservationSmallPopulations2010}. This threshold is usually set at an $N_e$ of
+	around 50. Upon entering the extinction vortex, populations not only struggle to
+	adapt to new environmental changes, but begin to suffer from the ill effects of
+	inbreeding, which can lead to decreased fitness and reduced fertility. It is very
+	difficult to rescue a population once it has entered the extinction vortex, as genetic
+	drift will tend to overpower mutation at such small population sizes and genetic
+	variation will continually be lost \citep{harmonConservationSmallPopulations2010}.
+	Currently existing methods to improve genetic diversity include genetic rescue,
+	where new alleles are introduced to a population through immigrants
+	\citep{whiteleyGeneticRescueRescue2015}. However, this method can only be used to
+	improve the prospects of sub-populations of a species, and not the species as a
+	whole, as there are is no traditional method for improving genetic diversity
+	across an entire species.
+	
+	
+	It has been common to collect samples
+	from these captive individuals, such as frozen cells, DNA and stem cells \citep{angelesChallengesDevelopmentBiodiversity2022, breithoffArkBankExtinction2020}. Now, it
 	should be possible to use these stored samples to assist in the goal of maintaining
 	genetic diversity within captive, and ultimately wild, populations.
 	
-	It has been possible for a few decades now to create clones of existing individuals \cite{campbellSheepClonedNuclear1996}.
+	It has been possible for a few decades now to create clones of existing individuals \citep{campbellSheepClonedNuclear1996}.
 	This approach has traditionally relied upon the use of egg cells from the donor
 	individual, which can be difficult and expensive to extract, particularly if you are
 	working with an endangered species, where every individual is particularly valuable.
@@ -50,11 +81,12 @@
 	nucleus is then reprogrammed by the egg cytoplasmic factors to become a zygotic nucleus,
 	and the egg will begin to multiply, forming a blastocyst. This blastocyst can then be
 	implanted into a host embryo, in which it will grow and develop into a new, cloned
-	individual. Under recent developments, it is now possible to use a cross-species
+	individual. Under recent developments, it is now possible to use an inter-species
 	approach for this process, where a somatic nucleus from the target species is
-	implanted into an egg cell obtained from some closely related species \cite{loiGeneticRescueEndangered2001}.
+	implanted into an egg cell obtained from some closely related species \citep{loiGeneticRescueEndangered2001}.
 	
-	For example, this approach has recently been used to clone an individual of the black-footed ferret \cite{ConservationFirstCloned, wiselyRoadMap21st2015, sandlerEthicalAnalysisCloning2021}. The black-footed ferret is an endangered species native to the 
+	For example, this approach has recently been used to clone an individual of the black-footed ferret
+	\citep{frittsConservationFirstCloned2022, wiselyRoadMap21st2015, sandlerEthicalAnalysisCloning2021}. The black-footed ferret is an endangered species native to the 
 	USA, which had been thought extinct in the late 1970s. In 1987, cell lines from a few
 	individuals of the species were preserved via deep-freezing. Since then, there has been
 	a breeding programme that has attempted to increase the numbers of the species, in order
@@ -65,100 +97,55 @@
 	and developing the embryo in a surrogate domestic ferret mother. The stored lines contain
 	a lot of genetic diversity that has been lost in the current population, and it is hoped
 	to use the successfully cloned individual in the breeding programme to restore some of
-	this genetic diversity to the population \cite{ConservationFirstCloned}.
+	this genetic diversity to the population \citep{frittsConservationFirstCloned2022}.
 	
 	Cross-species cloning may be an effective method for certain taxa, such as mammals.
-	However, in other taxa such as birds, cloning is not possible \cite{ConservationFirstCloned}. Alternative methods
+	However, in other taxa such as birds, cloning is not possible \citep{frittsConservationFirstCloned2022}. Alternative methods
 	have been developed which may be able to perform a similar role. It is possible to 
 	introduce primordial germ cells from a target species into some host species, for
 	example the chicken. These germ cells will then migrate to the gonads of the host
 	species, where they become sex cells and begin to produce gametic cells.
 	
-	Maintaining genetic diversity within a population is key to its long-term health and
-	survival. Existing genetic diversity is important to allow for selection under
-	evolutionary pressures \cite{harmonConservationSmallPopulations2010}. This allows a population to adapt to changes in its environment,
-	and new threats such as pathogens or climatic changes \cite{mccallumTasmanianDevilFacial2008}. For example, having a variety
-	of variants of antigenic receptors within a population will likely mean that a pathogen
-	binds more closely to cells in some individuals than others, thus being less pathogenic
-	to some and allowing them to survive and reproduce. Genetic rescue is another phenomenon
-	that relies on genetic diversity within the population, whereby selection on existing
-	genetic variation can give rise to traits which "rescue" a population from new external
-	conditions.
-	
-	An important concept for understanding the genetic diversity within a population is the
-	effective population size ($N_e$). The effective population size is a measure of
-	population size which also takes into account the relatedness between individuals in
-	a population, thus serving as a good measure of the total genetic diversity. We can
-	create a threshold using the effective population size, below which populations enter
-	what is known as the extinction vortex \cite{harmonConservationSmallPopulations2010}. This threshold is usually set at an $N_e$ of
-	around 50. Upon entering the extinction vortex, populations not only struggle to
-	adapt to new environmental changes, but begin to suffer from the ill effects of
-	inbreeding, which can lead to decreased fitness and reduced fertility. It is very
-	difficult to rescue a population once it has entered the extinction vortex, as genetic
-	drift will tend to overpower mutation at such small population sizes and genetic
-	variation will continually be lost \cite{harmonConservationSmallPopulations2010}. One of the promising aspects of cloning techniques 
-	for conservation is that it will allow conservationists to restore genetic diversity to
-	populations which have entered an extinction vortex, as in the case of the black-footed
-	ferret above \cite{wiselyRoadMap21st2015}. 
-
-	
-	Besides rescuing or restoring genetic diversity to highly vulnerable populations,
-	it seems likely that we will be able to extend this approach to clone individuals from species which
-	have recently become extinct. In fact, there is an ongoing project to restore
-	the Wooly Mammoth by a similar approach, which is a much more difficult project
-	as it necessitates working with ancient DNA, meaning low coverage reads and 
-	missing chunks of the genome \cite{novakDeExtinction2018}. By comparison, restoring species from DNA stored 
-	in modern cryopreservation facilities should be relatively doable.
-	
-	Often, conservation resources are focused on species with high visibility or
-	high cultural appeal \cite{gunnthorsdottirPhysicalAttractivenessAnimal2001}. Although this approach can help to drive resources
+	As the example of the black-footed ferret shows, the inter-species restoration approach
+	relies upon biobanked samples preserving the genetic diversity of the species, and
+	serving as sources for the needed genetic material. This necessitates storing now,
+	any samples we might wish to use in the future, particularly given the current
+	rates of extinction and population decline. Under a scenario of limited resources,
+	a key consideration is
+	which species to biobank first \citep{harwoodDevelopingImplementingPrioritisation2021}.
+	Often, conservation resources are focused on species with high attractiveness or
+	cultural appeal \citep{gunnthorsdottirPhysicalAttractivenessAnimal2001}. Although this approach can help to drive resources
 	towards conservation, it does not optimise the use of the resources we have, 
 	and can result in oversights which leave behind species of high worth on other
 	metrics, such as ecological importance or phylogenetic diversity. This has been
-	the basis of approaches such as EDGE scores, which prioritise conservation 
-	resources based on aims such as maximising retained phylogenetic diversity \cite{isaacMammalsEDGEConservation2007}. In 
-	this case, we aim to prioritise species for biobanking based solely on the 
-	likelihood of the material becoming useful. Currently, biobanks such as 
-	Nature's Safe simply aim to biobank whatever material is available. While this %need citation
-	can be a cost effective approach, and avoids potentially controversial 
-	decisions comparing the worth of various species, it means that the samples are
-	biased, particularly towards species housed in zoos \cite{mooneyValueExSitu2021}. Zoos are generally more
-	likely to contain larger mammals and certain taxa like primates, and as such
-	give an unrepresentative sample of the total biological diversity of animals \cite{gunnthorsdottirPhysicalAttractivenessAnimal2001}.
-	
-	Under a scenario of limited resources, a key consideration for using cloning and other
-	biotechnological techniques to restore species and population genetic diversity, is
-	which species to biobank first \cite{harwoodDevelopingImplementingPrioritisation}. We can build a metric, the Priority Score, that approaches this 
-	question by utilising phylogenetics, and data on extinction risk. The cross-species approach for species restoration appears most promising at present, as it avoids using
+	the basis of approaches such as EDGE or HEDGE scores, which prioritise conservation 
+	resources based on aims such as maximising retained phylogenetic diversity \citep{isaacMammalsEDGEConservation2007,steelHedgingOurBets2007}.
+	Mirroring these approaches, we can attempt to prioritise species for biobanking
+	by utilising data on phylogenetics and extinction risk.
+	The cross-species approach for species restoration appears most promising at present, as it avoids using
 	individuals of a valuable threatened species for risky procedures such as egg cell
 	extraction and blastocyst implantation, and may also allow us to leverage existing
-	knowledge on best breeding practices within the donor species \cite{wiselyRoadMap21st2015}. In order for a
+	knowledge on best breeding practices within the donor species \citep{wiselyRoadMap21st2015}. In order for a
 	cross-species approach to be possible, we need biobanked material from the target
 	species, as well as the presence of some sufficiently closely related species to act
 	as a donor of egg cells and a host for embryos. Therefore, the highest priority species
 	for biobanking are those which have a high probability of extinction, alongside a high
-	probability of the survival of a closely related species, within some threshold. The current best test of
+	probability of the survival of a potentially compatible donor species. The current best test of
 	relatedness is phylogenetic distance, particularly in a general, cross-taxa approach, so we can calculate these prioritisation
 	scores by combining IUCN Red List data with phylogenetic trees of the taxa of 
 	interest.
 	
-	As well as generating a set of priority scores for biobanking, based on the
-	outlined approach, we also want to get a sense of the usefulness and
-	robustness of this approach. One way to do this is to simulate a set of future
-	scenarios and compare them to each other. These can compare the number of species
-	preserved when biobanking is based upon the priority list, as well as a random
-	approach, and the scenario where cloning-based restoration of species is not
-	performed at all. We can also get some sense of the financial cost-effectiveness of
-	this endeavour when compared to traditional conservation approaches. Estimates of the
-	cost of downlisting (moving from one IUCN threat status to the next, e.g. Critically
-	Endangered to Endangered) around 200 different bird species were made by
-	species experts \cite{mccarthyFinancialCostsMeeting2012}, and we can use these costs as a base comparison to see e.g. what
-	amount of phylogenetic diversity would be saved by each approach, and at what
-	cost level would cloning-based approaches need to be viable to be competitive
-	with traditional conservation approaches \cite{nunesPriceConservingAvian2015}. Of course, the suggestion is not to replace
-	existing conservation spending with spending on biobanking and cloning; it would
-	be to supplement the existing conservation efforts with this technique, and the
-	financial analysis simply gives a good baseline on which to analyse it.
+	This project thus aimed to create a metric for prioritising species for
+	biobanking, based on the potential usefulness of the material for inter-species
+	restoration methods. Factors such as how closely related two species need to
+	be for inter-species cloning to be possible could affect the order of
+	prioritisation. I aimed to assess some of these factors, as well as running
+	simulations to analyse the effectiveness of the developed prioritisation
+	methods when compared to other possible methods. I also wished to compare
+	traditional conservation spending against biobanking, by simulating the
+	effect on extinctions of various levels of conservation spending, based on
+	estimates from expert surveys
+	\citep{mccarthyFinancialCostsMeeting2012,nunesPriceConservingAvian2015}.
 
 	%still need to discuss - 
 	% 	where to set the thresholds / how are these set
@@ -168,8 +155,9 @@
 	
 	\section{Methods}
 	\subsection{Data Sources}
-	Extinction risk categories for mammal and bird species was sourced from the IUCN Red List 2020 \cite{iucnIUCNRedList2021, IUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, kindly provided by Dr. Rikki Gumbs (EDGE). % Proper citation needed
-	 The extinction risk categories were converted to likelihoods of extinction, according to the transformations given by \cite{mooersConvertingEndangeredSpecies2008} (see Table \ref{ext_prob}).
+	Extinction risk categories for mammal and bird species was sourced from the IUCN Red List 2020 \citep{iucnIUCNRedList2021, iucnIUCNRedList2012}. This was combined with 100 phylogenetic trees for each class, taken from \citet{uphamInferringMammalTree2019}
+	for mammals, and \citet{jetzGlobalDiversityBirds2012} respectively.
+	 The extinction risk categories were converted to likelihoods of extinction, according to the transformations given by \citep{mooersConvertingEndangeredSpecies2008} (see Table \ref{ext_prob}).
 	
 	\begin{table}[b]
 		\begin{tabular}{|c|c c c c|}
@@ -188,15 +176,15 @@
 			\hline
 		\end{tabular}
 		\caption{Conversion of IUCN threat status to probabilities of extinction, under three
-			different scenarios \cite{mooersConvertingEndangeredSpecies2008}}\label{ext_prob}
+			different scenarios \citep{mooersConvertingEndangeredSpecies2008}}\label{ext_prob}
 	\end{table}
 
-	Data was also obtained on the estimated conservation spending needed for 206 different bird species, from \cite[McCarthy \textit{et al.} 2012]{mccarthyFinancialCostsMeeting2012}. This data was collected via expert surveys, and was their best estimate of the cost to downlist each birds species,
+	Data was also obtained on the estimated conservation spending needed for 206 different bird species, from \citet{mccarthyFinancialCostsMeeting2012}. This data was collected via expert surveys, and was their best estimate of the cost to downlist each birds species,
 	which means to move it from one IUCN risk category to the next, e.g from Critically Endangered
 	to Endangered. It was formatted as the estimated spending per year in US \$ needed over 10 years to result in species downlisting. To account for inflation, amounts were converted from January 2012
 	US \$ to May 2022 US \$ using the US Bureau of Labour Statistics CPI Inflation Calculator
-	\cite{} % need to cite the website from Zotero, https://www.bls.gov/data/inflation_calculator.htm
-	. Mismatches between the species names in this data and the 2020 IUCN data were resolved using Global Names Verifier \cite{}. Any species without a clear synonymic or misspelling match were removed from the data. Species that had changed IUCN extinction risk category
+	\citep{CPIInflationCalculator} % need to citep the website from Zotero, https://www.bls.gov/data/inflation_calculator.htm
+	. Mismatches between the species names in this data and the 2020 IUCN data were resolved using Global Names Verifier \citep{mozzherinGnamesGnverifierV12022}. Any species without a clear synonymic or misspelling match were removed from the data. Species that had changed IUCN extinction risk category
 	during the intervening period were also removed from the data. This left a total of 166 species to use for the analysis, and the cleaned data used is available from Appendix \ref{expen}.
 	
 	%\begin{table}
@@ -239,115 +227,381 @@
 		A_i(T) &= \{j \in S | MRCA(j, i) \le T\} \label{set}
 	\end{align}
 
-	
-
-	In order to deduce the number of closely related species, phylogenetic trees were used. 100 different phylogenetic trees were used for each taxa, to avoid biasing the results to any particular phylogeny. The priority scores for each species were calculated for each phylogeny, and the mean across all 100 trees was then calculated and used as the final
+	These priority scores were calculated for two taxa of broad interest,
+	mammals and birds. Mammals were of interest as attempts have already been made to use
+	cross-species methods to assist in conservation within this taxa, as in the example of the
+	black-footed ferret. Birds were used as a comparison taxa, and also because there are data
+	available on estimated costs of conservation for bird species. In order to produce the set $A_i(T)$
+	of closely related species for each species, time since divergence was calculated using phylogenetic
+	trees. 100 different phylogenetic trees were used for each taxa, to avoid biasing the results to any
+	particular phylogeny. %citep source of trees from Rikki
+	The priority scores for each species were calculated for each phylogeny,
+	and the mean across all 100 trees was then calculated and used as the final
 	priority score. A number of different models for the probabilities of species
 	extinction, based on the IUCN Risk Categories, are available, as shown in Table \ref{ext_prob}.
 	Each of these models was used to
 	calculate a different set of priority scores, changing the probabilities of extinction as
-	appropriate for each model.
+	appropriate for each model. To explore the effect of varying $T$ on the distribution of Priority
+	Scores, I calculated the Priority Score for a range of values of $T$, from 1
+	to 20 million years since the MRCA. To visualise these distributions effectively,
+	the number of high priority species for each calculation was counted. High priority
+	species were defined as those with a Priority Score of > 0.95 (meaning a 95\%
+	chance of being useful for cross-species restoration under these assumptions).
+	This threshold was chosen as it is close to the extinction probabilities
+	of the Critically Endangered species for the 50 year and pessimistic scenarios,
+	and the extinction probabilities of the Endangered species for the 500 year
+	scenario (see Table \ref{ext_prob})).
+	
+	\subsection{Extinction Simulations}\label{sim_methods}
+	Simulated extinctions were carried out for two reasons, to deduce the usefulness of the prioritisation
+	method as compared to random sampling, and to generate cost estimates of saving species from
+	extinction using traditional conservation techniques. For all simulations, the IUCN 50
+	year model of extinction probabilities \citep{mooersConvertingEndangeredSpecies2008} was used, alongside
+	a $T$ of 10 million years. Simulations were performed by randomly drawing a number from the 
+	uniform distribution between 0 and 1 for each species,
+	and then comparing this to their extinction probability. If the randomly drawn number 
+	was less than the extinction probability, that species was deemed to have gone extinct.
+	
+	To benchmark the usefulness of the prioritisation method for biobanking, a restoration simulation
+	was then performed. This involved first generating a list of biobanked species of a given length,
+	either randomly selected or in descending order from Priority Scores. Then, for each biobanked
+	species, I checked whether they had reached extinction in the simulation; if they had, then I 
+	checked whether any of their relatives from the set $A_i(T)$ of close relatives had survived.
+	If both of these conditions were met, the species was considered to be capable of being "restored",
+	i.e. using cross-species restoration methods for de-extinction of the species.
+	
+	Simulations were also used to estimate the number of extinctions prevented, for a certain level
+	of traditional conservation spending. In this case, before the simulations were performed, a
+	number of species were downlisted (moved down one IUCN threat category), and then simulations
+	were performed as described with the new extinction probabilities, and the number of extinctions
+	was recorded. To determine which species would be downlisted, a certain budget was set for each
+	simulation. Then species were selected either by random sampling, or by an optimised method
+	which selected the species which represented the best value for money in conservation spending,
+	in descending order. Value for money was determined by dividing the cost of conservation
+	by the difference in probability of extinction between the two threat categories, e.g. for
+	a Critically Endangered species, this would be 0.55,
+	calculated by 0.97 (extinction probability for Critically
+	Endangered) minus 0.42 (extinction probability for Endangered). The cleaned cost estimates
+	from \citep{mccarthyFinancialCostsMeeting2012} were only available for 166 threatened species.
+	To extend this to the other 1325 species available in the IUCN Red List dataset I was 
+	using, each species without a cost was randomly assigned a cost from one of the estimates within
+	the same extinction risk category.
+	
+	\subsection{Code}
+	Code for this project was written primarily in R version 4.2.1 \citep{rcite},
+	and is available from Github at
+	\textit{https://github.com/eamonnmurphy/biobanking\_prioritisation}.
+	High-throughput scripts were
+	run in the Imperial College London High Performance Computing cluster. Libraries used
+	include ape Version 5.6-2 \citep{paradisApeEnvironmentModern2019},
+	dplyr Version 1.0.9 \citep{dplyr},
+	stringr Version 1.4.0 \citep{stringr}, and stringdist \citep{stringdist}.
+	
 	
 	\section{Results}
 	\subsection{Prioritising Species for Biobanking}
-	The primary aim of this project was to explore methods for prioritising sample collection and
-	storage for genetic biobanking, when the aim of the sample storage is for use in cross-species
-	restoration techniques. These priority scores were calculated for two taxa of broad interest,
-	mammals and birds. Mammals were of interest as attempts have already been made to use
-	cross-species methods to assist in conservation within this taxa, as in the example of the
-	black-footed ferret. Birds were used as a comparison taxa, and also because there are data
-	available on estimated costs of conservation for bird species, which will be used in a later section. The priority scores were calculated using the methods laid out in Section 
-	\ref{ps_method}. The histograms in Figure \ref{ps_hist} show the distribution of the priority
-	scores for a number of different models at a $T$ of 10 million years, as well as how this
-	distribution differs from the underlying extinction likelihoods. Intuitively, we know that
-	the priority score for any given species can only be less than it's given extinction likelihood,
-	as the probability of survival of some related species can only be $\le 1$ (refer to Equation \ref{ps_equation}). The underlying extinction likelihoods have a discrete distribution (discrete
-	value for each threat status), and the distribution of the priority scores mostly follows this.
-	The majority of the difference in the distribution comes from species who have no close relative
-	within $T$, and thus their priority score goes to zero. Given the distribution of species among
-	the threat categories, it is likely that if there is close relatives, it belongs to the least
-	threatened categories, meaning a low likelihood of extinction and only a small effect upon the
-	priority score. However, this does not hold for the pessimistic model of extinction, as even
-	species of Least Concern have a significant chance of extinction.
+	The distribution of Priority Scores for all three assessed models (IUCN 50 years,
+	IUCN 500 years and Pessimistic scenario) are shown in Figure \ref{ps_hist}, for
+	a $T$ of 10 million years to the MRCA. These Priority Scores are in the form
+	of a probability, ranging between 0 and 1. We can see that there is a peaked
+	distribution for all models and taxa, with most Priority Scores falling into
+	clearly separated buckets. This distribution is similar to the underlying
+	shape of the distribution of probabilities of extinction (see Table \ref{ext_prob}
+	for these values), which has a discrete value for each extinction risk
+	category. We can see that the distribution of Priority Scores for the
+	pessimistic model differs significantly from the others, both in isolation
+	and in comparison to the underlying extinction risk values for this model.
 	
 	\begin{figure}
-		\includegraphics{../results/combined_hist.png}
-		\caption{}\label{ps_hist}
+		\includegraphics{../results/combined_hist.pdf}
+		\caption{Histograms showing the distribution of priority scores for
+		mammals (A-C) and birds (D-F), generated using the following models for
+		extinction probabilities: IUCN 50 year model (A, D), IUCN 500 year
+		model (B, E) and Pessimistic model (C, F)}\label{ps_hist}
 	\end{figure}
 
-	\subsection{Exploring the Effects of Varying $T$}
-	One important consideration when prioritising species for the possibility of cross-species
-	restoration methods, is how closely related the two species need to be for cloning to be viable.
-	I explored the effect of varying $T$ for a variety of different models in both birds and mammals,
-	as it is still unknown what level of relatedness is truly viable, or will be in the future. This
-	value is also likely to vary between groups, and even between species. In order to visualise
-	the effect of varying the threshold, the number of high priority species for a combination of
-	models and values of $T$ were calculated. High priority species were said to be those with a
-	priority score of $>0.95$. This threshold was chosen as it is close to the extinction likelihood
-	values of the Critically Endangered species for the 50 year and pessimistic scenarios, and the
-	extinction likelihood values of the Endangered species for the 500 year scenario (see Table 
-	\ref{ext_prob}). However, any
-	choice of threshold for this distinction will be somewhat arbitrary; the important aspect is to 
-	be able to visualise the difference between different models and different values of $T$. We can
-	see from Figure \ref{thresh_viz} that the number of high priority species approaches the total
-	number of species that have extinction likelihood values that exceed the priority threshold.
-	This is an expected result, as with increasing $T$, fewer species will be without close relatives,
-	and the greater number of close relatives will reduce the chance of none of them surviving. We
-	also see that the relative increase in high priority species from a $T$ of 1 million years to 20
-	million years is greater for the pessimistic and 500 year scenarios. This effect is mediated by
-	the higher extinction likelihood values in these scenarios for the lower threat categories. This
-	reduces the likelihood of a near relative surviving. An example is if some Critically Endangered
-	species had 2 near relatives, both Vulnerable, the Priority Scores under each model would be 
-	0.97, 0.85 and 0.36 for the 50 year, 500 year and pessimistic models, respectively (see 
-	\ref{ps_equation}).
+	\subsection{Effect of $T$ Upon Priority Scores}
+	The change in the number of high priority species (Priority Score of > 0.95)
+	with variation in the value of $T$, for each of the three different models, is
+	shown in Figure \ref{thresh_viz}. For all models and taxa, the number of high
+	priority species increases as we increase the value of $T$. This increase
+	is sharpest at lower values of $T$, and as the number of high priority
+	species approaches the number of Critically Endangered species (IUCN 
+	50 year model and pessimistic model) or Endangered species (IUCN 500 year
+	model), this increase tapers off, which reflects the total number of species
+	whose extinction probability exceeds the high priority threshold for
+	each model. The relative or percentage increase in the number of high
+	priority species as $T$ increases
+	is greater for the IUCN 500 year and pessimistic models.
 	
 	\begin{figure}
-		\includegraphics[scale=0.7]{../results/threshold_viz.png}
+		\includegraphics[scale=0.7]{../results/threshold_viz.pdf}
 		\caption{The number of species with a high priority score ($> 0.95$)
 			for the IUCN 50 and 500 year models and the pessimistic scenario, for 
 			mammals (A) and birds (B).}\label{thresh_viz}
 	\end{figure}
 	
 	\subsection{Simulating the Usefulness of Biobanked Material}
-	Having created prioritisation lists for two taxa, mammals and birds, we next wanted to test how
-	useful these lists would be in prioritising material. In order to do this, we simulated the
-	number of extinctions expected to occur under the IUCN 50 year model in 50 years time. We also
-	created a list of biobanked species of varying length using one of two approaches: random 
-	selection, or in descending order from the priority scores. Next, we could check for each
-	biobanked species, whether or not this material would be useful for cross-species restoration.
-	For this to be true, two criteria must be met; the species itself must be extinct, and there
-	must be some surviving relative within the chosen $T$. In order to reduce the number of
-	simulations, it was chosen to perform them using only a $T$ of 10mya, rather than with a range
-	of $T$.  We can see from these results that the optimised approach performs far better than a
-	random range for any number of species biobanked within the range explored (0-1000), although
-	that effect is largely mediated by the initial few hundred species, which in an optimised
-	scenario, are those that are either Critically Endangered or Endangered and are likely to have surviving close relatives.
+	We compared the number of species that could potentially be restored using
+	a random and optimised biobanking approach for cross-species restoration,
+	visualised in Figure \ref{rest_sims}. The optimised biobanking approach
+	results in a far greater number of potential species restorations
+	compared to random biobanking, for both birds and mammals. An optimised
+	biobanking approach would yield 412 and 420 potential restorations, for
+	birds and mammals respectively, if 1000 species were biobanked, whereas
+	a random approach would yield 64 and 34 potential restorations. The number
+	of restorations for the optimised biobanking approach has a clearly stepped
+	shape for both mammals and birds. The transitions between these steps
+	correspond to the numbers of prioritised species for each extinction risk
+	category in turn, i.e. we can see the transition point from where Critically
+	Endangered species are being biobanked to Endangered species, and so on.
+	The distributions have quite similar shapes for the two taxa, especially
+	when taking into account the underlying numbers of species in each category.
+	The random biobanking approach is, however, noticeably more successful in mammals
+	than in birds.
 	
 	\begin{figure}
-		\includegraphics[scale = 0.5]{../results/restoration.png}
-		\caption{Restoration simulations}\label{rest_sims}
+		\includegraphics[scale = 0.5]{../results/restoration.pdf}
+		\caption{The number of potential species restorations, comparing
+		a random and optimised biobanking approach for both mammals and birds.
+		These simulations were performed using the IUCN 50 year model of
+		extinction probabilites, and with a $T$ of 10my to the most recent
+		common ancestor.}\label{rest_sims}
 	\end{figure}
 
 	
+	\subsection{Conservation Costs and Extinction}
+	The likely number of extinctions prevented for a certain level of
+	conservation spending on birds was simulated, according to the
+	methods set out in Methods Subsection \ref{sim_methods}. The optimised
+	approach to conservation spending yielded clearly superior results,
+	visualised by Figure \ref{expense_sims}. The spending required to
+	change the number of extinctions from baseline was approximately
+	66 times greater for the random approach, almost two orders of
+	magnitude (\$60 billion vs. \$900 million). We can see from the
+	linear plot that the number of extinctions using the random approach
+	has a linear relationship to spending, up to a certain amount, whereas
+	the optimised approach has a curved relationship.
 	
 	
+	\begin{figure}
+		\includegraphics[scale = 0.8]{../results/log_expense_sims.pdf}
+		\caption{The number of simulated extinctions for birds in a 50 year period,
+		using the IUCN 50 year model and a $T$ of 10my, vs. the }\label{expense_sims}
+	\end{figure}
 	
 	\section{Discussion}
+	To the best of my knowledge, there are no previous publications in the
+	primary literature attempting to create metrics for prioritising
+	biobanking. However, there have been theses written which concentrated
+	on this task, and these attempts focused mainly on aspects such as
+	samples currently existing and phylogenetic diversity 
+	\citep{mooneyValueExSitu2021,harwoodDevelopingImplementingPrioritisation2021}.
+	% check out these citations
+	That means that this research is potentially
+	the first to analyse sample prioritisation by
+	a direct metric of the sample's potential usefulness in the future,
+	namely its use for cross-species restoration. The aim of this research
+	was to create a metric to prioritise species for biobanking for this
+	use, and to analyse the factors which affected the order of priority,
+	as well as test the applicability of this prioritisation to the
+	real world.
 	
+	The distribution of Priority Scores looks similar to the underlying
+	distribution of extinction risks for a $T$ of 10 million years, with some
+	key differences. The Priority Scores for a given species can only be less
+	than the underlying probability of extinction for that species, because
+	in the case that the species goes extinct, the possibility of restoration
+	still relies upon another factor, a potentially compatible relative
+	surviving. The
+	majority of species are not within the threatened categories, meaning
+	that for most species with close relatives, their Priority Score under
+	the 50 year and 500 year models is only
+	mildly affected by the probability of a close relative surviving (as this
+	will be near to 1). Most of the apparent difference in the distribution
+	comes from species who have no close relative with a MRCA of $<$ 10mya.
+	However, the distribution for the pessimistic model is more evenly spread,
+	as the probabilities of extinction for even non-threatened species are
+	non-negligible, and thus the probability of a close relative surviving
+	is not as clustered around 0 and 1.
+	% talk about pessimistic model being non-realistic / how notable is result
 	
+	Realistically being able to estimate the phylogenetic distance at which
+	a cross-species restoration would be viable will be difficult. It will
+	require a large number of successful cross-species restorations to
+	have been performed, particularly as the viability threshold
+	is likely to vary widely
+	between and within taxa. Currently, the best working example of cross-species
+	restoration is that of the black-footed ferret, whose donor species, the
+	domestic ferret, is separated by around 1-3 million years of evolution
+	\citep{frittsConservationFirstCloned2022}. Studies performed on xenomitochondrial
+	cybrids, which are cells where the native mtDNA has
+	been destroyed, and mtDNA from a cell of a different species is introduced
+	by merging an enucleated cell, also inform where potential thresholds
+	may lie.
+	For example, human nuclear DNA
+	is compatible with gorilla and chimpanzee mtDNA (MRCA 8mya and 6mya respectively)
+	but not orangutan mtDNA (MRCA 14mya)
+	\citep{kenyonExpandingFunctionalHuman1997}. However, human-gorilla and
+	human-chimp xenomitochondrial cybrids did have reduced
+	OXPHOS Complex I activity by 40\%
+	\citep{barrientosHumanXenomitochondrialCybrids1998}, which may have potential effects on reproductive success. Humans carrying mutations with similar effects on Complex
+	I activity were developmentally arrested and usually died before 2 years of
+	age \citep{gershoniMitochondrialBioenergeticsMajor2009}. It is also possible
+	that compatibility between species is not bi-directional; it was possible to
+	maintain human mtDNA in an orangutan nuclear background, despite the opposite
+	case not being possible \citep{bayona-bafaluyFastAdaptiveCoevolution2005}. I
+	found that
+	larger values of $T$ increase the number of likely candidate species
+	for cross-species restoration. This is
+	expected, as larger values of $T$ increase the number of potentially
+	compatible species. The greater relative increase in the number of high priority
+	species for more pessimistic, or longer timeframe, models of extinction
+	probabilities, is due to the higher probabilities of extinction for non-threatened
+	species in these models. This reduces the likelihood of a potentially
+	compatible relative surviving.
+	An example is if some Critically Endangered species had 2 near relatives,
+	both Vulnerable, the Priority Scores
+	under each model would be 0.97, 0.85 and 0.36 for the 50 year, 500 year and
+	pessimistic models respectively (see Equation \ref{equation}). These results
+	show that expanding
+	the capability of cross-species cloning approaches to greater phylogenetic
+	distances would vastly increase the number of species for which this would be
+	a viable conservation approach, particularly in scenarios of continually
+	accelerating rates of extinction, or over particularly long time frames. 
 	
+	Will discuss the restoration simulations later after new results
+	
+	Optimising conservation spending for a metric of choice
+	(in this case simply number of extinctions)
+	has a large effect on the cost-effectiveness. The shape
+	of the relationship between spending and number of extinctions for the optimised
+	approach is curved, because it begins with the species of greatest
+	cost effectiveness, making the slope steep, and as it begins to spend on
+	less cost-effective species, the slope of the curve lessens. The random approach
+	has a linear relationship, as species are sampled equally
+	from across the cost effectiveness distribution for any given level of spending.
+	Even the optimised approach requires a high level of spending,
+	\$900 million over 10 years, to have a noticeable
+	effect on the number of extinctions compared to the baseline stochastic variation.
+	This level of spending becomes even more significant when considered that
+	this data is for only one class, birds, and other classes would likely require
+	a similar outlay. There are possible metrics by which this
+	could be an overestimate of the actual spending required, as some
+	items such as habitat restoration could affect the prospects
+	of more than one species
+	\citep{mccarthyFinancialCostsMeeting2012}. However, it is very unlikely that
+	conservation spending would be optimised in this way in the real world, as
+	conservation spending is rarely allocated based solely on a cost-for-value basis
+	based solely on extinction risk. Thus, the \$900 million estimate
+	seems like a good lower bound for the real-world spending required
+	to noticeably affect extinctions.
+	The amount of spending required for biobanking compares
+	favourably with these estimates. Based on informal conversations with staff at the
+	Molecular Collections Facility at the Natural History Museum, material costs
+	of biobanking are low, such that even storing a sufficient sample of all bird
+	species (usually considered to be 10 samples each for 50 individuals
+	\citep{harwoodDevelopingImplementingPrioritisation2021}) would be
+	a fraction of the cost of the required conservation spending to reduce
+	extinctions. The more significant portion of the costs of cloning-based
+	restoration approaches would lie in sample collection and costs at the
+	stage of cloning. Since many studies are already taking samples of our
+	biodiversity for their own purposes, this presents an opportunity to ensure
+	that the unused samples are stored with an eye to long-term
+	preservation.
+	
+	Attempts to draw generalisable conclusions from this study are limited by a
+	number of factors. One of these is that, as in the case of the black-footed
+	ferret, cross-species restoration is likely to be most practical and
+	effective when used with populations that are close to, but have not yet
+	undergone extinction. Cross-species cloning and other methods can then be
+	used to reintroduce genetic diversity to a population which has entered into
+	the extinction vortex, where inbreeding causes rapid loss of diversity and
+	fixation of deleterious traits. It would have been difficult to create a
+	Priority Score for species based on their entry into an extinction vortex.
+	It is currently difficult to predict when species
+	will enter an extinction vortex. It has only having been performed in a few cases
+	with extant populations \citep{williamsextinctionvortex2020}, and quantitative
+	models for prediction have only recently been developed
+	\citep{nabutanyiModelsEcoEvolutionaryExtinction2021}. Therefore, I think that
+	basing the analysis on performing restoration methods after extinction
+	is well-supported, as
+	this can in any case serve as a proxy for a species entering the extinction
+	vortex.
 	
 	Another potential source of bias in our estimates lies within species
 	classification in the phylogenetic trees. There will always be debate whether
-	to classify closely related taxa as seperate species or only subspecies. This
+	to classify closely related taxa as separate species or only subspecies. This
 	can create a source of bias, particularly if there is a tendency within certain
 	genera or orders to classify as species vs. subspecies and vice-versa. Since it
 	is necessary for closely related species to survive, artificially inflating the
 	number of closely related taxa will bias the priority scores. However, this
 	effect should be evened somewhat by the fact that each of these species will 
 	have their own extinction risk, which will be incorporated into the
-	calculations. A sensitivity analysis needs to be carried out to get a better
-	sense of the size of this effect.
+	calculations.
+	
+	Furthermore, this analysis assumes that the potential use of samples in species
+	restoration is the primary aim of any biobanked material, unlike other
+	methods for prioritisation such as
+	\citep{harwoodDevelopingImplementingPrioritisation2021,mooneyValueExSitu2021}.
+	This is a limited perspective on the use of biobanked samples, which may be
+	useful for basic scientific research, for other conservation approaches, or
+	for scientific applications which are invented in the future. This
+	analysis also fails to take into account aspects such as the current number
+	of stored samples for a given species, which would be important for
+	prioritisation as we can then focus our efforts on under-represented species.
+	The insights gained from this more focused analysis can however be used
+	to inform prioritisation efforts when considered alongside other important
+	aspects such as those discussed above.
+	
+	
+	
+	There are also ethical considerations regarding prioritisation and inter-species
+	restoration methods.
+	Any attempt to create metrics to prioritise choice of species, even in areas
+	where this is well-established such as conservation prioritisation via methods
+	like EDGE scores \citep{isaacMammalsEDGEConservation2007}, can be controversial,
+	partly because it seems distasteful to have to choose between saving different
+	species \citep{bottrillConservationTriageJust2008},
+	and also because there are so many potential measures of species worth,
+	such as cultural worth, ecosystem contribution or evolutionary diversity.
+	Cross-species restoration methods are also controversial in and of themselves,
+	as it can be argued that you are not truly recreating the target species since
+	another species mtDNA is used. This raises questions about whether we should
+	be using our resources to create such genetic hybrids, as opposed to spending
+	these resources on more standard conservation methods.
+	
+	Acknowledging the difficulty of resolving such ethical and moral considerations,
+	and of the scientific difficulty of expanding inter-species cloning approaches
+	beyond very close relatives, we are presented with a rapidly
+	closing window to collect samples of many of these endangered species before
+	they unfortunately become extinct. This seems like a low-risk venture, as the
+	material cost of sample storage is relatively inexpensive. These samples would
+	also be useful for many other applications, even if inter-species restoration
+	proves unviable or is ruled out for ethical reasons. My results
+	in the conservation spending and restoration spending simulations show that
+	large increases in the efficacy of conservation efforts can be made, if attempts
+	are made at optimisation and criteria for doing so can be
+	agreed. Spending on biobanking and cloning-based restoration methods can
+	should be thought of as a complement to, rather than a replacement of,
+	traditional conservation spending. It may even allow current conservation
+	spending to have greater leverage, by improving aspects of population health
+	such as genetic diversity.
+	Finally, greater coordination among scientists and existing biobanks
+	can improve their contribution, as we can ensure that the samples existing in
+	biobanks reflect the diversity of life, and that samples taken are stored with
+	a view to the long-term, to avoid losing these precious resources.
+	
+	\section{Acknowledgments}
+	First and foremost, I would like to thank my primary supervisor, Dr. James
+	Rosindell, for all of his help and support. I would also like to thank
+	Prof. Francisco Pelegri at the University of Wisconsin Madison for very
+	interesting discussions and for generating the initial idea for this
+	project with James. Thanks to everyone at the Molecular Collections
+	Facility at the Natural History Museum, and from the Frozen Arks and
+	Cryo Arks teams, for their help and discussions. Particularly, thanks to
+	Jacqueline Mackenzie-Dobbs for giving us tour of the MCF and providing
+	insights into the day-to-day running of a biobank facility.
 	
 	\section{Appendix}
 	\subsection{Bird Downlisting Conservation Expenditure Estimates}\label{expen}
@@ -357,7 +611,6 @@
 	{cleanedexpen.csv}{"Species"=\species,"Status"=\status,"Required_expen"=\required}%
 	{\thecsvrow & \status & \required}%
 	
-	
-	\bibliographystyle{plain}
-	\bibliography{MSc_Thesis}
+	\bibliographystyle{apalike}
+	\bibliography{bibtex,manual}
 \end{document}
