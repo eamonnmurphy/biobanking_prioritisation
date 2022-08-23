@@ -8,6 +8,12 @@ priority_builder <- function(file) {
     return(newtable)
 }
 
+category_priority_builder <- function(file) {
+    raw <- read.csv(file)
+    new <- raw[order(raw$survival, decreasing = FALSE), ]
+    return(new)
+}
+
 prep_output <- function(species, reps) {
     mat <- matrix(nrow = length(species), ncol = reps)
 
