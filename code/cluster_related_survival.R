@@ -32,11 +32,11 @@ assign(paste("like", model, sep = "_"), read.csv(file =
 
 # Calculate the priority scores
 if (taxa == "mammal") {
-    prior_table <- prior_calc(phy.block.1000, thresh = threshold,
+    rel_table <- rel_calc(phy.block.1000, thresh = threshold,
         species = get(paste("like", model, sep = "_"))$species,
         ext_like = get(paste("like", model, sep = "_")))
 } else if (taxa == "bird") {
-    prior_table <- prior_calc(bird.species, thresh = threshold,
+    rel_table <- rel_calc(bird.species, thresh = threshold,
         species = get(paste("like", model, sep = "_"))$species,
         ext_like = get(paste("like", model, sep = "_")))
 }
@@ -44,4 +44,4 @@ if (taxa == "mammal") {
 filename <- paste(taxa, "_",
     model, "_rs_", threshold, "mya.csv", sep = "")
 
-write.csv(prior_table, file = filename)
+write.csv(rel_table, file = filename)
