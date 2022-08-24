@@ -78,3 +78,8 @@ code/aggregated*
 # Ignore cluster output and error files
 *.o*
 *.e*
+
+# Ignore image files
+*.png
+*.jpg
+*.svg

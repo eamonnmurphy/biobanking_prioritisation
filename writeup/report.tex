@@ -1,17 +1,62 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{csvsimple}
 \usepackage{amsmath}
 \usepackage{a4wide}
 \usepackage{graphicx}
 \usepackage[square]{natbib}
 
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
 \title{Prioritising species sampling for genetic biobanking}
 \author{Eamonn Murphy}
 
+\renewcommand\familydefault{\sfdefault}
 \begin{document}
-	\maketitle
+	\begin{titlepage}
+		\newcommand{\HRule}{\rule{\linewidth}{0.6mm}}
+		\begin{center}
+			\vspace{\baselineskip}
+			\huge
+			Prioritising Species for Genetic Biobanking
+			
+			\HRule \\
+			\large
+			\vspace{5ex}
+			Authored by Eamonn Murphy
+			
+			\medspace
+			
+			Supervised by Dr. James Rosindell and Prof. Francisco Pelegri
+			
+			\vspace*{\fill}
+			\normalsize
+			A thesis submitted in partial fulfilment of the requirements for the degree of
+			Master of Science at Imperial College London
+			\vspace{2ex} \\
+			Submitted for the MSc in Computational Methods in Ecology and Evolution
+	\end{center}
+
+	\end{titlepage}
 	
 	\pagebreak
+	
+	\section{Abstract}
+	Biodiversity is currently faced with an existential threat, in the form of
+	mass extinctions and population declines. Traditional conservation methods
+	may not be sufficient to avert all of these adverse effects. Biotechnological
+	methods such as inter-species cloning could assist traditional conservation
+	methods in maintaining population health, and could even be used to restore
+	extinct species. These efforts will require biobanked biological material,
+	and we should prioritise our sample collection efforts, in order to ensure
+	greatest utility from these samples in the future, and to make best use
+	of limited resources. I developed a prioritisation metric for biobanking
+	material for inter-species restoration, and tested the 
 	
 	\section{Introduction}
 
@@ -227,7 +272,7 @@
 		A_i(T) &= \{j \in S | MRCA(j, i) \le T\} \label{set}
 	\end{align}
 
-	These priority scores were calculated for two taxa of broad interest,
+	These Priority Scores were calculated for two taxa of broad interest,
 	mammals and birds. Mammals were of interest as attempts have already been made to use
 	cross-species methods to assist in conservation within this taxa, as in the example of the
 	black-footed ferret. Birds were used as a comparison taxa, and also because there are data
@@ -235,12 +280,12 @@
 	of closely related species for each species, time since divergence was calculated using phylogenetic
 	trees. 100 different phylogenetic trees were used for each taxa, to avoid biasing the results to any
 	particular phylogeny. %citep source of trees from Rikki
-	The priority scores for each species were calculated for each phylogeny,
+	The Priority Scores for each species were calculated for each phylogeny,
 	and the mean across all 100 trees was then calculated and used as the final
-	priority score. A number of different models for the probabilities of species
+	Priority Score. A number of different models for the probabilities of species
 	extinction, based on the IUCN Risk Categories, are available, as shown in Table \ref{ext_prob}.
 	Each of these models was used to
-	calculate a different set of priority scores, changing the probabilities of extinction as
+	calculate a different set of Priority Scores, changing the probabilities of extinction as
 	appropriate for each model. To explore the effect of varying $T$ on the distribution of Priority
 	Scores, I calculated the Priority Score for a range of values of $T$, from 1
 	to 20 million years since the MRCA. To visualise these distributions effectively,
@@ -292,7 +337,10 @@
 	and is available from Github at
 	\textit{https://github.com/eamonnmurphy/biobanking\_prioritisation}.
 	High-throughput scripts were
-	run in the Imperial College London High Performance Computing cluster. Libraries used
+	run in the Imperial College London High Performance Computing cluster.
+	We acknowledge computational resources and support provided by the
+	Imperial College Research Computing Service (http://doi.org/10.14469/hpc/2232).
+	Libraries used
 	include ape Version 5.6-2 \citep{paradisApeEnvironmentModern2019},
 	dplyr Version 1.0.9 \citep{dplyr},
 	stringr Version 1.4.0 \citep{stringr}, and stringdist \citep{stringdist}.
@@ -301,9 +349,14 @@
 	\section{Results}
 	\subsection{Prioritising Species for Biobanking}
 	The distribution of Priority Scores for all three assessed models (IUCN 50 years,
-	IUCN 500 years and Pessimistic scenario) are shown in Figure \ref{ps_hist}, for
-	a $T$ of 10 million years to the MRCA. These Priority Scores are in the form
-	of a probability, ranging between 0 and 1. We can see that there is a peaked
+	IUCN 500 years and Pessimistic scenario) are shown in Figures \ref{mammal_hist}
+	and  \ref{bird_hist}, for mammals and birds respectively, alongside the
+	probability of a compatible relative surviving. Compatible relatives in these
+	figures are those which have less than 10 million years to the MRCA of the
+	species of interest, and these Priority Scores were also calculated using this
+	value of $T$.
+	a $T$ of 10 million years to the MRCA. Priority Scores are in the form
+	of a probability, ranging between 0 and 1. There is a peaked
 	distribution for all models and taxa, with most Priority Scores falling into
 	clearly separated buckets. This distribution is similar to the underlying
 	shape of the distribution of probabilities of extinction (see Table \ref{ext_prob}
@@ -311,13 +364,31 @@
 	category. We can see that the distribution of Priority Scores for the
 	pessimistic model differs significantly from the others, both in isolation
 	and in comparison to the underlying extinction risk values for this model.
+	The probabilities of a compatible relative surviving follow a very asymmetric
+	bimodal distribution, with a very large peak near a probability of 1 and
+	a smaller peak near a probability of 0. The pessimistic
+	model has a more even distribution, with a lower proportion of the probabilities
+	falling very close to 1. Distribution of the probabilities of a compatible
+	relative surviving
+	is more even across models for birds (Figure \ref{bird_hist}) compared to
+	mammals (Figure \ref{mammal_hist}), with a greater proportion of probabilities
+	lying away from the extremes.
+	
 	
 	\begin{figure}
-		\includegraphics{../results/combined_hist.pdf}
-		\caption{Histograms showing the distribution of priority scores for
+		\includegraphics{../results/mammal_combined_hist.pdf}
+		\caption{Histograms showing the distribution of Priority Scores for
+			mammals (A-C) and birds (D-F), generated using the following models for
+			extinction probabilities: IUCN 50 year model (A, D), IUCN 500 year
+			model (B, E) and Pessimistic model (C, F)}\label{mammal_hist}
+	\end{figure}
+	
+	\begin{figure}
+		\includegraphics{../results/bird_combined_hist.pdf}
+		\caption{Histograms showing the distribution of Priority Scores for
 		mammals (A-C) and birds (D-F), generated using the following models for
 		extinction probabilities: IUCN 50 year model (A, D), IUCN 500 year
-		model (B, E) and Pessimistic model (C, F)}\label{ps_hist}
+		model (B, E) and Pessimistic model (C, F)}\label{bird_hist}
 	\end{figure}
 
 	\subsection{Effect of $T$ Upon Priority Scores}
@@ -335,8 +406,8 @@
 	is greater for the IUCN 500 year and pessimistic models.
 	
 	\begin{figure}
-		\includegraphics[scale=0.7]{../results/threshold_viz.pdf}
-		\caption{The number of species with a high priority score ($> 0.95$)
+		\includegraphics{../results/threshold_viz.pdf}
+		\caption{The number of species with a high Priority Score ($> 0.95$)
 			for the IUCN 50 and 500 year models and the pessimistic scenario, for 
 			mammals (A) and birds (B).}\label{thresh_viz}
 	\end{figure}
@@ -535,7 +606,7 @@
 	can create a source of bias, particularly if there is a tendency within certain
 	genera or orders to classify as species vs. subspecies and vice-versa. Since it
 	is necessary for closely related species to survive, artificially inflating the
-	number of closely related taxa will bias the priority scores. However, this
+	number of closely related taxa will bias the Priority Scores. However, this
 	effect should be evened somewhat by the fact that each of these species will 
 	have their own extinction risk, which will be incorporated into the
 	calculations.
