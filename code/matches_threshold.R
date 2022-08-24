@@ -6,7 +6,8 @@ if (iter == 1) {
 } else if (iter == 2) {
 	taxa <- "bird"
 }
-threshold <- 10
+threshold <- 2
 
 aggregate <- aggregate_distance_thresholds(taxa, threshold)
-write.csv(aggregate, file = paste("aggregated_", taxa, "_10mya.csv", sep = ""))
+write.csv(aggregate, file = paste("aggregated_", taxa, "_",
+    threshold, "mya.csv", sep = ""))
