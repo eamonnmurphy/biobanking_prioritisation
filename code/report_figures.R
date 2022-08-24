@@ -184,14 +184,14 @@ mammal_random_rest <-
 mammal_optim_rest <-
     read.csv("../results/mammal_optimised_restoration_scores.csv")
 mammal_cat_rest <-
-    read.csv("../results/cat_2/mammal_cat_restoration_scores.csv")
+    read.csv("../results/cat_10/mammal_cat_restoration_scores.csv")
 
 bird_random_rest <-
     read.csv("../results/bird_random_restoration_scores.csv")
 bird_optim_rest <-
     read.csv("../results/bird_optimised_restoration_scores.csv")
 bird_cat_rest <-
-    read.csv("../results/cat_2/bird_cat_restoration_scores.csv")
+    read.csv("../results/cat_10/bird_cat_restoration_scores.csv")
 
 pdf("../results/restoration.pdf")
 

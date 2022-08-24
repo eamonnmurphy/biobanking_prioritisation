@@ -3,14 +3,21 @@ source("extsim_functions.R")
 set.seed(123)
 sims <- 2
 max_biobanked <- 1000
-thresh <- 10
 iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
 
-# Check which of four scenarios to calculate
-if (iter == 1) {
+# Check which scenario to calculate
+if (iter %% 2 == 1) {
     taxa <- "bird"
-} else if (iter == 2) {
+} else if (iter %% 2 == 0) {
     taxa <- "mammal"
+}
+
+if (iter <= 20) {
+    thresh <- 10
+    count <- floor((iter + 1) / 2)
+} else {
+    thresh <- 2
+    count <- floor((iter - 19) / 2)
 }
 
 # Load in the likelihood table
@@ -35,5 +42,5 @@ restoration <- sapply(bb, optimised_restoration_prioritised,
     sim_res = base_res, priorities = priorities, taxa = taxa, sims = sims,
     thresh = thresh)
 
-write.csv(restoration, file = paste(taxa, "cat_restoration_scores.csv",
+write.csv(restoration, file = paste(count, iter, taxa, "cat", thresh, "mya.csv",
     sep = "_"), row.names = FALSE)

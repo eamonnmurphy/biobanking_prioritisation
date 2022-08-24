@@ -3,24 +3,30 @@ source("extsim_functions.R")
 set.seed(123)
 sims <- 2
 max_biobanked <- 1000
-thresh <- 10
 iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
 
 # Check which of four scenarios to calculate
-if (iter == 1) {
+if (iter %% 2 == 1) {
     taxa <- "bird"
     type <- "random"
-} else if (iter == 2) {
+} else if (iter %% 2 == 2) {
     taxa <- "bird"
     type <- "optimised"
-} else if (iter == 3) {
+} else if (iter %% 2 == 3) {
     taxa <- "mammal"
     type <- "random"
-} else if (iter == 4) {
+} else if (iter %% 2 == 0) {
     taxa <- "mammal"
     type <- "optimised"
 }
 
+if (iter <= 40) {
+    thresh <- 10
+    count <- floor((iter + 3) / 4)
+} else {
+    thresh <- 2
+    count <- floor((iter - 37) / 4)
+}
 # Load in the likelihood table
 like <- read.csv(paste(taxa, "s_50_likelihoods.csv", sep = ""))
 
@@ -52,5 +58,5 @@ if (type == "random") {
         thresh = thresh)
 }
 
-write.csv(restoration, file = paste(taxa, type, "restoration_scores.csv",
+write.csv(restoration, file = paste(count, iter, taxa, type, thresh, "mya.csv",
     sep = "_"), row.names = FALSE)
