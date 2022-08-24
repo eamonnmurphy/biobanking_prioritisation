@@ -36,7 +36,7 @@ if (taxa == "mammal") {
         species = get(paste("like", model, sep = "_"))$species,
         ext_like = get(paste("like", model, sep = "_")))
 } else if (taxa == "bird") {
-    rel_table <- rel_calc(bird.species, thresh = threshold,
+    rel_table <- rel_calc(bird.trees, thresh = threshold,
         species = get(paste("like", model, sep = "_"))$species,
         ext_like = get(paste("like", model, sep = "_")))
 }
