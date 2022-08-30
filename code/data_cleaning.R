@@ -115,8 +115,7 @@ for (i in seq_len(nrow(bird_expen))) {
 bird_expen <- bird_expen[-to_remove, ]
 
 # Account for inflation from 2012 to today (29%)
-# Account for estimates being intended for a 10 year period
-bird_expen$Required_expen <- 1.29 * 10 * bird_expen$Required_expen
+bird_expen$Required_expen <- 1.29 * bird_expen$Required_expen
 
 write.csv(bird_expen, file = "../data/cleaned_bird_downlist_expen.csv",
   row.names = FALSE)

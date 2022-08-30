@@ -1,167 +1,167 @@
-"Species","Status","Required_expen","GE"
-"Rhabdotorrhinus_waldeni","CR",150930000,4
-"Acrocephalus_aequinoctialis","EN",31734000,3
-"Acrocephalus_caffer","EN",18705000,3
-"Acrocephalus_familiaris","CR",34830000,4
-"Acrocephalus_paludicola","VU",4.257e+09,2
-"Aglaeactis_aliciae","EN",7894800,3
-"Alauda_razae","CR",6630600,4
-"Amazona_agilis","VU",147060000,2
-"Amazona_tucumana","VU",51858000,2
-"Amazona_vittata","CR",354750000,4
-"Amytornis_woodwardi","VU",193500000,2
-"Anairetes_alpinus","EN",106296000,3
-"Anas_aucklandica","VU",70821000,2
-"Anas_wyvilliana","EN",116487000,3
-"Hedydipna_pallidigaster","EN",384420000,3
-"Anthus_nilghiriensis","VU",53019000,2
-"Antilophia_bokermanni","CR",159960000,4
-"Apalis_flavigularis","EN",122808000,3
-"Apalis_fuscigularis","CR",37797000,4
-"Aphrastura_masafucrae","CR",53406000,4
-"Apteryx_australis","VU",30057000,2
-"Ara_glaucogularis","CR",16125000,4
-"Arborophila_ardens","VU",34959000,2
-"Artisornis_moreaui","CR",158670000,4
-"Atlapetes_pallidiceps","EN",9997500,3
-"Aythya_innotata","CR",35346000,4
-"Biatas_nigropectus","VU",8539800000,2
-"Bostrychia_bocagei","CR",121776000,4
-"Botaurus_poiciloptilus","EN",167700000,3
-"Brotogeris_pyrrhoptera","EN",139320000,3
-"Cacatua_haematuropygia","CR",35346000,4
-"Cacatua_sulphurea","CR",32895000,4
-"Geospiza_heliobates","CR",73401000,4
-"Catharus_bicknelli","VU",290250000,2
-"Centrocercus_minimus","EN",181890000,3
-"Chaetocercus_berlepschi","EN",402480000,3
-"Cinclodes_aricomae","CR",93267000,4
-"Cinclodes_palliatus","CR",38958000,4
-"Poeoptera_femoralis","VU",291540000,2
-"Circus_maillardi","EN",1302900000,3
-"Cistothorus_apolinari","EN",24510000,3
-"Cleptornis_marchei","CR",528900000,4
-"Columba_elphinstonii","VU",2205900000,2
-"Corvus_kubaryi","CR",374100000,4
-"Crossoptilon_mantchuricum","VU",162540000,2
-"Cyanoramphus_malherbi","CR",37926000,4
-"Dendrocopos_noguchii","CR",641130000,4
-"Dicaeum_quadricolor","CR",81270000,4
-"Ducula_brenchleyi","VU",139320000,2
-"Dysithamnus_occidentalis","VU",120099000,2
-"Eriocnemis_nigrivestis","CR",567600000,4
-"Eutrichomyias_rowleyi","CR",16254000,4
-"Eutriorchis_astur","EN",69918000,3
-"Pternistis_ochropectus","CR",218010000,4
-"Pternistis_swierstrai","EN",14706000,3
-"Fregata_andrewsi","CR",18963000,4
-"Gallicolumba_keayi","CR",141900000,4
-"Gallinago_macrodactyla","VU",267030000,2
-"Garrulax_courtoisi","CR",4618200,4
-"Trochalopteron_yersini","EN",23994000,3
-"Glaucidium_nubicola","VU",219300000,2
-"Grallaria_kaestneri","EN",39087000,3
-"Grallaria_ridgelyi","EN",75336000,3
-"Grus_nigricollis","VU",207690000,2
-"Gymnogyps_californianus","CR",1328700000,4
-"Gymnomyza_aubryana","CR",381840000,4
-"Gyps_bengalensis","CR",98556000,4
-"Gyps_indicus","CR",98556000,4
-"Gyps_tenuirostris","CR",98556000,4
-"Habia_atrimaxillaris","EN",18189000,3
-"Haliaeetus_vociferoides","CR",52761000,4
-"Himantopus_novaezelandiae","CR",46827000,4
-"Houbaropsis_bengalensis","CR",125130000,4
-"Humblotia_flavirostris","EN",22188000,3
-"Laniarius_amboimensis","EN",46440000,3
-"Lanius_newtoni","CR",120228000,4
-"Larus_bulleri","EN",190920000,3
-"Laterallus_spilonota","VU",12358200,2
-"Laterallus_tuerosi","EN",40506000,3
-"Lepidopyga_lilliae","CR",36378000,4
-"Leptasthenura_xenothorax","EN",33540000,3
-"Leptotila_wellsi","CR",187050000,4
-"Lophophorus_lhuysii","VU",13545000,2
-"Lophornis_brachylophus","CR",79722000,4
-"Loxops_caeruleirostris","CR",374100000,4
-"Loxops_coccineus","EN",330240000,3
-"Lybius_chaplini","VU",617910000,2
-"Macroagelaius_subalaris","EN",12126000,3
-"Macronyx_sharpei","EN",60243000,3
-"Madanga_ruficollis","EN",100749000,3
-"Mergus_octosetaceus","CR",731430000,4
-"Merulaxis_stresemanni","CR",115455000,4
-"Metallura_iracunda","EN",43215000,3
-"Mimus_graysoni","CR",53406000,4
-"Mimus_melanotis","EN",22575000,3
-"Monticola_erythronotus","EN",14577000,3
-"Myadestes_palmeri","CR",358620000,4
-"Myioborus_pariae","EN",63597000,3
-"Myrmotherula_snowi","CR",42054000,4
-"Nemosia_rourei","CR",37797000,4
-"Neomorphus_radiolosus","EN",105651000,3
-"Crithagra_concolor","CR",120228000,4
-"Nesasio_solomonensis","VU",98169000,2
-"Newtonia_fanovanae","VU",243810000,2
-"Nisaetus_bartelsi","EN",11106900,3
-"Oreomystis_bairdi","CR",383130000,4
-"Oreophasis_derbianus","EN",4179600000,3
-"Oriolus_isabellae","CR",58566000,4
-"Palmeria_dolei","CR",256710000,4
-"Pardalotus_quadragintus","EN",37926000,3
-"Petroica_traversi","EN",16383000,3
-"Leucocarbo_chalconotus","VU",2889600,2
-"Leucocarbo_onslowi","CR",6063000,4
-"Phoebastria_irrorata","CR",56631000,4
-"Phyllomyias_urichi","EN",70950000,3
-"Picathartes_gymnocephalus","VU",58179000,2
-"Pipile_pipile","CR",51858000,4
-"Pithecophaga_jefferyi","CR",281220000,4
-"Platysteira_laticincta","EN",57792000,3
-"Ploceus_aureonucha","EN",379260000,3
-"Ploceus_golandi","EN",158670000,3
-"Ploceus_nicolli","EN",532770000,3
-"Podiceps_taczanowskii","CR",39474000,4
-"Polyplectron_napoleonis","VU",216720000,2
-"Pomarea_nigra","CR",26445000,4
-"Pomarea_whitneyi","CR",1101660000,4
-"Pseudibis_davisoni","CR",102168000,4
-"Pseudobulweria_macgillivrayi","CR",32766000,4
-"Pseudocalyptomena_graueri","VU",772710000,2
-"Pseudonestor_xanthophrys","CR",283800000,4
-"Pterodroma_magentae","CR",54567000,4
-"Pterodroma_phaeopygia","CR",36249000,4
-"Ptilocichla_falcata","VU",178020000,2
-"Puffinus_auricularis","CR",99717000,4
-"Puffinus_mauretanicus","CR",78303000,4
-"Pyrrhura_orcesi","EN",28767000,3
-"Pyrrhura_viridicata","EN",2618700,3
-"Rhinoptilus_bitorquatus","CR",152220000,4
-"Rhynchopsitta_pachyrhyncha","EN",13932000,3
-"Rhynchopsitta_terrisi","EN",105522000,3
-"Rowettia_goughensis","CR",88881000,4
-"Sephanoides_fernandensis","CR",92106000,4
-"Sheppardia_aurantiithorax","EN",71208000,3
-"Spizella_wortheni","EN",27735000,3
-"Spizocorys_fringillaris","EN",915900,3
-"Thalasseus_bernsteini","CR",38829000,4
-"Strigops_habroptila","CR",121002000,4
-"Synthliboramphus_craveri","VU",470850000,2
-"Chlorophoneus_kupeensis","EN",58695000,3
-"Terpsiphone_corvina","CR",33153000,4
-"Thaumatibis_gigantea","CR",86946000,4
-"Thryophilus_nicefori","CR",28122000,4
-"Todiramphus_funebris","VU",91590000,2
-"Todiramphus_gambieri","CR",3818400,4
-"Todiramphus_godeffroyi","CR",7417500,4
-"Treron_pembaensis","VU",51729000,2
-"Treron_psittaceus","EN",18705000,3
-"Troglodytes_monticola","CR",11081100,4
-"Turdus_helleri","CR",75594000,4
-"Turnix_olivii","EN",7301400,3
-"Vanellus_gregarius","CR",19221000,4
-"Geokichla_guttata","EN",232200000,3
-"Zosterops_chloronothos","CR",33282000,4
-"Zosterops_nehrkorni","CR",16254000,4
-"Zosterops_rotensis","CR",332820000,4
-"Zosterops_splendidus","VU",12487200,2
+Species,Status,Required expen,GE
+Rhabdotorrhinus waldeni,CR,15093000,4
+Acrocephalus aequinoctialis,EN,3173400,3
+Acrocephalus caffer,EN,1870500,3
+Acrocephalus familiaris,CR,3483000,4
+Acrocephalus paludicola,VU,425700000,2
+Aglaeactis aliciae,EN,789480,3
+Alauda razae,CR,663060,4
+Amazona agilis,VU,14706000,2
+Amazona tucumana,VU,5185800,2
+Amazona vittata,CR,35475000,4
+Amytornis woodwardi,VU,19350000,2
+Anairetes alpinus,EN,10629600,3
+Anas aucklandica,VU,7082100,2
+Anas wyvilliana,EN,11648700,3
+Hedydipna pallidigaster,EN,38442000,3
+Anthus nilghiriensis,VU,5301900,2
+Antilophia bokermanni,CR,15996000,4
+Apalis flavigularis,EN,12280800,3
+Apalis fuscigularis,CR,3779700,4
+Aphrastura masafucrae,CR,5340600,4
+Apteryx australis,VU,3005700,2
+Ara glaucogularis,CR,1612500,4
+Arborophila ardens,VU,3495900,2
+Artisornis moreaui,CR,15867000,4
+Atlapetes pallidiceps,EN,999750,3
+Aythya innotata,CR,3534600,4
+Biatas nigropectus,VU,853980000,2
+Bostrychia bocagei,CR,12177600,4
+Botaurus poiciloptilus,EN,16770000,3
+Brotogeris pyrrhoptera,EN,13932000,3
+Cacatua haematuropygia,CR,3534600,4
+Cacatua sulphurea,CR,3289500,4
+Geospiza heliobates,CR,7340100,4
+Catharus bicknelli,VU,29025000,2
+Centrocercus minimus,EN,18189000,3
+Chaetocercus berlepschi,EN,40248000,3
+Cinclodes aricomae,CR,9326700,4
+Cinclodes palliatus,CR,3895800,4
+Poeoptera femoralis,VU,29154000,2
+Circus maillardi,EN,130290000,3
+Cistothorus apolinari,EN,2451000,3
+Cleptornis marchei,CR,52890000,4
+Columba elphinstonii,VU,220590000,2
+Corvus kubaryi,CR,37410000,4
+Crossoptilon mantchuricum,VU,16254000,2
+Cyanoramphus malherbi,CR,3792600,4
+Dendrocopos noguchii,CR,64113000,4
+Dicaeum quadricolor,CR,8127000,4
+Ducula brenchleyi,VU,13932000,2
+Dysithamnus occidentalis,VU,12009900,2
+Eriocnemis nigrivestis,CR,56760000,4
+Eutrichomyias rowleyi,CR,1625400,4
+Eutriorchis astur,EN,6991800,3
+Pternistis ochropectus,CR,21801000,4
+Pternistis swierstrai,EN,1470600,3
+Fregata andrewsi,CR,1896300,4
+Gallicolumba keayi,CR,14190000,4
+Gallinago macrodactyla,VU,26703000,2
+Garrulax courtoisi,CR,461820,4
+Trochalopteron yersini,EN,2399400,3
+Glaucidium nubicola,VU,21930000,2
+Grallaria kaestneri,EN,3908700,3
+Grallaria ridgelyi,EN,7533600,3
+Grus nigricollis,VU,20769000,2
+Gymnogyps californianus,CR,132870000,4
+Gymnomyza aubryana,CR,38184000,4
+Gyps bengalensis,CR,9855600,4
+Gyps indicus,CR,9855600,4
+Gyps tenuirostris,CR,9855600,4
+Habia atrimaxillaris,EN,1818900,3
+Haliaeetus vociferoides,CR,5276100,4
+Himantopus novaezelandiae,CR,4682700,4
+Houbaropsis bengalensis,CR,12513000,4
+Humblotia flavirostris,EN,2218800,3
+Laniarius amboimensis,EN,4644000,3
+Lanius newtoni,CR,12022800,4
+Larus bulleri,EN,19092000,3
+Laterallus spilonota,VU,1235820,2
+Laterallus tuerosi,EN,4050600,3
+Lepidopyga lilliae,CR,3637800,4
+Leptasthenura xenothorax,EN,3354000,3
+Leptotila wellsi,CR,18705000,4
+Lophophorus lhuysii,VU,1354500,2
+Lophornis brachylophus,CR,7972200,4
+Loxops caeruleirostris,CR,37410000,4
+Loxops coccineus,EN,33024000,3
+Lybius chaplini,VU,61791000,2
+Macroagelaius subalaris,EN,1212600,3
+Macronyx sharpei,EN,6024300,3
+Madanga ruficollis,EN,10074900,3
+Mergus octosetaceus,CR,73143000,4
+Merulaxis stresemanni,CR,11545500,4
+Metallura iracunda,EN,4321500,3
+Mimus graysoni,CR,5340600,4
+Mimus melanotis,EN,2257500,3
+Monticola erythronotus,EN,1457700,3
+Myadestes palmeri,CR,35862000,4
+Myioborus pariae,EN,6359700,3
+Myrmotherula snowi,CR,4205400,4
+Nemosia rourei,CR,3779700,4
+Neomorphus radiolosus,EN,10565100,3
+Crithagra concolor,CR,12022800,4
+Nesasio solomonensis,VU,9816900,2
+Newtonia fanovanae,VU,24381000,2
+Nisaetus bartelsi,EN,1110690,3
+Oreomystis bairdi,CR,38313000,4
+Oreophasis derbianus,EN,417960000,3
+Oriolus isabellae,CR,5856600,4
+Palmeria dolei,CR,25671000,4
+Pardalotus quadragintus,EN,3792600,3
+Petroica traversi,EN,1638300,3
+Leucocarbo chalconotus,VU,288960,2
+Leucocarbo onslowi,CR,606300,4
+Phoebastria irrorata,CR,5663100,4
+Phyllomyias urichi,EN,7095000,3
+Picathartes gymnocephalus,VU,5817900,2
+Pipile pipile,CR,5185800,4
+Pithecophaga jefferyi,CR,28122000,4
+Platysteira laticincta,EN,5779200,3
+Ploceus aureonucha,EN,37926000,3
+Ploceus golandi,EN,15867000,3
+Ploceus nicolli,EN,53277000,3
+Podiceps taczanowskii,CR,3947400,4
+Polyplectron napoleonis,VU,21672000,2
+Pomarea nigra,CR,2644500,4
+Pomarea whitneyi,CR,110166000,4
+Pseudibis davisoni,CR,10216800,4
+Pseudobulweria macgillivrayi,CR,3276600,4
+Pseudocalyptomena graueri,VU,77271000,2
+Pseudonestor xanthophrys,CR,28380000,4
+Pterodroma magentae,CR,5456700,4
+Pterodroma phaeopygia,CR,3624900,4
+Ptilocichla falcata,VU,17802000,2
+Puffinus auricularis,CR,9971700,4
+Puffinus mauretanicus,CR,7830300,4
+Pyrrhura orcesi,EN,2876700,3
+Pyrrhura viridicata,EN,261870,3
+Rhinoptilus bitorquatus,CR,15222000,4
+Rhynchopsitta pachyrhyncha,EN,1393200,3
+Rhynchopsitta terrisi,EN,10552200,3
+Rowettia goughensis,CR,8888100,4
+Sephanoides fernandensis,CR,9210600,4
+Sheppardia aurantiithorax,EN,7120800,3
+Spizella wortheni,EN,2773500,3
+Spizocorys fringillaris,EN,91590,3
+Thalasseus bernsteini,CR,3882900,4
+Strigops habroptila,CR,12100200,4
+Synthliboramphus craveri,VU,47085000,2
+Chlorophoneus kupeensis,EN,5869500,3
+Terpsiphone corvina,CR,3315300,4
+Thaumatibis gigantea,CR,8694600,4
+Thryophilus nicefori,CR,2812200,4
+Todiramphus funebris,VU,9159000,2
+Todiramphus gambieri,CR,381840,4
+Todiramphus godeffroyi,CR,741750,4
+Treron pembaensis,VU,5172900,2
+Treron psittaceus,EN,1870500,3
+Troglodytes monticola,CR,1108110,4
+Turdus helleri,CR,7559400,4
+Turnix olivii,EN,730140,3
+Vanellus gregarius,CR,1922100,4
+Geokichla guttata,EN,23220000,3
+Zosterops chloronothos,CR,3328200,4
+Zosterops nehrkorni,CR,1625400,4
+Zosterops rotensis,CR,33282000,4
+Zosterops splendidus,VU,1248720,2

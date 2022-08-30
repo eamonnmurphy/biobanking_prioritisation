@@ -133,12 +133,12 @@ hist(rs_bird_pessimistic$average, ylim = c(0, 7000), breaks = 20)
 #### Varying thresholds visualisation ####
 bird_table <- read.csv("../results/bird_threshold_table.csv", row.names = 1)
 mammal_table <- read.csv("../results/mammal_threshold_table.csv", row.names = 1)
-pdf("../results/threshold_viz.pdf", height = 9, width = 6, pointsize = 11)
-par(mfcol = c(2, 1))
+pdf("../results/threshold_viz.pdf", height = 7.5, width = 6, pointsize = 11)
+par(mfcol = c(2, 1), mar = c(4.1, 4.1, 2.6, 2.1))
 
 # Plot the mammal table
 plot(mammal_table$fifty_year, type = "l", xlab = "Threshold for MRCA (mya)",
-    ylim = c(0, 701), ylab = "No. of species", col = "blue")
+    ylim = c(0, 701), ylab = "Number of species", col = "blue")
 
 lines(mammal_table$fivehundred_year, col = "#6c3092")
 lines(mammal_table$pessimistic, col = "red")
@@ -157,7 +157,7 @@ mtext("A", adj = adjx, line = liney, cex = 1.2)
 
 # Plot the bird results
 plot(bird_table$fifty_year, type = "l", xlab = "Threshold for MRCA (mya)",
-    ylim = c(0, 691), ylab = "No. of species", col = "blue")
+    ylim = c(0, 691), ylab = "Number of species", col = "blue")
 
 lines(bird_table$fivehundred_year, col = "#6c3092")
 lines(bird_table$pessimistic, col = "red")
@@ -180,52 +180,63 @@ graphics.off()
 ###### Restoration simulations ######
 # Mammals
 mammal_random_rest <-
-    read.csv("../results/mammal_random_restoration_scores.csv")
+    read.csv("../results/mammal_random_10mya.csv")
 mammal_optim_rest <-
-    read.csv("../results/mammal_optimised_restoration_scores.csv")
+    read.csv("../results/mammal_optimised_10mya.csv")
 mammal_cat_rest <-
-    read.csv("../results/cat_10/mammal_cat_restoration_scores.csv")
+    read.csv("../results/mammal_cat_10mya.csv")
 
 bird_random_rest <-
-    read.csv("../results/bird_random_restoration_scores.csv")
+    read.csv("../results/bird_random_10mya.csv")
 bird_optim_rest <-
-    read.csv("../results/bird_optimised_restoration_scores.csv")
+    read.csv("../results/bird_optimised_10mya.csv")
 bird_cat_rest <-
-    read.csv("../results/cat_10/bird_cat_restoration_scores.csv")
+    read.csv("../results/bird_cat_10mya.csv")
 
-pdf("../results/restoration.pdf")
+pdf("../results/restoration.pdf", pointsize = 11)
 
-par(mfcol = c(1, 2))
+par(mfcol = c(2, 1))
 
 plot(seq(0, 1000, by = 10), mammal_random_rest[1, ], xlim = c(0, 1000),
     ylim = c(0, 500), xlab = "Number of species biobanked",
     ylab = "Number of species restored",
     main = "Mammal restoration")
-points(seq(0, 1000, by = 10), mammal_random_rest[2, ])
 
-points(seq(0, 1000, by = 10), mammal_optim_rest[1, ], col = "red")
-points(seq(0, 1000, by = 10), mammal_optim_rest[2, ], col = "red")
+for (i in 2:nrow(mammal_random_rest)) {
+    points(seq(0, 1000, by = 10), mammal_random_rest[i, ])
+}
 
-points(seq(0, 1000, by = 10), mammal_cat_rest[1, ], col = "blue")
-points(seq(0, 1000, by = 10), mammal_cat_rest[2, ], col = "blue")
+for (i in 1:nrow(mammal_optim_rest)) {
+    points(seq(0, 1000, by = 10), mammal_optim_rest[i, ], col = "red")
+}
 
-legend(x = "topright", legend = c("Random biobanking", "Optimised biobanking"),
-    col = c("black", "red"), pch = 1)
+for (i in 1:nrow(mammal_cat_rest)) {
+    points(seq(0, 1000, by = 10), mammal_cat_rest[i, ], col = "blue")
+}
+
+legend(x = "topleft", legend = c("Random biobanking", "Optimised biobanking",
+        "Category based optimisation"),
+    col = c("black", "red", "blue"), pch = 1)
 
 plot(seq(0, 1000, by = 10), bird_random_rest[1, ], xlim = c(0, 1000),
     ylim = c(0, 500), xlab = "Number of species biobanked",
     ylab = "Number of species restored",
     main = "Bird restoration")
-points(seq(0, 1000, by = 10), bird_random_rest[2, ])
+for (i in 2:nrow(bird_random_rest)) {
+    points(seq(0, 1000, by = 10), bird_random_rest[i, ])
+}
 
-points(seq(0, 1000, by = 10), bird_optim_rest[1, ], col = "red")
-points(seq(0, 1000, by = 10), bird_optim_rest[2, ], col = "red")
+for (i in 1:nrow(bird_optim_rest)) {
+    points(seq(0, 1000, by = 10), bird_optim_rest[i, ], col = "red")
+}
 
-points(seq(0, 1000, by = 10), bird_cat_rest[1, ], col = "blue")
-points(seq(0, 1000, by = 10), bird_cat_rest[2, ], col = "blue")
+for (i in 1:nrow(bird_cat_rest)) {
+    points(seq(0, 1000, by = 10), bird_cat_rest[i, ], col = "blue")
+}
 
-legend(x = "topright", legend = c("Random biobanking", "Optimised biobanking"),
-    col = c("black", "red"), pch = 1)
+legend(x = "topleft", legend = c("Random biobanking", "Optimised biobanking",
+        "Category based optimisation"),
+    col = c("black", "red", "blue"), pch = 1)
 
 graphics.off()
 
@@ -233,21 +244,31 @@ graphics.off()
 #### Conservation cost simulations ####
 con_spend <- read.csv("../results/conservation_spend_sim.csv")
 
-pdf("../results/log_expense_sims.pdf")
-par(mfcol = c(1, 2))
+pdf("../results/log_expense_sims.pdf", height = 8, pointsize = 11)
+par(mfcol = c(2, 1), mar = c(5.1, 4.1, 1.1, 2.1))
 plot(log10(con_spend$spend), con_spend$optim_downlist,
-    xlab = "Log10 of dedicated conservation spending (US $)",
-    ylab = "No. of extinctions in a 50 year period")
+    xlab = "Log10 of conservation spending (US $)",
+    ylab = "Number of extinctions")
 points(log10(con_spend$spend), con_spend$random_downlist, col = "red")
 legend(x = "bottomleft", legend = c("Optimised", "Random"),
     col = c("black", "red"), pch = 1)
-abline(v = log10(9e+08), col = "black", lty = 2)
-abline(v = log10(6e+10), col = "red", lty = 2)
+abline(v = log10(9e+07), col = "black", lty = 2)
+abline(v = log10(6e+09), col = "red", lty = 2)
+
+pplt <- par("plt")
+adjx <- (0 - pplt[1]) / (pplt[2] - pplt[1])
+liney <- 0
+mtext("A", adj = adjx, line = liney, cex = 1.2)
 
 plot(con_spend$spend, con_spend$optim_downlist,
-    xlab = "Dedicated conservation spending (US $)",
-    ylab = "No. of extinctions in a 50 year period")
+    xlab = "Conservation spending (US $)",
+    ylab = "Number of extinctions")
 points(con_spend$spend, con_spend$random_downlist, col = "red")
 legend(x = "topright", legend = c("Optimised", "Random"),
     col = c("black", "red"), pch = 1)
+
+pplt <- par("plt")
+adjx <- (0 - pplt[1]) / (pplt[2] - pplt[1])
+liney <- 0
+mtext("B", adj = adjx, line = liney, cex = 1.2)
 graphics.off()
